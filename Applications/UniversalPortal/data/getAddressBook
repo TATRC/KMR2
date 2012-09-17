@@ -1,0 +1,27 @@
+{
+    "addressBookFact": {
+        "successStatus": true,
+        "statusMessage": null,
+        "contacts": [
+            {
+                "contactId": "doe.jane",
+                "name": "Jane M Doe",
+                "address1": "5003 Mt Elbrus Drive",
+                "state": "CA",
+                "zipCode": "92117",
+                "phones": [],
+                "email":"janemdoe@lab.socraticgrid.org"
+            },
+            {
+                "contactId": "fry.emory",
+                "name": "Emory A Fry, MD",
+                "address1": "4920 Mt Elbrus Drive",
+                "state": "CA",
+                "city":"San Diego",
+                "zipCode": "92117",
+                "phones": [],
+                "email":"eafry@lab.socraticgrid.org"
+            }
+        ]
+    }
+}

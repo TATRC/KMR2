@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/Users/nhin/src/KMR/Services/Common/AdapterFactServiceLib/src/wsdl/AdapterFactsService.wsdl" uri="wsdl/AdapterFactsService.wsdl"/>
+    <system systemId="file:/Users/nhin/src/KMR/wsdl/AdapterFactsService.wsdl" uri="wsdl/AdapterFactsService.wsdl"/>
+</catalog>

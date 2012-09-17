@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+<div id="loginMain">
+    <div class="homeContent" style="height:340px; background:url('images/Home-Page-Image-2.jpg');background-repeat:no-repeat;background-position:right top">
+        <div id="loginInput" style="width:49%">
+            <form id="loginForm">
+            <table class="tblClean tblCenter inputTable primaryLinks">
+                <tr><td colspan="3" style="padding:95px 0 15px 0">
+                    <div style="text-align:center"><span style="font-family:serif;font-size:38px;padding-bottom:30px" class="primaryText">
+                        Partners in Health</span><br/>
+                        <span> For patients and health care providers,<br/>vitae vel posuere tellus etiam</span>
+                    </div>
+                </td></tr>
+                <tr><td><label for="userName">Username</label></td><td><input id="userName" value="fry.emory"/></td><td rowspan="3" style="vertical-align:middle;"><img id="formSubmit" src="images/loginTransparent.png"/></td></tr>
+                <tr><td><label for="userPass">Password</label></td><td><input id="userPass" type="password" value="test"/></td></tr>
+                <tr><td><label for="userCAC">or CAC</label></td><td><input id="userCAC" type="password"/><img src="images/Question-mark-icon.png" style="padding-left:5px"/></td></tr>
+                <tr><td id="loginMessage" class="suiteErrorText" colspan="3"></td> </tr>
+
+                <tr><td colspan="3"><a id="forgotPass" href="#">Request new password?</a><span style="padding:0 10px">|</span><a id="newAccount" href="#">Request an account</a></td></tr>
+                <tr></tr>
+            </table>
+            </form>
+        </div>
+        <!--<div id="loginNews" style="width:50%"></div>-->
+    </div>
+</div>
+<div id="miscInfo" class="homeContent" style="padding:15px 0">
+    <table class="tblClean primaryLinks tblCenter" style="width:960px">
+        <tr><td colspan="2" style="width:50%"></td><td colspan="2" style="width:50%"></td></tr>
+        <tr><td></td><td style="line-height:40px;padding-left:20px"><a href="#" style="font-size:18px" onclick="$.publish('/suite/navigateView', ['about'], event)">About Janus</a></td>
+            <td></td><td style="line-height:40px;padding-left:20px"><a href="#" style="font-size:18px" onclick="$.publish('/suite/navigateView', ['medicalNews'], event)">Recent Medical News</a></td></tr>
+        <tr>
+            <td id="aboutImage"></td><td id="aboutInfo" style="padding:0 20px"></td>
+            <td id="newsImage"></td><td id="newsInfo" style="padding-left:20px"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without a template which loads the global namespace
+        var _thisView = 'login';
+
+        $('td:has("label")').css({ 'text-align':'right'});   // Align all cells that contain a label field to the right
+        <!-- Load the images and css for this widget -->
+        $('#aboutImage').prepend('<img src="' + sirona.images + 'About-Janus.jpg"/>');
+        $('.miscImg').css({'float':'left', 'marginTop':'55px'});
+        $('#newsImage').prepend('<img src="' + sirona.images + 'Recent-News.jpg" style="padding-left:20px; border-left:1px solid #ccc"/>');
+        $('.miscInfo').css({'float':'left', 'width':'340px'});
+
+        sirona.localOnce=true;
+        sirona.reqPS('getMiscellaneous', { view:_thisView,
+            success: function(data) {
+                $('#aboutInfo').html(data.aboutSummary);
+                $('#newsInfo').html(data.newsSummary);
+                resizeContent.init();
+            }
+        }, 'miscellaneousFact');
+
+        // Publishers
+        $('#newAccount').click(function (e) { $.publish('/suite/navigateView', ['newAccount'], e) });
+        $('#forgotPass').click(function (e) { $.publish('/suite/navigateView', ['forgotPassword'], e) });
+
+        $('#formSubmit').click(function (e) {
+            e.preventDefault();
+
+            // Validate form submission against Presentation Services
+            sirona.reqPS('validateAccount', { view:_thisView, data:{ userName:$('#userName').val(), password:$('#userPass').val() },  // TODO SHA1 this??
+                success: function(data) {
+                    if (data.successStatus) {
+                        var _url = ((data.role)?data.role:'patient') + '.html?userId=' + data.userId + '&token=' + data.token;
+                        if (data.providerId) _url += '&providerId=' + data.providerId;
+                        window.location.replace(_url);
+                    } else {
+                        $('#loginMessage').html(data.statusMessage);
+                    }
+                },
+                error: function(data) { $('#loginMessage').html(data.statusMessage); }
+            }, 'validateAccountFact', 'GET', true);
+        });
+    });
+</script>
+</body>
+</html>

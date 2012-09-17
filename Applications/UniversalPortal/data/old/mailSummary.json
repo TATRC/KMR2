@@ -1,0 +1,207 @@
+{
+    "GetSummaryDataForUserResponse": {
+        "errorList": [
+
+        ],
+        "summaryObjects": [
+            {
+                "author": "\"Joe E. Provider\" <joe.provider@socraticgrid.org>",
+                "itemValues": [
+                    {
+                        "values": [
+                            "true"
+                        ],
+                        "name": "Read"
+                    },
+                    {
+                        "values": [
+                            "false"
+                        ],
+                        "name": "Replied"
+                    }
+                ],
+                "dataSource": "Mail",
+                "description": "Test eMail",
+                "dateCreated": "2011-02-15T08:30:23.000-08:00",
+                "itemId": "T99990070?INBOX?1"
+            },
+            {
+                "author": "\"Joe E. Provider\" <joe.provider@socraticgrid.org>",
+                "itemValues": [
+                    {
+                        "values": [
+                            "true"
+                        ],
+                        "name": "Read"
+                    },
+                    {
+                        "values": [
+                            "false"
+                        ],
+                        "name": "Replied"
+                    }
+                ],
+                "dataSource": "Mail",
+                "description": "Annual Breast Cancer Awareness Walk",
+                "dateCreated": "2011-02-15T11:52:28.000-08:00",
+                "itemId": "T99990070?INBOX?2"
+            },
+            {
+                "author": "DDSS-test",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Critical"
+                        ],
+                        "name": "Priority"
+                    },
+                    {
+                        "values": [
+                            "Read"
+                        ],
+                        "name": "Status"
+                    }
+                ],
+                "dataSource": "Patient Alerts",
+                "patient": "JANE DOE",
+                "description": "Fasting Glucose Recommendation",
+                "dateCreated": "2011-02-20T11:19:54.000-08:00",
+                "itemId": "ID:3-208.75.163.61(a2:4d:2b:d9:ea:a4)-1-1298229593938"
+            },
+            {
+                "author": "DDSS-test",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Critical"
+                        ],
+                        "name": "Priority"
+                    },
+                    {
+                        "values": [
+                            "New"
+                        ],
+                        "name": "Status"
+                    }
+                ],
+                "dataSource": "Patient Alerts",
+                "patient": "JANE DOE",
+                "description": "Fasting Glucose Recommendation",
+                "dateCreated": "2011-02-20T11:51:55.000-08:00",
+                "itemId": "ID:9-208.75.163.61(a2:4d:2b:d9:ea:a4)-1-1298231515840"
+            },
+            {
+                "author": "DDSS-test",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Critical"
+                        ],
+                        "name": "Priority"
+                    },
+                    {
+                        "values": [
+                            "New"
+                        ],
+                        "name": "Status"
+                    }
+                ],
+                "dataSource": "Patient Alerts",
+                "patient": "JANE DOE",
+                "description": "Fasting Glucose Recommendation",
+                "dateCreated": "2011-02-20T12:16:15.000-08:00",
+                "itemId": "ID:17-208.75.163.61(a2:4d:2b:d9:ea:a4)-1-1298232975584"
+            },
+            {
+                "author": "DDSS-test",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Critical"
+                        ],
+                        "name": "Priority"
+                    },
+                    {
+                        "values": [
+                            "New"
+                        ],
+                        "name": "Status"
+                    }
+                ],
+                "dataSource": "Patient Alerts",
+                "patient": "JANE DOE",
+                "description": "Further Diabetes Testing Required",
+                "dateCreated": "2011-02-20T13:51:29.000-08:00",
+                "itemId": "ID:31-208.75.163.61(a2:4d:2b:d9:ea:a4)-1-1298238689608"
+            },
+            {
+                "author": "DDSS-test",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Critical"
+                        ],
+                        "name": "Priority"
+                    },
+                    {
+                        "values": [
+                            "Read"
+                        ],
+                        "name": "Status"
+                    }
+                ],
+                "dataSource": "Patient Alerts",
+                "patient": "JANE DOE",
+                "description": "Further Diabetes Testing Required",
+                "dateCreated": "2011-02-20T14:32:51.000-08:00",
+                "itemId": "ID:48-208.75.163.61(a2:4d:2b:d9:ea:a4)-1-1298241170974"
+            },
+            {
+                "author": "^AHLTA^^^^",
+                "itemValues": [
+                    {
+                        "values": [
+                            "Summarization of Episode Note"
+                        ],
+                        "name": "Name"
+                    },
+                    {
+                        "values": [
+                            "text/plain"
+                        ],
+                        "name": "MIME Type"
+                    },
+                    {
+                        "values": [
+                            "168979"
+                        ],
+                        "name": "Size"
+                    },
+                    {
+                        "values": [
+                            "false"
+                        ],
+                        "name": "Accessed"
+                    },
+                    {
+                        "values": [
+                            "Department of Defense"
+                        ],
+                        "name": "Author Institution"
+                    },
+                    {
+                        "values": [
+                            "true"
+                        ],
+                        "name": "Read"
+                    }
+                ],
+                "dataSource": "NHIN Documents",
+                "patient": "Doe, Jane",
+                "description": "Summarization of Episode Note",
+                "dateCreated": "2009-09-21T12:00:00.000-07:00",
+                "itemId": "33333333341"
+            }
+        ]
+    }
+}

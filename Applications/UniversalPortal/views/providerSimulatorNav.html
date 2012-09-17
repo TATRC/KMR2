@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+<div id="simNavigation"></div>
+
+<script type="text/javascript">
+$(function(){
+    if (!sirona) return false; // Cannot be loaded without a template which loads the global namespace
+    var _thisView = 'providerSimulatorNav';
+    var _navContainer = $('#simNavigation');
+
+// PUBLISHERS
+    _navContainer.delegate('li', 'click', function() {
+        if ($('div:first-child',this).hasClass('navSelected')) return;  // Exit if already selected
+
+        // Remove the previous selected item, and select the new one.
+        _navContainer.find('div').removeClass('navSelected');
+        $('div:first-child',this).addClass('navSelected');
+
+         $.publish('/simulator/modelSelected',[ $(this).data() ]);
+        return false;
+    });
+
+// SUBSCRIBERS
+    $.subscribe('/simulator/modelSelected', _thisView, function(objData) {
+        // Initialize the first selected model
+        $('#' + objData.modelId + ' div:first-child', _navContainer).addClass('navSelected');
+    });
+
+// INITIALIZATION
+    var _disease = '';
+    sirona.localOnce=true;  // TODO testing
+    sirona.reqPS('getPlanningModels', { view:_thisView,
+        success: function(data) {
+            var _diseaseCnt = 0;
+            $.each(data.models, function(idx) {
+                if (this.disease != _disease) {
+                    _diseaseCnt ++;
+                    // Diseases
+                    _navContainer.append(
+                        '<div><span style="float:left" class="ui-icon ui-icon-triangle-1-s"></span><span style="font-weight:bold">' + this.disease +'</span></div>' +
+                        '<ul id="disease' + _diseaseCnt + '"></ul>'
+                    );
+                    _disease = this.disease;
+                }
+                // Model data
+                $('#disease' + _diseaseCnt).append(
+                    '<li id="' + this.modelId + '"><div>' + this.shortDescr +
+                        ((this.modelRunInfo)?('<br/>(' + this.modelRunInfo[0].startedSimulations + '/' + this.modelRunInfo[0].resultedSimulations + ')'):'no') +
+                    '</div></li>'
+                ).children(':last-child').data(this);  // Add the model and it's data
+
+
+                // Initial click on the first item
+                if (idx==0) $.publish('/simulator/modelSelected',[ this ]);
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>

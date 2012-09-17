@@ -1,0 +1,36 @@
+{
+    "successStatus": "true",
+    "message": "Data validation errors go here",
+    "messageObjects": [
+        {
+            "messageId": "1",
+            "folders": [
+                "Starred"
+            ],
+            "messageDate": "2011-04-01T10:13:29.000-08:00",
+            "messageType": "Email",
+            "description": "Test description of an email message",
+            "from": "provider.joe",
+            "title": "Title of Joe",
+            "messageStatus": "Unread",
+            "priority": "Critical",
+            "tasksCount": 0,
+            "tasksComplete": 0
+        },
+        {
+            "messageId": "2",
+            "folders": [
+                ""
+            ],
+            "messageDate": "2011-04-02T10:13:29.000-08:00",
+            "messageType": "Patient Alert",
+            "description": "Test description of an Alert message",
+            "from": "provider.jane",
+            "title": "Title of Jane",
+            "messageStatus": "Open",
+            "priority": "Critical",
+            "tasksCount": 6,
+            "tasksComplete": 2
+        }
+    ]
+}

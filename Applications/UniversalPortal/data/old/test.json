@@ -1,0 +1,37 @@
+{
+    "employees": [
+        {
+            "dateOfBirth": "1944-05-06T10:00:00-07:00",
+            "legalName": {
+                "middleName": "E",
+                "familyName": "Doe",
+                "firstName": "John",
+                "suffix": "Sr.",
+                "nameType": {
+                    "codeSystemName": "",
+                    "codeSystem": "",
+                    "label": "Legal",
+                    "code": "L"
+                }
+            }
+        },
+        {
+            "dateOfBirth": "1944-05-06T10:00:00-07:00",
+            "legalName": {
+                "middleName": "E",
+                "familyName": "Doe",
+                "firstName": "John",
+                "nameType": {
+                    "codeSystemName": "",
+                    "codeSystem": "",
+                    "label": "Legal",
+                    "code": "L"
+                }
+            },
+            "Hobbies": {
+                "Outdoor": "Golf, Hiking",
+                "Indoor": "Darts, TV"
+            }
+        }
+    ]
+}

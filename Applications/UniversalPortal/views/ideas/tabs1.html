@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simple Tabs</title>
+<script type="text/javascript">
+<!--
+
+
+var tabsClass = {
+	tabSetArray: 	new Array(),
+	classOn: 		"tabs_on",
+	classOff: 		"tabs_off",
+
+	addTabs: function (tabsContainer) {
+		tabs = document.getElementById(tabsContainer).getElementsByTagName("div");
+		for (x in tabs) {
+			if (typeof(tabs[x].id) != "undefined") {
+				this.tabSetArray.push(tabs[x].id);
+			} else {}
+		}
+	},
+
+	switchTab: function (element) {
+		for (x in this.tabSetArray) {
+			tabItem = this.tabSetArray[x];
+			dataElement = document.getElementById(tabItem + "_data");
+			if (dataElement) {
+				if (dataElement.style.display != "none") {
+					dataElement.style.display = "none";
+				} else {}
+			} else {}
+
+			tabElement = document.getElementById(tabItem);
+			if (tabElement) {
+				if (tabElement.className != this.classOff) {
+					tabElement.className = this.classOff;
+				} else {}
+			} else {}
+		}
+
+		document.getElementById(element.id + "_data").style.display = "";
+		element.className = this.classOn;
+	}
+};
+
+-->
+</script>
+
+<style type="text/css">
+<!--
+.tab_content {
+	border: 1px solid #669CCC;
+	padding-bottom: 15px;
+}
+
+#tabContainer {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	display: block;
+}
+
+#tabContainer div {
+	padding-bottom: 5px;
+	padding-right: 8px;
+	padding-left: 8px;
+	font-weight: bold;
+	margin-left: 5px;
+	padding-top: 5px;
+	color: #000000;
+	float: left;
+}
+
+#tabContainer .tabs_on, #tabContainer .tabs_off {
+	border-bottom-color: #669CCC;
+	border-right-color: #669CCC;
+	background-position: bottom;
+	border-left-color: #669CCC;
+	border-bottom-style: solid;
+	background-color: #EFEFEF;
+	border-right-style: solid;
+	border-top-color: #669CCC;
+	border-left-style: solid;
+	border-bottom-width: 0px;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-left-width: 1px;
+	border-top-width: 1px;
+	cursor: pointer;
+}
+#tabContainer .tabs_on {
+	background-color: #BBBBBB;
+}
+-->
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+            <td><div id="tabContainer">
+                        <div id="tab_1" class="tabs_on" onclick="tabsClass.switchTab(this);">General Information</div>
+                        <div id="tab_2" class="tabs_off" onclick="tabsClass.switchTab(this);">Demographics</div>
+                        <div id="tab_3" class="tabs_off" onclick="tabsClass.switchTab(this);">Education</div>
+                        <div id="tab_4" class="tabs_off" onclick="tabsClass.switchTab(this);">Experience</div>
+                  </div></td>
+      </tr>
+      <tr>
+            <td><div id="tab_1_data" class="tab_content">
+                        tab 1 content
+                  </div>
+                  <div id="tab_2_data" class="tab_content" style="display: none;">
+                        tab 2 content
+                  </div>
+                  <div id="tab_3_data" class="tab_content" style="display: none;">
+                        tab 3 content
+                  </div>
+                  <div id="tab_4_data" class="tab_content" style="display: none;">
+                        tab 4 content
+                  </div>
+                  <script type="text/javascript">
+			<!--
+			tabsClass.addTabs("tabContainer");
+			-->
+			</script>
+            </td>
+      </tr>
+</table>
+</body>
+</html>

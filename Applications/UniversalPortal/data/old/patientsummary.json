@@ -1,0 +1,75 @@
+{
+   "providerFact":{
+      "historical":"true",
+      "id":{
+         "codeSystem":"1.1",
+         "codeSystemName":"",
+         "value":"1",
+         "floatValue":"1.0",
+         "displayable":"true"
+      },
+      "sourceSystem":"2.16.840.1.113883.3.200",
+      "codedProviderType":{
+         "codeSystem":"2.16.840.1.113883.3.88.12.3221.4",
+         "codeSystemName":"Health Care Provider Taxonomy",
+         "code":"207PH0002X",
+         "label":"Emergency Medicine"
+      },
+      "freeTextProviderType":"Emergency Medicine",
+      "legalName":{
+         "firstName":"JOE",
+         "middleName":"A",
+         "familyName":"PROVIDER",
+         "nameType":{
+            "codeSystem":"",
+            "codeSystemName":"",
+            "code":"L",
+            "label":"Legal"
+         }
+      },
+      "telecom":[
+         {
+            "value":"1-858-444-4444",
+            "telecomType":{
+               "codeSystem":"",
+               "codeSystemName":"",
+               "code":"WP",
+               "label":"Work"
+            }
+         },
+         {
+            "value":"1-858-395-7317",
+            "telecomType":{
+               "codeSystem":"",
+               "codeSystemName":"",
+               "code":"MC",
+               "label":"Mobile"
+            }
+         },
+         {
+            "value":"eafry@gmx.com",
+            "telecomType":{
+               "codeSystem":"",
+               "codeSystemName":"",
+               "code":"NET",
+               "label":"Email"
+            }
+         }
+      ],
+      "address":{
+         "streetAddress":"1098 Frost St",
+         "city":"Worcester",
+         "state":"MA",
+         "postalCode":"01606",
+         "country":"US",
+         "addressType":{
+            "codeSystem":"",
+            "codeSystemName":"",
+            "code":"HP",
+            "label":"Home"
+         }
+      },
+      "organization":"NMC Portmouth",
+      "serviceDeliveryLocation":"EMERGENCY DEPARTMENT"
+   }
+}

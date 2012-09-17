@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<div id="inboxHeader" class="emrBodyHeader">
+    <table class="tblClean" style="width:100%">
+        <tr>
+            <td><h2>Inbox</h2></td>
+            <td style="width:100%"><div id="fullScreen">Full Screen</div></td></tr>
+        <tr>
+            <td style="padding-right:5px"><select id="inboxCategory"><option selected>Category/All</option><option>Email</option><option>Patient Alerts</option></select>
+                <label for="inboxCategory">Select:&nbsp;&nbsp;</label><a href="">All</a><a href="">None</a><a href="">Read</a><a href="">Unread</a>
+            </td>
+            <td style="text-align:right;">
+                <button>Reply</button><button>Reply All</button><button>Forward</button><button>Archive</button><button style="margin-right:20px">Delete</button>
+                <button style="margin-right:20px">Request NHIN Document</button><button>Print</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="inboxContent">
+    <div id="inboxTop" style="border:1px solid red">
+        <table id="inboxMain"></table>
+    </div>
+
+    <!--<div id="inboxPager"></div>-->
+    <div id="inboxSplitter" style="height:10px; background-color:green;"></div>
+    <div id="inboxDetail" style="background-color:yellow; height:250px">
+        <div id="inboxDetailHeader">
+        </div>
+        <div id="inboxDetailInput"></div>
+    </div>
+</div>
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        var $spl = $('#inboxSplitter');
+        var $offst = $('#inboxTop').position().top;
+        $spl.draggable({
+            containment:'parent', axis:'y',
+            drag: function(e, ui) {
+                $('#navSimulator').html( $spl.position().top - $offst +'  '+Date() +'   dh:'+$('#inboxTop').height()+'   gh:'+$('#inboxMain').height() );
+//                $('#inboxTop').height( $spl.position().top - $offst );
+//                $.publish( '/emr/contentResize',[] );
+//                $('#inboxMain').setGridHeight( $spl.position().top - $('#inboxTop').position().top );
+
+            }
+        });
+/*
+        $('#inboxTop').resizable({
+                handles: 's',
+                resize:(function() { $.publish('/emr/contentResize',[]) })
+        });
+*/
+        $("#inboxMain").jqGrid({
+            /*  Since autoWidth is on, set the columns so that they add up to the largest size in pixels - For now max will be 2000 */
+            width:100,  /* Set to the smallest width the grid can be */
+            url:'http://localhost/KMR2/EMR/data/getMessages.json',
+            datatype: "json",
+            loadonce: true,  // loads the data from the server only once.  Sets the datatype to local afterwards for sorting
+            jsonReader: {
+                root: "messagesFact.messageObjects",
+                repeatitems:false
+            },
+            colNames:['','Status', 'Date', 'Title', 'Message','Type','Priority' ],
+            colModel:[
+                {name:'messageId', index:'messageId', hidden:true, width:0 },
+                {name:'messageStatus', index:'messageStatus', width:150 },
+                {name:'messageDate',index:'messageDate', width:150 },
+                {name:'title',index:'title', width:300},
+                {name:'description',index:'description', width:600 },
+                {name:'messageType',index:'messageType', width:200},
+                {name:'priority',index:'priority', width:150} // align:"right"
+            ],
+            forceFit:true,
+            gridComplete: function() {
+                $.publish('/emr/contentResize',[]);
+
+            },
+            afterInsertRow: function(rowid, rowdata) {
+                // Bold the row if it has not been read
+                if ( rowdata.messageStatus !='Open' ) $(this).jqGrid('setRowData', rowid, false, 'gridUnread');
+            }
+        });
+
+        // Subscribers
+        $.subscribe('/emr/contentResize', function() {
+            /* Used to resize the grid if the div containing it resizes by another widget (Predictive Analysis drawer) */
+            $('#inboxMain').setGridHeight( $('#inboxTop').height()-25 );
+            if ( $('#inboxContent').width() >100 ) {
+                $('#inboxTop').width( $('#inboxContent').width() );
+                $('#inboxMain').setGridWidth( $('#inboxContent').width() )
+            }
+        });
+        $.subscribe('/emr/splitterMove', function() {
+            // Horizontal splitter bar is moving, adjust the bottom pane
+        });
+    });
+</script>
+</body>
+</html>

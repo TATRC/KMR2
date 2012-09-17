@@ -1,0 +1,9 @@
+http://jqueryui.com/themeroller/#ffDefault=Arial%2Csans-serif&fwDefault=normal&fsDefault=12px&cornerRadius=0&bgColorHeader=88b4e0&bgTextureHeader=01_flat.png&bgImgOpacityHeader=100&borderColorHeader=88b4e0&fcHeader=ffffff&iconColorHeader=222222&bgColorContent=efefef&bgTextureContent=01_flat.png&bgImgOpacityContent=100&borderColorContent=efefef&fcContent=000000&iconColorContent=222222&bgColorDefault=88b4e0&bgTextureDefault=01_flat.png&bgImgOpacityDefault=100&borderColorDefault=88b4e0&fcDefault=ffffff&iconColorDefault=888888&bgColorHover=88b4e0&bgTextureHover=01_flat.png&bgImgOpacityHover=100&borderColorHover=88b4e0&fcHover=ffffff&iconColorHover=454545&bgColorActive=88b4e0&bgTextureActive=01_flat.png&bgImgOpacityActive=65&borderColorActive=88b4e0&fcActive=000000&iconColorActive=454545&bgColorHighlight=d2e6f7&bgTextureHighlight=01_flat.png&bgImgOpacityHighlight=100&borderColorHighlight=d2e6f7&fcHighlight=000000&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=05_inset_soft.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+
+Tweaks afterwards
+emrTheme
+ui-accordion-content:  background:white !important
+
+jqGrid
+* Look in Provider and Patient CSS template JS where some styles are overwritten
+

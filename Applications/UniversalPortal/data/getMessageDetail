@@ -1,0 +1,8 @@
+{
+   "messageDetailFact":{
+      "successStatus":true,
+      "statusMessage":"Data validation errors go here",
+      "surveyId":"survey123",
+      "body":"<h3>This is the survey heading</h3>This is free form <b>HTML</b> with an <i>optionally embedded survey</i>: <p class='agentEmbed' type='survey' id='uniquesurvey_827364gjh'/>.  Then, later on down the page in the same HTML, possibly a chart: <p class='agentEmbed' type='chart' type='chart' cht='v' chtt='Chart title' chd='100,80,60,30,30,30,10'/>"
+   }
+}

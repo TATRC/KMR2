@@ -1,0 +1,4 @@
+#!/bin/sh
+tar czvf portal.tgz *
+scp portal.tgz m@192.168.1.5:/home/m/Downloads 
+

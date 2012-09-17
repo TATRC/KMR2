@@ -1,0 +1,25 @@
+{
+   "preferences":{
+      "general":{
+         "use24hourClock":"true"
+      },
+      "providers":[
+
+      ],
+      "pmrCalendar":[
+         {
+            "username":"patient.pharmacy",
+            "password":"test",
+            "description":"Personal",
+            "eventColor":"0x0000FF"
+         }
+      ],
+      "externalCalendar":[
+         {
+            "name":"Mike",
+            "account":"mike@dunestech.com",
+            "eventColor":"0xFFFF00"
+         }
+      ]
+   }
+}

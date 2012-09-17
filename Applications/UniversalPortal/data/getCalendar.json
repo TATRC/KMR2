@@ -1,0 +1,61 @@
+{
+    "calendarsFact": {
+        "calendars": [
+            {
+                "calendarId": "cal1",
+                "type": "Provider",
+                "patientId": "1",
+                "providerId": "1",
+                "title": "patientId 1 Provider 1 Appts",
+                "backgroundColor": "blue",
+                "events": [
+                    {
+                        "id": "event1",
+                        "title": "title 1",
+                        "start":"2011-09-22T13:15:30Z",
+                        "end":"2011-09-22T15:15:30Z"
+                    }
+                ]
+            },
+            {
+                "calendarId": "cal2",
+                "type": "Personal",
+                "patientId": "1",
+                "title": "patientId 1 personal cal",
+                "backgroundColor": "yellow",
+                "textColor":"black",
+                "borderColor":"lightgreen",
+                "events": [
+                    {
+                        "id": "event1",
+                        "title": "Title 2",
+                        "start":"2011-09-26T09:00:30Z",
+                        "end":"2011-09-26T09:30:30Z"
+                    },
+                    {
+                        "id": "event2",
+                        "title": "event 2",
+                        "start":"2011-09-26T010:00:30Z",
+                        "end":"2011-09-26T010:30:30Z"
+                    },
+                    {
+                        "id": "event3",
+                        "title": "Important event !!!",
+                        "start":"2011-10-26T11:00:30Z",
+                        "end":"2011-10-26T11:30:30Z",
+                        "borderColor":"red"
+
+                    },
+                    {
+                        "id": "event4",
+                        "title": "This is event #4 for cal2.",
+                        "start":"2011-09-26T12:00:30Z",
+                        "end":"2011-09-26T012:30:30Z"
+                    }
+                ]
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": "Any error messages go here if successStatus=true"
+    }
+}

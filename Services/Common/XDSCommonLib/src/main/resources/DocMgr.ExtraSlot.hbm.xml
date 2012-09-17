@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.docmgr.repository.model">
+  <class name="ExtraSlot" table="extraslot">
+    <id column="extraslotid" name="extraSlotId" type="long">
+      <generator class="increment"/>
+    </id>
+    <many-to-one column="documentid" lazy="false" name="document" not-null="true"/>
+    <property column="ExtraName" length="64" name="extraSlotName" not-null="false" type="string"/>
+    <property column="ExtraSlotValue" length="64" name="extraSlotValue" not-null="false" type="string"/>
+  </class>
+</hibernate-mapping>

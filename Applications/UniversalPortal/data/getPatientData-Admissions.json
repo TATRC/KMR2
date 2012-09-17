@@ -1,0 +1,30 @@
+{
+"patientDataFact": {
+  "facts": [
+      {
+        "admissionDate": "1997-03-03T00:00:00-08:00",
+        "dischargeDate": "1997-03-04T00:00:00-08:00",
+        "admittingMD": "Dr. Smith",
+        "dischargeMD": "Stan Smith",
+        "followupMD": "Steve Smith",
+          "DX1": "Diabetes",
+          "DX2": "Pneumonia",
+          "status":"Final",
+          "source":"VA"
+      },
+      {
+        "admissionDate": "1997-03-05T00:00:00-08:00",
+        "dischargeDate": "1997-03-06T00:00:00-08:00",
+        "admittingMD": "Dr. Smith",
+        "dischargeMD": "Dr. B Swift",
+        "followupMD": "Dr. P. Adams",
+          "DX1": "Hypertension",
+          "DX2": "Stroke",
+          "status":"Final",
+          "source":"IHS"
+      }
+  ],
+  "successStatus": true,
+  "statusMessage": "Successful retrieval of Allergies Fact List Info",
+  "factCount": 1
+}}

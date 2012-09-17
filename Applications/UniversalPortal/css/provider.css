@@ -1,0 +1,90 @@
+/*
+ * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* HTML element overrides */
+html { overflow:hidden; height:100% }
+button:hover { cursor:pointer; background:#8dc8d6; border:1px solid #ddd; }
+
+/* Main Colors for this template */
+.primaryBG { background-color:#8dc8d6 }
+.primaryBorder { border-color:#8dc8d6 !important }
+.primaryText, .primaryLinks a { color:#5d9baa !important } /* important here because grids override */
+
+.lightBG { background-color:#dcecf0 }
+.lighterBG { background-color:#dde9ed }
+.lightLines { border-bottom:1px solid #cde3ea; }
+.lightColor { color:#cde3ea }
+/* New styles 11-5-11 */
+.gridTabActiveBG { background:#8dc8d6; color:#000 }
+.gridTabInactiveBG { background:#6bb9cb url("../images/gridTabsProviderBG4.png"); color:#fff; cursor:pointer }
+
+#suiteDropdownList li:hover { background-color:#dcecf0 }
+
+#emrTopNav { position:relative; padding-left:150px; line-height:26px }
+#providerTopTabs { position:absolute; bottom:0; left:0; padding-left:150px}
+
+/*  Left side navigation */
+div#emrNavigation { width:115px; padding:50px 20px 0 15px }
+div#emrNavigation ul { padding:0 0 15px 10px }
+div#emrNavigation li { line-height:20px; border-bottom:1px solid #eeeeee; cursor:pointer }
+div#emrNavigation li > span.navSelected { padding-right:20px; font-weight:bold; color:#5d9baa; background-image:url("../images/Arrow-Provider.png"); background-repeat:no-repeat; background-position:right } /*  Background color of selected nav item*/
+
+div#simNavigation { width:115px; padding:50px 20px 0 15px }
+div#simNavigation > ul { margin:5px 0 10px 16px; border-top:1px solid #eeeeee; }
+div#simNavigation li { padding:5px 0; border-bottom:1px solid #eeeeee; cursor:pointer }
+/*div#simNavigation li > div.navSelected { padding-bottom:10px; font-weight:bold; color:#5d9baa; background: url("../images/Arrow-Provider.png") no-repeat left bottom;*/
+div#simNavigation li > div.navSelected { padding-right:13px; font-weight:bold; color:#5d9baa; background: url("../images/Arrow-Provider.png") no-repeat right;
+} /*  Background color of selected nav item*/
+
+/*  Content area
+    This is the provider layout template logic
+    Fixed width navigation and drawer, with a fluid center  */
+div#emrContent { padding: 0 20px 0 150px }
+div#emrNav, div#suiteContent, div#emrDrawer { float:left}
+/*div#emrContent div#emrNav { position: relative }*/
+div#emrContent div#emrDrawer { position: relative; width:270px;}
+div#emrContent div#emrNav { margin-left:-150px; } /* Subtract the left margin space */
+div#emrContent div#suiteContent { height:100%; width:100%;min-width:150px; }
+div#emrContent div#emrDrawer { margin-right:-270px; }
+
+/* Horizontal splitter */
+/*#suiteSplitter { height:10px; background: #ddd url('../images/Splitter-18pt.png') no-repeat center; }  *//*border-bottom:2px solid #fff; border-top:2px solid #fff;*/
+
+/* Grids */
+/*
+.ui-jqgrid-labels > th { font-weight:normal !important; color:black !important; background:#8dc8d6 !important; }
+.ui-jqgrid .ui-jqgrid-bdiv, .ui-jqgrid .ui-widget-content { background: #f5f5f5; }
+.ui-jqgrid .ui-state-highlight { background:#dcecf0 }
+*/
+
+/* Clinical Analyitics drawer */
+#providerClinicalContent { position:absolute; top:50px; left:20px; }
+    #providerClinicalAccordion { width:209px; }
+    #providerClinicalAccordion h3 { padding:0; font-size:12px; line-height:14px; }/* line-height:26px;*/
+        .providerModelStatus { float:left; width:7px; height:36px; }
+        /*.providerModelWait { width:16px;height:25px;float:right;clear:none;margin-right:20px; }*/
+        /*.providerModelWait { width:16px;height:25px;position:absolute;right:20px;top:5px }*/
+            /*.providerDiagnosticStarted { background: url("../images/ajax-loader-white2.gif") no-repeat center; }*/
+            /*.providerDiagnosticStartedActive { background: url("../images/ajax-loader-black2.gif") no-repeat center }*/
+
+    .providerPredictiveNormal { background-color:gray; }
+    .providerPredictiveAlert { background-color:#f89c2b }
+    .providerPredictiveSurvey { max-height:200px; overflow-y:auto !important }
+
+/* Survey qustions are wrapped in <li> tags */
+.surveyQuestion { padding:0; border-bottom:1px solid #d3d3d3; }
+    /*.surveyQuestion input,select { vertical-align:middle; }  from suite.css */
+    /*.surveyQuestion label { font-weight:bold; }*/
+.surveyAnswerGood { /*background-color: #EFEFEF*/ }
+.surveyAnswerError input { border:1px solid #ff6666 }
+
+/* Dialogs */
+

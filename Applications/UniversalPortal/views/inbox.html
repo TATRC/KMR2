@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <style>
+        .inboxCheckbox { padding-left:5px }
+    </style>
+</head>
+<body>
+    <div id="suiteBodyHeader">
+        <div class="suiteBodyHeaderTop">
+            <div id="suiteBodyTitle">Inbox</div>
+            <div class="suiteBodyHeaderButtonsL">
+                <div style="float:left"><img src="images/buttonDropL.png"></div><div id="inboxFilter" style="float:left;padding:0 5px;line-height:21px;background:url('images/buttonDropM.png')"></div>
+                <div id="inboxFilterDrop" style="float:left"><img src="images/buttonDropR.png"></div>
+            </div>
+            <div class="suiteBodyHeaderButtonsR"><span id="inboxAction" style="display:none">
+                <div style="float:left"><img src="images/buttonDropL.png"></div>
+                <div id="inboxActionText" style="float:left;cursor:pointer;padding:0 5px;line-height:21px;background:url('images/buttonDropM.png')" onclick="$.publish('/suite/selectedDropdown',[$.extend($(this).data(),{container:'inboxActions'})])"></div>
+                <div id="inboxActionDrop" style="float:left"><img src="images/buttonDropR.png"></div></span>
+                <span style="margin-left:10px"><button id="documentsState" disabled>Request NHIN Documents</button></span><span style="margin-left:10px"><button style="margin-left:10px">Print</button></span>
+            </div>
+        </div>
+    </div>
+    <div id="suiteBody">
+        <div id="suiteSplitTop">
+            <table id="suiteTopGrid" class="suiteGrid"></table>
+        </div>
+        <div id="suiteSplitBottom">
+            <div id="suiteBodyHeaderBottom">
+                <div id="suiteSplitter"><div id="suiteSplitterHandle"></div></div>
+                <div id="inboxDetailHeader" class="suiteSplitBottomDetail lightBG">
+                    <table class="tblClean">
+                        <!--<tr><td style="text-align:right;padding-right:10px">From:</td><td><span id="inboxMessageFrom"></span></td></tr>-->
+                        <tr><td style="text-align:right;padding-right:10px">To:</td><td><span id="inboxMessageTo"></span></td></tr>
+                        <tr><td style="text-align:right;padding-right:10px">CC:</td><td><span id="inboxMessageCC"></span></td></tr>
+                        <tr><td style="text-align:right;padding-right:10px">Subject:</td><td><span id="inboxMessageSubject"></span></td></tr>
+                    </table>
+                </div>
+            </div>
+            <div id="inboxDetail" class="contentPadding"></div>
+        </div>
+    </div>
+
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without the config
+        var _thisView = 'inbox';
+        var _cssClass='suiteSurveyInbox';
+        var _messagePatientId;
+        var _grid=$('#suiteTopGrid');
+
+        function populateGrid(data) {
+            // Load and populate the Inbox grid
+            _grid.jqGrid({
+                datatype: "jsonstring",
+                datastr:data,
+                jsonReader: {
+                    root: "messageObjects",
+                    repeatitems:false
+                },
+                colNames:['messageId','status','location','', '<img id="inboxSelections" src="images/checkboxDrop2.png" style="padding-left:1px" onclick="$.publish(\'/suite/selectDropdown\',[{ container:\'inboxSelections\', items:sirona.inboxSelections }, $(event.target) ])">',
+                    '<img src="images/starred4.png" style="padding-left:4px">', 'Date', 'Time', 'Title', 'Message','Type','Priority','Task','tasksComplete', 'from' ],
+                colModel:[
+                    {name:'messageId', index:'messageId', hidden:true },
+                    {name:'status', index:'status', hidden:true },
+                    {name:'location', index:'location', hidden:true },
+                    {name:'spacer', fixed:true, sortable:false, width:3, resizable:false },
+                    {name:'messageSelected', index:'messageSelected', editable:true, formatoptions:{disabled:false},
+                        edittype:'checkbox', formatter:"checkbox", width:30, fixed:true, sortable:false },
+                    {name:'labels', index:'labels', editable:true, formatter:folderFormatter, width:20, fixed:true, resizable:false, align:'center', firstsortorder:'desc'  },
+                    {name:'messageDate',index:'messageDate', width:10 },  // formatter:'dateFmatter'
+                    {name:'messageTime',index:'messageTime', width:10 },
+                    {name:'title',index:'title', width:20},
+                    {name:'description',index:'description', width:24 },
+                    {name:'type',index:'type', width:10},
+                    {name:'priority',index:'priority', width:10}, // align:"right"
+                    {name:'tasksCount',index:'tasksCount', formatter:taskFormatter, width:10, firstsortorder:'desc' },
+                    {name:'tasksComplete',index:'tasksComplete', hidden:true },
+                    {name:'from',index:'from', hidden:true }
+                ],
+                forceFit:true, hoverrows:false, scrollrows:true, // scrollOffset:0, deselectAfterSort:false, sortable:true,
+                gridComplete: function() { $.publish( '/suite/topGridLoaded',[] ) },
+                afterInsertRow: function(rowid, rowdata) {
+                    // Bold the row if it has not been read by adding the suiteGridBold CSS class
+                    if ( rowdata.status =='Unread' ) _grid.jqGrid('setRowData', rowid, null, 'suiteGridBold');
+                },
+                onCellSelect: function(rowid, iCol, cellcontent, e) {
+                    // Display appropriate action buttons depending on message type
+                    var _gridRow = _grid.getRowData(rowid);
+                    if (iCol==5) {
+                        // Toggle the starred column if clicked
+                        var _labels = (cellcontent==' ')?['Starred']:[''];
+                        // Call PS to update the flag, then update the grid display on response
+                        sirona.reqPS('setMessages', { view:_thisView, data: { 'messageIds':_gridRow.messageId, 'location':_currentLocation, 'types':_gridRow.type,
+                            'action':'update', 'labels':_labels.join(',') },
+                            success: function(data){
+                                _grid.jqGrid('setCell', rowid, iCol, _labels, ' ' );
+                            }
+                        }, 'setMessagesFact', 'POST');
+                        return false;
+                    } else {
+                        // Only select the row if they aren't clicking to "star"
+                        if (_gridRow.type + _gridRow.messageId == _currentMessageId ) return false;  // Dont read if already on the row
+                        _currentMessageId = _gridRow.type + _gridRow.messageId;  // Update the selected messageId
+                    }
+                },
+                onSelectRow: function(rowid, status) {
+                    $.publish( '/suite/inboxMessage', [ rowid ] );
+                    return false;
+                }
+            });
+        }
+        function folderFormatter (cellvalue, options, rowObject) {
+            // Formatting function for the 'Starred' messages.  Inserts the proper image if 'Starred' is found in the labels array value
+            if (!cellvalue) return ' ';
+            return ($.inArray('Starred',cellvalue) < 0) ? ' ' : '<img src="images/starred4.png">'; // <span style='font-family:sans-serif; font-size:30px;'>&#8902;</span>
+        }
+        function taskFormatter (cellvalue, options, rowObject) {
+            // Formatting function for the Tasks progress column.
+            if (cellvalue==0) return ''; // Don't show the progress bar for messages with no tasks
+            return "<div class='tasksProgress'><div class='taskProgress primaryBG' style='width:" + '25' + "%'></div></div>";
+        }   // End of grid definition and formatters
+
+// SUBSCRIBERS
+        $('#inboxFilterDrop').click(function() {
+            $.publish( '/suite/selectDropdown', [ { container:'inboxFilter', filterCSS:(sirona.patient.id)?'providerContext':'', items:sirona.inboxFilters}, $(this) ] )
+        });
+        $('#inboxActionDrop').click(function() {
+            $.publish( '/suite/selectDropdown', [ { container:'inboxActions', filterCSS:(sirona.patient.id)?'providerContext':'', items:sirona.viewData.inbox.currentActions}, $(this) ] )
+        });
+
+        $.subscribe('/suite/selectedDropdown', _thisView, function(objData) {
+            // This subscription listens for any dropdowns that have been selected in this widget
+            var _iRowId = 0;
+            if (objData.container=='inboxFilter') {
+                // Filter the messages shown in the upper grid
+                objData.data.location = _currentLocation;
+                $('#'+objData.container).data(objData.data).html(objData.label);   // Store the current selection data in the element
+                $.publish( '/suite/inboxGetMessages', [true, objData.data] );
+            } else if (objData.container=='inboxSelections') {
+                // Select the messages that match the type selected
+                _iRowId = 0, _rowStatus = $('#suiteTopGrid').getCol('status');
+                $('#suiteTopGrid td input').each( function() {
+                    // Check off the selected message type that was selected
+                    $(this).attr('checked',false);
+                    if (objData.label=='All' ||
+                        (objData.label=='Read' && _rowStatus[_iRowId]!='Unread') ||
+                        (objData.label=='Unread' && _rowStatus[_iRowId]=='Unread')) $(this).attr('checked',true);
+                    _iRowId++;
+                });
+                checkActions();
+            } else if (objData.container=='inboxActions') {
+                // Each object contains an array of labels to use for the dropdown.
+                // The "label" value is what is displayed and used in the logic conditions UNLESS an "action" value is provided
+                var _action = ((objData.action)?objData.action:objData.label);
+                if ('reply|forward|reply all'.indexOf(_action.toLowerCase()) >= 0) {
+                    // Reply, Reply All, or Forward
+                    sirona.viewData.inboxCompose.data.action=objData.label;
+                    sirona.getView('inboxCompose', { data:sirona.viewData.inboxCompose.data })
+                } else {
+                    // Delete, Archive, Undelete, etc....
+                    _iRowId = 0;
+                    var _messageIds = [], _types=[];
+                    // Load the checked items first, otherwise the highlighted row
+                    if ($('#suiteTopGrid td input:checked').length>0) {
+                        var _idCol = $('#suiteTopGrid').getCol('messageId');        // Array of messageIds
+                        var _locationCol = $('#suiteTopGrid').getCol('location');   // Array of locations
+                        var _typeCol = $('#suiteTopGrid').getCol('type');           // Array of message types
+                        $('#suiteTopGrid td input').each( function() {
+                            if ($(this).attr('checked')) {
+                                _messageIds.push(_idCol[_iRowId]);
+                                _types.push(_typeCol[_iRowId]);
+                            }
+                            _iRowId++;
+                        });
+                    } else {
+                        _iRowId = $('#suiteTopGrid').jqGrid('getGridParam','selrow');
+                        _messageIds.push($('#suiteTopGrid').getCell(_iRowId, 'messageId'));
+                        _types.push($('#suiteTopGrid').getCell(_iRowId, 'type'));
+                    }
+                    if (_messageIds.length==0) return false;   // Nothing to update
+                    if (objData.label.toLocaleLowerCase()=='delete forever' && !confirm(sirona.confirmPermDelete)) return false;
+
+                    sirona.reqPS('setMessages', { view:_thisView, data: { 'action':_action, 'messageIds':_messageIds.join(','), 'location':_currentLocation, 'types':_types.join(',') },
+                        success: function(data) {
+                            // Re-read the current location and type
+                            $.publish( '/suite/inboxGetMessages', [true, $('#inboxFilter').data()] );
+                        }
+                    }, 'setMessagesFact', 'POST');
+                }
+            }
+        });
+        $('#documentsState').click(function() {
+            $(this).attr('disabled','disabled');
+            // User clicked the Request NHIN Document button, so request to start
+            sirona.reqPS('getDocuments', { view:_thisView, data:{ patientId:sirona.patient.id, action:"Start"},
+                 success: function(data) { if (data && data.processState != 'In Progress') $('#documentsState').removeAttr('disabled') }
+            }, 'documentsFact');
+        });
+
+
+        function checkActions() {
+            // Count the messages that are checked, and disable the Email action if there is more than one
+            var _checkCnt = $('#suiteTopGrid td input:checked').length;
+            var _type = '';
+            if (_checkCnt <= 1) {
+                var _rowId = _grid.jqGrid('getGridParam', 'selrow');
+                _type = _grid.getRowData(_rowId).type;
+            }
+            sirona.viewData.inbox.currentActions = ((_checkCnt <= 1 && _type == 'Email')?
+                sirona.inboxEmailActions:[]).concat(sirona.viewData.inbox.data.actions);
+            $('#inboxActionText').text(sirona.viewData.inbox.currentActions[0].label).data(sirona.viewData.inbox.currentActions[0]);
+        }
+
+        $('#suiteTopGrid').delegate('td input', 'click', checkActions);
+        $.subscribe('/suite/inboxGetMessages', _thisView, function(refresh, objData) {
+            $('#inboxDetail').empty(); $('#inboxDetailHeader').hide();
+            if (!objData) objData = {};
+//            $('#suiteTopGrid').jqGrid('GridUnload');
+
+            // Main subscriber to load or refresh the grid data.  Optional category can be supplied
+            objData.patientId = sirona.patient.id;
+            $('#inboxAction').hide();
+            sirona.reqPS('getMessages', { view:_thisView, data:objData,
+                success: function(data) {
+                    if (refresh) {  // Make sure the datatype is reset, because after the initial load, it get set to "local"
+                        $("#suiteTopGrid").jqGrid('setGridParam', { datatype:'jsonstring', datastr:data } ).trigger("reloadGrid");
+                    }
+                    else populateGrid(data);
+
+//$.publish( '/suite/debug', [ 'inbox:'+ new Date() + ': getMessages' ] );
+                    if (_grid.getGridParam("reccount") > 0 ) {
+                        _grid.jqGrid('setSelection',"1"); // Select the first row after the grid is loaded
+                    }
+                }
+            },'messagesFact');
+
+            var _docButton = $('#documentsState');
+            if (sirona.patient.id || sirona.portal=='patient') {
+                // Also get the state of any NHIN document requests and remove the disabled attribute from the button if available again
+                sirona.reqPS('getDocuments', { view:_thisView, data:{ patientId:sirona.patient.id },
+                     success: function(data) { if (data.processState='Available') _docButton.removeAttr('disabled') }
+                }, 'documentsFact');
+                _docButton.show();
+            } else _docButton.hide();
+        });
+
+        $.subscribe('/suite/inboxMessage', _thisView, function(rowId) {
+            $('#inboxDetail').empty();
+            var _rowData = _grid.getRowData(rowId);
+            sirona.viewData.inboxCompose =  { data: { 'messageId':_rowData.messageId, 'type':_rowData.type, 'location':_rowData.location, 'description':_rowData.description } };
+
+            $('#inboxDetailHeader').toggle(_rowData.type.toLowerCase()=='email');
+            sirona.reqPS('getMessageDetail', { view:_thisView, data: { 'messageId':_rowData.messageId, 'type':_rowData.type, 'location':_rowData.location },
+                success: function(data){
+                    _messagePatientId = data.patientId;     // Reset the message patientId
+                    sirona.viewData.inbox.currentActions = ((_rowData.type=='Email')?sirona.inboxEmailActions:[]).concat(sirona.viewData.inbox.data.actions);
+                    $('#inboxActionText').text(sirona.viewData.inbox.currentActions[0].label).data(sirona.viewData.inbox.currentActions[0]);
+                    $('#inboxAction').show();
+
+                    $.extend(sirona.viewData.inboxCompose, data);   // Merge the new fields into the existing object
+
+                    // TODO figure out which type of detail to display
+                    if (_rowData.type=='Alert') { // TODO - parse the body field for surveyIds
+                        $('#inboxDetail').html(data.body);
+                        $('#inboxDetail [type="survey"]').each(function() {
+                            // Look inside the body for <p type="survey"> tags.  If found, call getSurvey
+                            var _surveyId = $(this).attr('id');
+                            sirona.reqPS('getSurvey', { view:_thisView, data: { 'patientId':_messagePatientId, 'surveyId':_surveyId },
+                                success: function(data2) {
+                                    renderSurvey($.extend(data2,{'cssClass':_cssClass}), $('#'+_surveyId) );
+                                }
+                            }, 'surveyFact');
+                        });
+                    } else {
+                        if (_rowData.type=='Email') {
+                            if (data.sentTo) $('#inboxMessageTo').html(data.sentTo.join(','));
+                            if (data.CCTo) $('#inboxMessageCC').html(data.CCTo.join(','));
+                            $('#inboxMessageSubject').html(_rowData.description);
+                        }
+                        if (data.body) $('#inboxDetail').html(data.body);
+                    }
+                    resizeContent.init(); // Needs to recalc heading heights
+
+                    // On successful display of the detail, mark the message read
+                    if (_rowData.status.toLowerCase()=='unread') {
+                        sirona.reqPS('setMessages', { view:_thisView, data: { 'action':'Read', 'location':_currentLocation, 'messageIds':_rowData.messageId, 'types':_rowData.type },
+                            success: function(data){
+                                $(_grid[0].rows.namedItem(rowId)).removeClass('suiteGridBold');
+                            }
+                        }, 'setMessagesFact', 'POST');
+                    }
+                }
+            }, 'messageDetailFact');
+        });
+
+        $.subscribe('/suite/surveyAnswer/'+_cssClass, _thisView, function(e, surveyId) {
+            // TODO - an "e is not defined" for buttons is here
+            // Fires when a Survey answer is given.  Retrieve the answer through the event and call Presentation Services
+            var _data = e.target.value;
+            // If the survey element answered is a checkbox, get() all the checked items and create an array
+            if (e.target.type =='checkbox'){
+                _data = $('.' + e.target.className + ':checked').map(function(){ return this.value; }).get().join(',');
+            }
+
+            sirona.reqPS('setSurvey', { view:_thisView, data: { patientId:_messagePatientId, 'surveyId':surveyId,
+                'questionId':$(e.target).parent()[0].id, 'answer':_data  },
+                success: function(data) {
+                    $('li#' + $(e.target).parent()[0].id).addClass('surveyAnswerGood');
+                    $('li#' + $(e.target).parent()[0].id).removeClass('surveyAnswerError');
+                    if (data.updateQuestions) renderSurvey($.extend(data,{'cssClass':_cssClass}), 'inboxDetail', surveyId);
+                },
+                error: function(data) {
+                    if (data.updateQuestions) renderSurvey($.extend(data,{'cssClass':_cssClass}), 'inboxDetail', surveyId);
+                    $('li#' + $(e.target).parent()[0].id).addClass('surveyAnswerError');
+                    $('li#' + $(e.target).parent()[0].id).removeClass('surveyAnswerGood');
+                }
+            }, 'surveyFact', 'POST');
+
+        });
+
+        $.subscribe('/suite/contentResized', _thisView, function(resizeObj) {
+            $('#inboxDetail').outerHeight(resizeObj.suiteSplitBottomH - resizeObj.suiteBodyHeaderBottomH );
+        });
+
+// INITIALIZATION
+        var _currentMessageId ='';
+        $('#inboxFilter').text(sirona.inboxFilters[0].label);
+        var _currentLocation = sirona.viewData.inbox.data.data.location;
+        $.publish( '/suite/inboxGetMessages', [false, sirona.viewData.inbox.data.data ]);
+    });
+</script>
+</body>
+</html>

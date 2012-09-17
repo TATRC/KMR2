@@ -1,0 +1,11 @@
+{
+"patientDataFact": {
+  "facts": [
+    {
+      "body": "<body>Discharge Summary<br/>DATE OF ADMISSION:  MM/DD/YYYY<br/>DATE OF DISCHARGE:  MM/DD/YYYY <br/><br/>ADMITTING DIAGNOSIS:  Pneumonia<br/>CHIEF COMPLAINT:  Cough, Fever<br/>HISTORY OF PRESENT ILLNESS: This is an (XX)-year-old male with a past medical history of coronary artery disease, CABG done a few years ago, atrial fibrillation, peripheral arterial disease, peripheral neuropathy, recently retired one year ago secondary to leg pain.  The patient came to the ER for an episode of vertigo while reaching for<br/>some books.  The patient was able to reach the books, to support self, but did not have any syncope.  No nausea or vomiting.  No chest pain.  No shortness of breath.<br/><br/>Came to ER and had a CT head, which was within normal limits.  The impression was atrophy with old ischemic changes but no acute intracranial findings.  No focal weakness, headache, vision changes or speech changes.  The patient has had similar episodes since one year.  Peripheral neuropathy since one year and not relieved with<br/>multiple medications.  The patient also complains of weight loss of 25 pounds in the last 6 months.  No colonoscopy done.  Recent history of hematochezia but believes it<br/>was secondary to proctitis and secondary to decreased appetite.  No nausea, vomiting, no abdominal pain.</body>"
+    }
+  ],
+  "successStatus": true,
+  "statusMessage": "Successful retrieval of Allergies Fact List Info",
+  "factCount": 1
+}}

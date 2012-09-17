@@ -1,0 +1,127 @@
+{
+    "configurationDetailFact": {
+        "configuration":
+            {
+                "configId":"111",
+                "name": "configinfo name 1",
+                "description": "configinfo desc 1:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "createdDate": "2011-11-04 10:00",
+                "lastSavedDate": "2011-11-05 10:00",
+                "lastRunDate": "2011-11-06 10:00",
+                "author": "configinfo author 1",
+                "goal": "configinfo goal 1",
+                "score": 20 ,
+                "startDate":"2011-11-07 10:00" ,
+                "endDate":"2011-11-08 10:00",
+                "durations":["1","20","50","100"],
+                "duration":"20",
+                "stopTime":3,
+                "stopScore":40,
+                "stopIteration":10100,
+                "stopImprovement":5,
+                "agents":[
+                    {
+                        "agentId":"1",
+                        "name":"agent name 1",
+                        "type":"Consumer",
+                        "table":"datasource 1",
+                        "populations":[1,50,100,200,500,1000],
+                        "population":50,
+                        "subfilters":["filter 1","filter 2","filter3"],
+                        "subfilter":"filter 1",
+                        "filtered":true,
+                        "populationRange":40
+                    },
+                    {
+                        "agentId":"2",
+                        "name":"agent name 2",
+                        "type":"Producer",
+                        "table":"datasource 2",
+                        "populations":[1,2,3,4,5],
+                        "population":5,
+                        "subfilters":["filter 1","filter 2","filter3"],
+                        "subfilter":"filter 2",
+                        "filtered":false,
+                        "populationRange":80
+                    },
+                    {
+                        "agentId":"3",
+                        "name":"agent name 3",
+                        "type":"Producer",
+                        "table":"datasource 3",
+                        "populations":[1,50,100,200,500,1000],
+                        "population":1000,
+                        "subfilters":["filter 1","filter 2","filter 3"],
+                        "subfilter":"filter 3",
+                        "filtered":true,
+                        "populationRange":10
+                    }
+                ],
+                "constraints":[
+                    {
+                        "constraintId":"1",
+                        "name":"constraint name 1",
+                        "type":"General",
+                        "description":"general constraint desc 1",
+                        "importances":["Low","Medium","High"],
+                        "importance":"Low",
+                        "required":true,
+                        "included":true
+                    },
+                    {
+                        "constraintId":"2",
+                        "name":"constraint name 2",
+                        "type":"General",
+                        "description":"general constraint desc 2",
+                        "importances":["Low","Medium","High"],
+                        "importance":"Medium",
+                        "required":true,
+                        "included":false
+                    },
+                    {
+                        "constraintId":"3",
+                        "name":"constraint name 3",
+                        "type":"General",
+                        "description":"general constraint desc 3",
+                        "importances":["Low","Medium","High"],
+                        "importance":"High",
+                        "required":false,
+                        "included":true
+                    },
+                    {
+                        "constraintId":"4",
+                        "name":"constraint name 4",
+                        "type":"Clinical",
+                        "description":"clinical constraint desc 4",
+                        "importances":["Low","Medium","High"],
+                        "importance":"Medium",
+                        "required":true,
+                        "included":false
+                    },
+                    {
+                        "constraintId":"5",
+                        "name":"constraint name 5",
+                        "type":"Clinical",
+                        "description":"clinical constraint desc 5",
+                        "importances":["Low","Medium","High"],
+                        "importance":"Low",
+                        "required":false,
+                        "included":false
+                    },
+                    {
+                        "constraintId":"6",
+                        "name":"constraint name 6",
+                        "type":"Clinical",
+                        "description":"clinical constraint desc 6",
+                        "importances":["Low","Medium","High"],
+                        "importance":"High",
+                        "required":true,
+                        "included":true
+                    }
+                ]
+            }
+        ,
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

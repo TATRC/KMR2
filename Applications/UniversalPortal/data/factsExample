@@ -1,0 +1,31 @@
+{
+   "patientDataFact":{
+       "factCodeSystem":"2.16.840.1.113883.6.96",
+       "factCode":"416098002",
+       "facts":[
+         {
+            "reactions":[
+                {
+                    "factCode":"416098002-unique to Anaphylaxis",
+                   "reactionName":"Anaphylaxis",
+                   "reactionDate":"2011-01-01",
+                   "reactionSeverity":"Severe"
+                },
+                {
+                    "factCode":"416098002 - unique to Hives",
+                   "reactionName":"Hives",
+                   "reactionDate":"2011-01-02",
+                   "reactionSeverity":"Moderate"
+                }
+            ],
+            "allergyName":"Sulfa-Drugs",
+            "allergyType":"drug allergy",
+            "factNo":1,
+            "reportDate":"1997-03-03T00:00:00-08:00"
+         }
+      ],
+      "successStatus":true,
+      "statusMessage":"Successful retrieval of Allergies Fact List Info",
+      "factCount":1
+   }
+}

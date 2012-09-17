@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+html { overflow:hidden; height:100% }
+button:hover { cursor:pointer; background:#4493e1; color:white }
+
+/* Main Colors for this template */
+.primaryBG { background-color:#85bdf4 }
+.primaryBorder { border-color:#85bdf4 !important }
+
+.lightBG { background-color:#ddeaf6 }
+.lightLines { border-bottom:1px solid #cde3ea; }
+.primaryText { color:#5684b8 }
+.primaryLinks a { color:#88b4e0 }
+/* New styles 11-5-11 */
+.gridTabActiveBG { background:#85bdf4; color:#000}
+.gridTabInactiveBG { background:#609ed7 url("../images/gridTabsBG4.png"); color:#fff; cursor:pointer; }
+
+#suiteDropdownList li:hover { background-color:#ddeaf6 }
+
+/*#pmrTopNav { position:relative; padding-left:200px; line-height:22px; font-size:13px; }*/
+#patientTopTabs { position:absolute; bottom:0; left:0; padding-left:160px}
+
+/*  Left side navigation */
+div#pmrNavigation ul { padding:0 0 15px 10px }
+div#pmrNavigation li { line-height:20px; border-bottom:1px solid #eeeeee; cursor:pointer }
+div#pmrNavigation li > span.navSelected { padding-right:20px; font-weight:bold; color:#5684b8; background-image:url("../images/Arrow-Provider.png"); background-repeat:no-repeat; background-position:right } /*  Background color of selected nav item*/
+
+/*  Content area
+    This is the EMR layout template logic
+    Fixed width navigation and drawer, with a fluid center  */
+div#pmrContent { padding-left: 160px }
+div#pmrNav { float:left; padding-top:50px }
+div#pmrContent div#pmrNav { position: relative; width:120px; padding-left:20px } /* Subtract the width of the left margin */
+div#pmrContent div#pmrNav { margin-left:-160px; } /* Subtract the right margin space */
+div#pmrContent div#suiteContent { min-width:160px; margin-right:20px; }
+
+/* Survey qustions are wrapped in <li> tags */
+.surveyQuestion { padding:6px; border-bottom:1px solid #d3d3d3; }
+    .surveyQuestion input,select { vertical-align:middle; }
+    .surveyQuestion label { font-weight:bold; }
+.surveyAnswerGood { background-color: #EFEFEF; }
+.surveyAnswerError input { border:1px solid #ff6666 }
+
+#pmrFooter { background-color:#AAA; text-align:center; height:25px; clear:both; }

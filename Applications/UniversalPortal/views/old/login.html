@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Provider Portal</title>
+    <link type="text/css" href="../../css/old/redmond/jquery-ui-1.8.10.custom.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/home.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/test/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready (function() {
+            $('#news').load('./news.html');
+
+            $('#btnLogin').click(function () {
+                $(window.location).attr('href', './emr.html');
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="container">
+        <tr>
+            <td style="height:100%;vertical-align:middle;">
+            <div id="login">
+                <div id="loginHeader"><a href="login.html#">Contact</a></div>
+
+                <form>
+                <div id="auth">
+                    <table>
+                        <tr><td>Username</td><td><input size="20"/></td><td></td></tr>
+                        <tr><td>Password</td><td><input size="20"/></td><td></td></tr>
+                        <tr><td colspan="2" style="text-align:center">or</td><td></td></tr>
+                        <tr><td>CAC</td><td><input type="text" size="20"/></td><td>?</td></tr>
+                        <tr><td colspan="2"><input id="btnLogin" type="button" value="Login"/></td><td></td></tr>
+                    </table>
+                    <div><a href="login.html#">Forgot your password?</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="login.html#">Create an account</a> </div>
+                </div>
+                </form>
+
+                <div style="height:300px;border-left:1px solid;width:1px;float:left;margin-left:20px;"></div>
+                <div id="news">
+                </div>
+            </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

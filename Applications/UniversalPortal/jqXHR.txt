@@ -1,0 +1,189 @@
+config: readyState value :0
+setRequestHeader value :function (name, value) {
+    if (!state) {
+        requestHeaders[name.toLowerCase().replace(rucHeaders, rucHeadersFunc)] = value;
+    }
+    return this;
+}
+getAllResponseHeaders value :function () {
+    return state === 2 ? responseHeadersString : null;
+}
+getResponseHeader value :function (key) {
+    var match;
+    if (state === 2) {
+        if (!responseHeaders) {
+            responseHeaders = {};
+            while ((match = rheaders.exec(responseHeadersString))) {
+                responseHeaders[match[1].toLowerCase()] = match[2];
+            }
+        }
+        match = responseHeaders[key.toLowerCase()];
+    }
+    return match === undefined ? null : match;
+}
+overrideMimeType value :function (type) {
+    if (!state) {
+        s.mimeType = type;
+    }
+    return this;
+}
+abort value :function (statusText) {
+    statusText = statusText || "abort";
+    if (transport) {
+        transport.abort(statusText);
+    }
+    done(0, statusText);
+    return this;
+}
+promise value :function (obj) {
+    if (obj == null) {
+        if (promise) {
+            return promise;
+        }
+        promise = obj = {};
+    }
+    var i = promiseMethods.length;
+    while (i--) {
+        obj[promiseMethods[i]] = deferred[promiseMethods[i]];
+    }
+    return obj;
+}
+isRejected value :function () {
+    return !!(firing || fired);
+}
+isResolved value :function () {
+    return !!(firing || fired);
+}
+fail value :function () {
+    if (!cancelled) {
+        var args = arguments, i, length, elem, type, _fired;
+        if (fired) {
+            _fired = fired;
+            fired = 0;
+        }
+        for (i = 0, length = args.length; i < length; i++) {
+            elem = args[i];
+            type = jQuery.type(elem);
+            if (type === "array") {
+                deferred.done.apply(deferred, elem);
+            } else if (type === "function") {
+                callbacks.push(elem);
+            }
+        }
+        if (_fired) {
+            deferred.resolveWith(_fired[0], _fired[1]);
+        }
+    }
+    return this;
+}
+done value :function () {
+    if (!cancelled) {
+        var args = arguments, i, length, elem, type, _fired;
+        if (fired) {
+            _fired = fired;
+            fired = 0;
+        }
+        for (i = 0, length = args.length; i < length; i++) {
+            elem = args[i];
+            type = jQuery.type(elem);
+            if (type === "array") {
+                deferred.done.apply(deferred, elem);
+            } else if (type === "function") {
+                callbacks.push(elem);
+            }
+        }
+        if (_fired) {
+            deferred.resolveWith(_fired[0], _fired[1]);
+        }
+    }
+    return this;
+}
+then value :function (doneCallbacks, failCallbacks) {
+    deferred.done(doneCallbacks).fail(failCallbacks);
+    return this;
+}
+success value :function () {
+    if (!cancelled) {
+        var args = arguments, i, length, elem, type, _fired;
+        if (fired) {
+            _fired = fired;
+            fired = 0;
+        }
+        for (i = 0, length = args.length; i < length; i++) {
+            elem = args[i];
+            type = jQuery.type(elem);
+            if (type === "array") {
+                deferred.done.apply(deferred, elem);
+            } else if (type === "function") {
+                callbacks.push(elem);
+            }
+        }
+        if (_fired) {
+            deferred.resolveWith(_fired[0], _fired[1]);
+        }
+    }
+    return this;
+}
+error value :function () {
+    if (!cancelled) {
+        var args = arguments, i, length, elem, type, _fired;
+        if (fired) {
+            _fired = fired;
+            fired = 0;
+        }
+        for (i = 0, length = args.length; i < length; i++) {
+            elem = args[i];
+            type = jQuery.type(elem);
+            if (type === "array") {
+                deferred.done.apply(deferred, elem);
+            } else if (type === "function") {
+                callbacks.push(elem);
+            }
+        }
+        if (_fired) {
+            deferred.resolveWith(_fired[0], _fired[1]);
+        }
+    }
+    return this;
+}
+complete value :function () {
+    if (!cancelled) {
+        var args = arguments, i, length, elem, type, _fired;
+        if (fired) {
+            _fired = fired;
+            fired = 0;
+        }
+        for (i = 0, length = args.length; i < length; i++) {
+            elem = args[i];
+            type = jQuery.type(elem);
+            if (type === "array") {
+                deferred.done.apply(deferred, elem);
+            } else if (type === "function") {
+                callbacks.push(elem);
+            }
+        }
+        if (_fired) {
+            deferred.resolveWith(_fired[0], _fired[1]);
+        }
+    }
+    return this;
+}
+statusCode value :function (map) {
+    if (map) {
+        var tmp;
+        if (state < 2) {
+            for (tmp in map) {
+                statusCode[tmp] = [statusCode[tmp], map[tmp]];
+            }
+        } else {
+            tmp = map[jqXHR.status];
+            jqXHR.then(tmp, tmp);
+        }
+    }
+    return this;
+}
+status value :0
+statusText value :abort
+
+abort
+abort

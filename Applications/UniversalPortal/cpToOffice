@@ -1,0 +1,9 @@
+#!/bin/sh
+HOME='/home/m/htdocs/KMR2/UniversalPortal'
+
+tar czvf emr.tgz *
+scp emr.tgz m@192.168.1.5:${HOME}/
+ssh m@192.168.1.5 "cd ${HOME} && tar xzvf emr.tgz"
+echo "done"
+rm emr.tgz
+

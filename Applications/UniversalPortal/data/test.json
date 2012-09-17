@@ -1,0 +1,9 @@
+{
+    "detailDefinition":   [
+        {"label": "Detail", "type":"grid", "responseType":"detail", "filters": ["code","codeSystemCode", "sectionId"] },
+        {"label": "Background", "type":"text", "source":"ecs",   "index":"101"},
+        {"label": "Disease", "type":"text", "source":"ecs",   "index":"103"},
+        {"label": "Podcasts", "type":"text", "source":"ecs",   "index":"22"},
+        {"label": "Videos", "type":"text", "source":"ecs",   "index":"21"}
+    ]
+}

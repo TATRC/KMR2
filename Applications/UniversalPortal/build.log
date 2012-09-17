@@ -1,0 +1,56 @@
+                              Michael-Wrights-MacBook-Pro:UniversalPortal michaelwright$ mvn clean install
+                              [INFO] Scanning for projects...
+                              [INFO]
+                              [INFO] ------------------------------------------------------------------------
+                              [INFO] Building sample portal 0.90.0
+                              [INFO] ------------------------------------------------------------------------
+                              [INFO]
+                              [INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ portal ---
+                              [INFO] Deleting /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target
+                              [INFO]
+                              [INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ portal ---
+                              [WARNING] Using platform encoding (MacRoman actually) to copy filtered resources, i.e. build is platform dependent!
+                              [INFO] skip non existing resourceDirectory /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/src/main/resources
+                              [INFO]
+                              [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ portal ---
+                              [INFO] No sources to compile
+                              [INFO]
+                              [INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ portal ---
+                              [WARNING] Using platform encoding (MacRoman actually) to copy filtered resources, i.e. build is platform dependent!
+                              [INFO] skip non existing resourceDirectory /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/src/test/resources
+                              [INFO]
+                              [INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ portal ---
+                              [INFO] No sources to compile
+                              [INFO]
+                              [INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ portal ---
+                              [INFO] No tests to run.
+                              [INFO] Surefire report directory: /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target/surefire-reports
+
+                              -------------------------------------------------------
+                               T E S T S
+                              -------------------------------------------------------
+                              There are no tests to run.
+
+                              Results :
+
+                              Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+                              [INFO]
+                              [INFO] --- maven-war-plugin:2.1-alpha-2:war (default-war) @ portal ---
+                              [INFO] Packaging webapp
+                              [INFO] Assembling webapp[portal] in [/opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target/portal-0.90.0]
+                              [INFO] Processing war project
+                              [INFO] Copying webapp webResources[/opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/./] to[/opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target/portal-0.90.0]
+                              [INFO] Webapp assembled in[478 msecs]
+                              [INFO] Building war: /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target/portal.war
+                              [INFO]
+                              [INFO] --- maven-install-plugin:2.3.1:install (default-install) @ portal ---
+                              [INFO] Installing /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/target/portal.war to /Users/michaelwright/.m2/repository/portal/portal/0.90.0/portal-0.90.0.war
+                              [INFO] Installing /opt/apache-tomcat-7.0.22/webapps/UniversalPortalSaved/pom.xml to /Users/michaelwright/.m2/repository/portal/portal/0.90.0/portal-0.90.0.pom
+                              [INFO] ------------------------------------------------------------------------
+                              [INFO] BUILD SUCCESS
+                              [INFO] ------------------------------------------------------------------------
+                              [INFO] Total time: 3.233s
+                              [INFO] Finished at: Fri Nov 18 11:15:28 PST 2011
+                              [INFO] Final Memory: 5M/81M
+                              [INFO] ------------------------------------------------------------------------

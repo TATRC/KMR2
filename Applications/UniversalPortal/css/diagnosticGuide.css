@@ -1,0 +1,45 @@
+/*
+ * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* Disease probability */
+#dxGuideDiseaseProb div { float:left;  }
+#dxGuideDiseaseProbColors div { float:left; font-size:9px; min-width:60px;background-color:#ccc;line-height:15px;margin-left:3px;text-align:center }
+.dxGuideDiseaseProbActive { font-weight:bold; color:#ffffff; }
+
+/* Stage and Other options */
+.emrDiagStage { position:relative; border-bottom:1px solid #ccc; padding:10px 0 30px 0; z-index:15 }
+.emrDiagStageCompleted { opacity:.3 }
+.emrDiagStageArrow { width:21px; height:11px; margin:0 auto;margin-bottom:30px; background:url("../images/diagStageArrow.png") no-repeat }
+.emrDiagHorizontal { position:absolute; bottom:0; height:3px; z-index:15 }
+.emrDiagStageNode { width:250px;height:50px; margin:auto; border:2px solid; text-align:center; z-index: 10 }
+.emrDiagStageHeader { line-height:50px;width:70px; font-weight:bold; color:#ffffff; }
+.emrDiagOtherOptions { position:absolute; width:100px; padding-left:80px; padding-top:10px; background:url("../images/otherOptionsArrow.png") no-repeat;background-position:20px 50% }
+
+.emrDiagActionRow { margin-bottom:5px }
+    /*.emrDiagActionRow td { border:1px solid gray}*/
+
+    .emrDiagActionNode { position: relative; width:130px; min-height:50px; z-index: 10; margin:0 auto}
+    .emrDiagActionNodeLow { border:2px dashed #d3d3d3; }
+    .emrDiagActionNodeNormal { border:2px solid #83b5c5; }
+    .emrDiagActionNodeSuggested { border:2px solid #5a737c; }
+    .emrDiagActionNodeHeading { line-height:20px; color:white; text-align:center; }
+    .emrDiagSuggestedBG { background-color:#5a737c }
+    .emrDiagActionContent { height:30px; vertical-align:middle; text-align:center; }
+    .emrDiagActionClickable { cursor:pointer }
+
+.dxDiagActionStatus { color:white;font-weight:bold }
+.dxDiagActionStatusText { line-height:20px;font-size:9px; white-space:nowrap; text-align:center; }
+
+#dxGuideOverlay { position:absolute; background-color:black; top:0; left:0; width:100%; z-index:100 !important; }
+.dxGuideDialog { position:absolute; background-color:white; display:none; z-index:110 !important; }
+#dxGuideActionDetailContent { width:700px; height:500px; background:#add8e6; }
+#emrDiagGuideWrapper { position:relative }
+#dxGuideDecisionStatus { width:300px; margin:0 auto }

@@ -1,0 +1,205 @@
+{
+    "problemFact": [
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "RPMS",
+                "value": "problem-id-1",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "7",
+                "floatValue": "7.0",
+                "displayable": "true"
+            },
+            "problemType": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "64572001",
+                "label": "DISEASE (DISORDER)"
+            },
+            "codedProblem": {
+                "codeSystem": "2.16.840.1.113883.11.15931",
+                "codeSystemName": "ICD9",
+                "code": "279.9",
+                "label": "DIABETES TYPE I"
+            },
+            "freeTextProblem": "DIABETES TYPE I",
+            "problemDate": "1963-07-01T10:00:00-07:00",
+            "codedProblemStatus": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "active",
+                "label": ""
+            },
+            "treatingProvider": {
+                "firstName": "JOHN",
+                "middleName": "L",
+                "familyName": "SMITH",
+                "prefix": "MD",
+                "nameType": {
+                    "codeSystem": "",
+                    "codeSystemName": "",
+                    "code": "L",
+                    "label": "Legal"
+                }
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "RPMS",
+                "value": "problem-id-2",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "7",
+                "floatValue": "7.0",
+                "displayable": "true"
+            },
+            "problemType": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "64572001",
+                "label": "DISEASE (DISORDER)"
+            },
+            "codedProblem": {
+                "codeSystem": "2.16.840.1.113883.11.15931",
+                "codeSystemName": "ICD9",
+                "code": "405.0",
+                "label": "SECONDARY HYPERTENSION"
+            },
+            "freeTextProblem": "SECONDARY HYPERTENSION",
+            "problemDate": "1990-10-15T15:00:00-07:00",
+            "codedProblemStatus": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "active",
+                "label": ""
+            },
+            "treatingProvider": {
+                "firstName": "JOHN",
+                "middleName": "L",
+                "familyName": "SMITH",
+                "prefix": "MD",
+                "nameType": {
+                    "codeSystem": "",
+                    "codeSystemName": "",
+                    "code": "L",
+                    "label": "Legal"
+                }
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "RPMS",
+                "value": "problem-id-3",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "7",
+                "floatValue": "7.0",
+                "displayable": "true"
+            },
+            "problemType": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "64572001",
+                "label": "DISEASE (DISORDER)"
+            },
+            "codedProblem": {
+                "codeSystem": "2.16.840.1.113883.11.15931",
+                "codeSystemName": "ICD9",
+                "code": "357.2",
+                "label": "POLYNEUROPATHY IN DIABETES"
+            },
+            "freeTextProblem": "POLYNEUROPATHY IN DIABETES",
+            "problemDate": "1999-09-04T17:00:00-07:00",
+            "codedProblemStatus": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "active",
+                "label": ""
+            },
+            "treatingProvider": {
+                "firstName": "JOHN",
+                "middleName": "L",
+                "familyName": "SMITH",
+                "prefix": "MD",
+                "nameType": {
+                    "codeSystem": "",
+                    "codeSystemName": "",
+                    "code": "L",
+                    "label": "Legal"
+                }
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "RPMS",
+                "value": "problem-id-4",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "7",
+                "floatValue": "7.0",
+                "displayable": "true"
+            },
+            "problemType": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "64572001",
+                "label": "DISEASE (DISORDER)"
+            },
+            "codedProblem": {
+                "codeSystem": "2.16.840.1.113883.11.15931",
+                "codeSystemName": "ICD9",
+                "code": "348.1",
+                "label": "ANOXIC BRAIN DAMAGE"
+            },
+            "freeTextProblem": "ANOXIC BRAIN DAMAGE",
+            "problemDate": "2005-02-16T16:00:00-08:00",
+            "resolutionDate": "2005-03-16T16:00:00-08:00",
+            "codedProblemStatus": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "completed",
+                "label": ""
+            },
+            "treatingProvider": {
+                "firstName": "SAMUEL",
+                "middleName": "A",
+                "familyName": "JONES",
+                "suffix": "Dr",
+                "nameType": {
+                    "codeSystem": "",
+                    "codeSystemName": "",
+                    "code": "L",
+                    "label": "Legal"
+                }
+            }
+        }
+    ]
+}

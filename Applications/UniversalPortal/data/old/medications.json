@@ -1,0 +1,384 @@
+{
+    "medicationFact": [
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "value": "ae4afd93-1b15-461e-a023-1fe2c06a82fd",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "99990070",
+                "floatValue": "9.9990072E7",
+                "displayable": "true"
+            },
+            "freeTextBrandName": "AMOXICILLIN (500MG)",
+            "codedProductName": {
+                "codeSystem": "2.16.840.1.113883.12.549",
+                "codeSystemName": "NDC Codes",
+                "code": "0093-4160-78",
+                "label": "AMOXICILLIN (500MG)"
+            },
+            "codedTypeOfMedication": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "73639000",
+                "label": "Prescription Drug"
+            },
+            "sigFreeText": "1 CAPSULE PO TID x10 DAYS",
+            "codedSigRoute": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "156320",
+                "label": "PO"
+            },
+            "sigDose": {
+                "value": "1",
+                "floatValue": "1.0",
+                "unit": ""
+            },
+            "sigFrequency": {
+                "value": "TID",
+                "unit": ""
+            },
+            "sigMedicationStopped": "19880215000000-0800",
+            "order": {
+                "orderNumber": "990070-91123",
+                "fills": "0",
+                "quantityOrdered": {
+                    "value": "30",
+                    "floatValue": "30.0",
+                    "unit": ""
+                },
+                "orderExpirationDateTime": "1989-02-15T00:00:00-08:00",
+                "orderDateTime": "1988-02-15T00:00:00-08:00",
+                "orderingProvider": {
+                    "firstName": "Jim",
+                    "familyName": "Kelly",
+                    "nameType": {
+                        "codeSystem": "",
+                        "codeSystemName": "",
+                        "code": "L",
+                        "label": "Legal"
+                    }
+                }
+            },
+            "sigDuration": "x10 DAYS",
+            "codedAdministrationUnitCode": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "C25158",
+                "label": "CAPSULE"
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "value": "ce612352-a7ef-46be-acb0-7f4ce27a1544",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "99990070",
+                "floatValue": "9.9990072E7",
+                "displayable": "true"
+            },
+            "freeTextBrandName": "SEPTRA DS (160MG)",
+            "codedProductName": {
+                "codeSystem": "2.16.840.1.113883.12.549",
+                "codeSystemName": "NDC Codes",
+                "code": "61570-053-20",
+                "label": "SEPTRA DS (160MG)"
+            },
+            "codedTypeOfMedication": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "73639000",
+                "label": "Prescription Drug"
+            },
+            "sigFreeText": "1 TABLET PO BID x10 DAYS",
+            "codedSigRoute": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "156320",
+                "label": "PO"
+            },
+            "sigDose": {
+                "value": "1",
+                "floatValue": "1.0",
+                "unit": ""
+            },
+            "sigFrequency": {
+                "value": "BID",
+                "unit": ""
+            },
+            "sigMedicationStopped": "19970303000000-0800",
+            "order": {
+                "orderNumber": "990070-91132",
+                "fills": "0",
+                "quantityOrdered": {
+                    "value": "20",
+                    "floatValue": "20.0",
+                    "unit": ""
+                },
+                "orderExpirationDateTime": "1998-03-03T00:00:00-08:00",
+                "orderDateTime": "1997-03-03T00:00:00-08:00",
+                "orderingProvider": {
+                    "firstName": "Pat",
+                    "familyName": "Hills",
+                    "nameType": {
+                        "codeSystem": "",
+                        "codeSystemName": "",
+                        "code": "L",
+                        "label": "Legal"
+                    }
+                }
+            },
+            "sigDuration": "x10 DAYS",
+            "codedAdministrationUnitCode": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "C42998",
+                "label": "TABLET"
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "value": "f8875854-a2fb-41e4-85e0-272f078d0ece",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "99990070",
+                "floatValue": "9.9990072E7",
+                "displayable": "true"
+            },
+            "freeTextBrandName": "MACROBID (100MG)",
+            "codedProductName": {
+                "codeSystem": "2.16.840.1.113883.12.549",
+                "codeSystemName": "NDC Codes",
+                "code": "0149-0710-01",
+                "label": "MACROBID (100MG)"
+            },
+            "codedTypeOfMedication": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "73639000",
+                "label": "Prescription Drug"
+            },
+            "sigFreeText": "1 TABLET PO BID x7 DAYS",
+            "codedSigRoute": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "156320",
+                "label": "PO"
+            },
+            "sigDose": {
+                "value": "1",
+                "floatValue": "1.0",
+                "unit": ""
+            },
+            "sigFrequency": {
+                "value": "BID",
+                "unit": ""
+            },
+            "sigMedicationStopped": "19970304000000-0800",
+            "order": {
+                "orderNumber": "990070-91125",
+                "fills": "0",
+                "quantityOrdered": {
+                    "value": "14",
+                    "floatValue": "14.0",
+                    "unit": ""
+                },
+                "orderExpirationDateTime": "1998-03-04T00:00:00-08:00",
+                "orderDateTime": "1997-03-04T00:00:00-08:00",
+                "orderingProvider": {
+                    "firstName": "Pat",
+                    "familyName": "Hills",
+                    "nameType": {
+                        "codeSystem": "",
+                        "codeSystemName": "",
+                        "code": "L",
+                        "label": "Legal"
+                    }
+                }
+            },
+            "sigDuration": "x7 DAYS",
+            "codedAdministrationUnitCode": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "C42998",
+                "label": "TABLET"
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "value": "24d1fc0e-a3bd-4a4a-8d3b-dcf7a253f9f7",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "99990070",
+                "floatValue": "9.9990072E7",
+                "displayable": "true"
+            },
+            "freeTextBrandName": "MACROBID (100MG)",
+            "codedProductName": {
+                "codeSystem": "2.16.840.1.113883.12.549",
+                "codeSystemName": "NDC Codes",
+                "code": "0149-0710-01",
+                "label": "MACROBID (100MG)"
+            },
+            "codedTypeOfMedication": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "73639000",
+                "label": "Prescription Drug"
+            },
+            "sigFreeText": "1 TABLET PO BID x7 DAYS",
+            "codedSigRoute": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "156320",
+                "label": "PO"
+            },
+            "sigDose": {
+                "value": "1",
+                "floatValue": "1.0",
+                "unit": ""
+            },
+            "sigFrequency": {
+                "value": "BID",
+                "unit": ""
+            },
+            "sigMedicationStopped": "20000215000000-0800",
+            "order": {
+                "orderNumber": "990070-91131",
+                "fills": "0",
+                "quantityOrdered": {
+                    "value": "14",
+                    "floatValue": "14.0",
+                    "unit": ""
+                },
+                "orderExpirationDateTime": "2001-02-15T00:00:00-08:00",
+                "orderDateTime": "2000-02-15T00:00:00-08:00",
+                "orderingProvider": {
+                    "firstName": "Jones",
+                    "familyName": "Kim",
+                    "nameType": {
+                        "codeSystem": "",
+                        "codeSystemName": "",
+                        "code": "L",
+                        "label": "Legal"
+                    }
+                }
+            },
+            "sigDuration": "x7 DAYS",
+            "codedAdministrationUnitCode": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "C42998",
+                "label": "TABLET"
+            }
+        },
+        {
+            "historical": "true",
+            "id": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "value": "1a19f433-0e81-46f6-9be8-9b13ee530e85",
+                "floatValue": "0.0",
+                "displayable": "true"
+            },
+            "sourceSystem": "2.16.840.1.113883.3.200",
+            "patientId": {
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "codeSystemName": "",
+                "value": "99990070",
+                "floatValue": "9.9990072E7",
+                "displayable": "true"
+            },
+            "freeTextBrandName": "AZITHROMYCIN (250MG)",
+            "codedProductName": {
+                "codeSystem": "2.16.840.1.113883.12.549",
+                "codeSystemName": "NDC Codes",
+                "code": "0069-3080-30",
+                "label": "AZITHROMYCIN (250MG)"
+            },
+            "codedTypeOfMedication": {
+                "codeSystem": "2.16.840.1.113883.6.96",
+                "codeSystemName": "SNOMED CT",
+                "code": "73639000",
+                "label": "Prescription Drug"
+            },
+            "sigFreeText": "1 TABLET PO QD x5 DAYS",
+            "codedSigRoute": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "156320",
+                "label": "PO"
+            },
+            "sigDose": {
+                "value": "1",
+                "floatValue": "1.0",
+                "unit": ""
+            },
+            "sigFrequency": {
+                "value": "QD",
+                "unit": ""
+            },
+            "sigMedicationStopped": "20050828000000-0700",
+            "order": {
+                "orderNumber": "990070-91124",
+                "fills": "0",
+                "quantityOrdered": {
+                    "value": "30",
+                    "floatValue": "30.0",
+                    "unit": ""
+                },
+                "orderExpirationDateTime": "2006-08-28T00:00:00-07:00",
+                "orderDateTime": "2005-08-28T00:00:00-07:00",
+                "orderingProvider": {
+                    "firstName": "Kim",
+                    "familyName": "Jones",
+                    "nameType": {
+                        "codeSystem": "",
+                        "codeSystemName": "",
+                        "code": "L",
+                        "label": "Legal"
+                    }
+                }
+            },
+            "sigDuration": "x5 DAYS",
+            "codedAdministrationUnitCode": {
+                "codeSystem": "2.16.840.1.113883.3.26.1.1",
+                "codeSystemName": "NCI Thesaurus",
+                "code": "C42998",
+                "label": "TABLET"
+            }
+        }
+    ]
+}

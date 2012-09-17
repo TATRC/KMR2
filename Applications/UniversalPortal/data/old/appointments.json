@@ -1,0 +1,43 @@
+{
+    "appointmentFact": {
+        "historical": "true",
+        "id": {
+            "codeSystem": "",
+            "codeSystemName": "",
+            "value": "encounter-id-2010",
+            "floatValue": "0.0",
+            "displayable": "true"
+        },
+        "sourceSystem": "2.16.840.1.113883.3.200",
+        "patientId": {
+            "codeSystem": "1.1",
+            "codeSystemName": "",
+            "value": "7",
+            "floatValue": "7.0",
+            "displayable": "true"
+        },
+        "patient": "",
+        "statusCode": "active",
+        "startDateTime": "2009-10-20T13:10:10-07:00",
+        "endDateTime": "2009-10-20T13:10:10-07:00",
+        "appointmentType": {
+            "codeSystem": "2.16.840.1.113883.5.4",
+            "codeSystemName": "ActEncounterCode",
+            "code": "AMB",
+            "label": "Ambulatory"
+        },
+        "performer": "",
+        "author": {
+            "firstName": "Joe",
+            "familyName": "Samson",
+            "prefix": "Dr",
+            "nameType": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "L",
+                "label": ""
+            }
+        },
+        "freeTextLocation": "INTERNAL MEDICINE CLINIC"
+    }
+}

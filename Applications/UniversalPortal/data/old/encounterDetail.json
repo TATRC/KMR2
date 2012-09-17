@@ -1,0 +1,64 @@
+{
+    "encounterFact": {
+        "historical": "true",
+        "id": {
+            "codeSystem": "1.1",
+            "codeSystemName": "",
+            "value": "8962023c-84ca-4ba6-9420-afa113fc7bc4",
+            "floatValue": "0.0",
+            "displayable": "true"
+        },
+        "sourceSystem": "2.16.840.1.113883.3.200",
+        "patientId": {
+            "codeSystem": "1.1",
+            "codeSystemName": "",
+            "value": "7",
+            "floatValue": "7.0",
+            "displayable": "true"
+        },
+        "codedEncounterType": {
+            "codeSystem": "2.16.840.1.113883.6.12",
+            "codeSystemName": "CPT-4",
+            "code": "99218",
+            "label": "Initial Observation Care"
+        },
+        "freeTextEncounterType": "Initial Observation Care",
+        "encounterStatus": "completed",
+        "encounterStartTime": "2010-10-20T13:10:10-07:00",
+        "encounterEndTime": "2010-10-20T14:10:10-07:00",
+        "encounterProvider": {
+            "firstName": "Jonas",
+            "familyName": "Smith",
+            "nameType": {
+                "codeSystem": "",
+                "codeSystemName": "",
+                "code": "L",
+                "label": ""
+            }
+        },
+        "arrivalDateTime": "2010-10-20T13:10:10-07:00",
+        "departureDateTime": "2010-10-20T14:10:10-07:00",
+        "codedAdmissionType": {
+            "codeSystem": "2.16.840.1.113883.5.7",
+            "codeSystemName": "ActPriority",
+            "code": "EM",
+            "label": "Emergency"
+        },
+        "freeTextAdmissionType": "Emergency",
+        "codedPatientClass": {
+            "codeSystem": "2.16.840.1.113883.5.4",
+            "codeSystemName": "ActEncounterCode",
+            "code": "AMB",
+            "label": "Ambulatory Encounter"
+        },
+        "serviceDeliveryLocationId": "clinic-intmed-id",
+        "serviceDeliveryLocationName": "INTERNAL MEDICINE CLINIC",
+        "codedServiceDeliveryLocation": {
+            "codeSystem": "2.16.840.1.113883.1.11.16100",
+            "codeSystemName": "PlaceEntityType",
+            "code": "OF",
+            "label": "Outpatient facility"
+        },
+        "reasonForVisit": "Patient reported having chest pain"
+    }
+}

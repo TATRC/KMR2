@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Provider Portal</title>
+    <link type="text/css" href="../../css/old/redmond/jquery-ui-1.8.10.custom.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/home.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/old/emr3.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/test/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready (function(){
+            $('#topNav').tabs( {
+                selected:1
+            });
+//            $('#desktopNav').load('views/emrDesktopNav.html');
+            $('#recordNav').load('views/emrRecordNav.html');
+            $('#recordPredictive').load('views/emrPredictive.html');    // TODO Load only when tab is clicked
+            $('#drawerHandle').live('click', function() {
+              // Bound handler called.
+                if ($("#recordPredictive").is(':hidden')) {
+                    $("#recordPredictive").show('fast'); $("$drawerHandle").html('&gt;');
+                } else
+                    $("#recordPredictive").hide('fast'); $("$drawerHandle").html('&lt;');
+            });
+//            $('#drawerHandle').click(function() {
+//            });
+        });
+    </script>
+</head>
+<body>
+    <table id="container">
+        <tr>
+            <td>
+                <div id="header">Header</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="emrTopNav">
+                    <ul>
+                     <li><a href="emr3.html#desktop">Desktop</a></li>
+                        <li><a href="emr3.html#medrecord">Medical Record</a></li>
+                        <li><a href="emr3.html#simulator">Simulator</a></li>
+                    </ul>
+                    <div id="desktop">&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div id="simulator">&nbsp;</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="height:100%;background-color:#add8e6;">
+                    <table style="width:100%;height:100%; border-spacing:0; padding:0;">
+                        <tr>
+                            <td><div id="recordNav" class="navigation"></div></td>
+                            <td style="width:100%; height:100%;"><div id="recordContent" class="content">Hello</div></td>
+                            <td><div id="drawerHandle">&gt;</div></td>
+                            <td><div id="recordPredictive"></div></td>
+                        </tr>
+                    </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="footer">Footer</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

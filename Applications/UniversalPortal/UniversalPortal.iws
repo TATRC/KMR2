@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/provider.html" line="91" mnemonic="1" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="8eea8731-334c-461a-be48-216bc1dd7be3" name="Default" comment="Version 0.93.0&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jqXHR.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/admissions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/allergies.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/demographics.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/demographicsBotAccounts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/demographicsBotAddresses.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/demographicsBotTelecom.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/diagnoses.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/documentation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/documentationTopAll.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/documentationTopDirectives.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/fullCalendar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/immunizations.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/medications.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/problems.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/procedures.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/providerSimulatorNav-accordion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/resultsTopProcedures.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UniversalPortal.ipr" afterPath="$PROJECT_DIR$/UniversalPortal.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UniversalPortal.iws" afterPath="$PROJECT_DIR$/UniversalPortal.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/home.css" afterPath="$PROJECT_DIR$/css/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pubsub.js" afterPath="$PROJECT_DIR$/js/pubsub.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/patient.html" afterPath="$PROJECT_DIR$/patient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/provider.html" afterPath="$PROJECT_DIR$/provider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.html" afterPath="$PROJECT_DIR$/views/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/aboutDetail.html" afterPath="$PROJECT_DIR$/views/aboutDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/aboutPatient.html" afterPath="$PROJECT_DIR$/views/aboutPatient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/aboutProvider.html" afterPath="$PROJECT_DIR$/views/aboutProvider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/aboutSimulator.html" afterPath="$PROJECT_DIR$/views/aboutSimulator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addressBook.html" afterPath="$PROJECT_DIR$/views/addressBook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/calendar.html" afterPath="$PROJECT_DIR$/views/calendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/diagnosticGuide.html" afterPath="$PROJECT_DIR$/views/diagnosticGuide.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/dialogSelectAddressBook.html" afterPath="$PROJECT_DIR$/views/dialogSelectAddressBook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/dialogSelectRiskModels.html" afterPath="$PROJECT_DIR$/views/dialogSelectRiskModels.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/encounters.html" afterPath="$PROJECT_DIR$/views/encounters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/imaging.html" afterPath="$PROJECT_DIR$/views/imaging.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/inbox.html" afterPath="$PROJECT_DIR$/views/inbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/inboxCompose.html" afterPath="$PROJECT_DIR$/views/inboxCompose.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/misc.html" afterPath="$PROJECT_DIR$/views/misc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/newAccount.html" afterPath="$PROJECT_DIR$/views/newAccount.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/patientData.html" afterPath="$PROJECT_DIR$/views/patientData.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerPredictive.html" afterPath="$PROJECT_DIR$/views/providerPredictive.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerSimulatorConfig.html" afterPath="$PROJECT_DIR$/views/providerSimulatorConfig.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerSimulatorInProgress.html" afterPath="$PROJECT_DIR$/views/providerSimulatorInProgress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerSimulatorNav.html" afterPath="$PROJECT_DIR$/views/providerSimulatorNav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerSimulatorNewResults.html" afterPath="$PROJECT_DIR$/views/providerSimulatorNewResults.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/providerSimulatorSavedResults.html" afterPath="$PROJECT_DIR$/views/providerSimulatorSavedResults.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/searchPatient.html" afterPath="$PROJECT_DIR$/views/searchPatient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/vitalSigns.html" afterPath="$PROJECT_DIR$/views/vitalSigns.html" />
+    </list>
+    <ignored path="UniversalPortal.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="UniversalPortal" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="vertical" split-proportion="0.55939084">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="patient.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/patient.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="110" column="56" selection-start="6557" selection-end="6557" vertical-scroll-proportion="-3.9019608">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="provider.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/provider.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="160" column="61" selection-start="9311" selection-end="9327" vertical-scroll-proportion="-4.7058825">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="providerSimulatorConfig.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/providerSimulatorConfig.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="34" selection-start="2133" selection-end="2154" vertical-scroll-proportion="-4.509804">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="providerSimulatorSavedResults.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/providerSimulatorSavedResults.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="23" column="46" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.15604396">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="providerSimulatorNewResults.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/providerSimulatorNewResults.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="159" column="32" selection-start="9848" selection-end="9853" vertical-scroll-proportion="-99.84">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="config.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="15" column="30" selection-start="1751" selection-end="1751" vertical-scroll-proportion="0.65753424">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="suiteUtility.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/suiteUtility.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="64" column="30" selection-start="5818" selection-end="5824" vertical-scroll-proportion="-27.692308">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/home.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="23" column="47" selection-start="2008" selection-end="2008" vertical-scroll-proportion="-8.230769">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="getMiscellaneous.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/getMiscellaneous.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="28" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="provider.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/provider.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="14" selection-start="1821" selection-end="1835" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pmr.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/pmr.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="0" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="suite.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/suite.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="17" column="2" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="searchPlanResults.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/searchPlanResults.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="26" column="30" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="getSimulations.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/getSimulations.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="11" column="28" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="getResultDetails.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/getResultDetails.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
+    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/views/calendar.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/views/patientData.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/views/aboutProvider.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/views/aboutSimulator.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/views/providerSimulatorInProgress.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/views/providerSimulator.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/provider.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/views/inbox.html" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/views/calendar.html" />
+        <option value="$PROJECT_DIR$/views/dialogSelectAddressBook.html" />
+        <option value="$PROJECT_DIR$/views/dialogSelectRiskModels.html" />
+        <option value="$PROJECT_DIR$/views/encounters.html" />
+        <option value="$PROJECT_DIR$/views/imaging.html" />
+        <option value="$PROJECT_DIR$/views/inboxCompose.html" />
+        <option value="$PROJECT_DIR$/views/misc.html" />
+        <option value="$PROJECT_DIR$/views/newAccount.html" />
+        <option value="$PROJECT_DIR$/views/providerPredictive.html" />
+        <option value="$PROJECT_DIR$/views/providerSimulatorNav-accordion.html" />
+        <option value="$PROJECT_DIR$/views/providerSimulatorNav.html" />
+        <option value="$PROJECT_DIR$/views/providerSimulatorNewResults.html" />
+        <option value="$PROJECT_DIR$/views/searchPatient.html" />
+        <option value="$PROJECT_DIR$/views/providerSimulatorConfig.html" />
+        <option value="$PROJECT_DIR$/views/providerSimulatorSavedResults.html" />
+        <option value="$PROJECT_DIR$/config.js" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="keepSourceFolders" value="false" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sample portal" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Ant inspections</id>
+          </State>
+          <State>
+            <id>FreeMarker inspections</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralPHP</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>LESS</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>SCSS</id>
+          </State>
+          <State>
+            <id>SQL Inspections</id>
+          </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>Spring Integration</id>
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+          <State>
+            <id>Tapestry inspections</id>
+          </State>
+          <State>
+            <id>Velocity inspections</id>
+          </State>
+          <State>
+            <id>Web Services Inspections</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AOP</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UniversalPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="255" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="253" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="30" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="256" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="211" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="210" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="209" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="510" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="210" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="556" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.lastSelected" value="copyright.profiles" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/css/emrTheme/images" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/Applications/Flash Player Debugger.app" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <list size="0" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8eea8731-334c-461a-be48-216bc1dd7be3" name="Default" comment="" />
+      <created>1310270636409</created>
+      <updated>1310270636409</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-1080" width="1920" height="1080" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32258064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45833334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19828968" sideWeight="0.31983805" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15789473" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20129403" sideWeight="0.32249674" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18589744" sideWeight="0.67005074" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23655914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19331984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18145162" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.92.7&#10;Licensing/Copyright text in all files now.&#10;Licence file created in the root.&#10;Various bug fixes noted in TP" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.44036698" />
+    <MESSAGE value="Version 0.87.4&#10;Fixed some more issues with widget communication for the new patientData widget&#10;Stubbed and tested Meds, Immu, and Results.&#10;&#10;" />
+    <MESSAGE value="Version 0.87.5&#10;Fix timing bug in the populating of the upper and lower grids&#10;Put in new itemId field to pass to the facts Detail call&#10;Tested and debugged minor issues." />
+    <MESSAGE value="Version 0.87.6&#10;Fixed bug when navigating bottom grid tabs.  Didnt retain the right data.&#10;Fixed the wrapping of the tabs when the window is resized too small.&#10;Put in more dynamic fields to pass to detail call, using the filters from the list call" />
+    <MESSAGE value="Version 0.87.6&#10;Fixed a grid refreshing issue that was not allowing the headings or column numbers to be changed.&#10;Put in a CSS class to allow for cells to word wrap.   &#10;Added more aesthetic changes from Stefan, including some new gradients for the patient portal grid tabs and in the main header areas of the templates." />
+    <MESSAGE value="Version 0.87.7&#10;Changed delegate for grid tab navigation to not accept clicks from active tabs&#10;Worked on final colors and aesthetics with Stefan.  Moved grid navigators to the right.&#10;Stubbed an ECS call with an image and test the display in the appropriate tab.&#10;Refactored gridFacts class to be more dynamic in preparation for new Detail data structure&#10;Refactored grid CSS" />
+    <MESSAGE value="Version 0.90.0&#10;Worked on final colors and aesthetics with Stefan.  Tightened up the heading and nav areas.&#10;Moved the Inbox filtering to the grid heading with a checkbox dropdown.  Need dropdowns still.&#10;Fixed a grid refreshing bug in the Inbox where it was pulling the wrong location.&#10;Fixed and installed global grid parameter to override the default row count of 20&#10;Fixed splitter handle grab area&#10;Installed new themes with colors from Stefan and minimized the theme and jqgrid libraries" />
+    <MESSAGE value="Version 0.90.1&#10;Put in new consolidated dropdown logic for Inbox message selection and actions&#10;Styled the new dropdown per suggestions from Stefan&#10;Refactored main template body widgets to use the new body heading structure suiteBodyHeaderTop/suiteBodyTitle&#10;Fixed minor Inbox bugs&#10;On fact list click, clear grids and content containers&#10;Fixed the horizontal splitter handle grab area&#10;Created another look for the horizontal paging buttons for the facts&#10;My Organizer --&gt; Organizer" />
+    <MESSAGE value="Version 0.90.2&#10;Provider portal footer will only appear at the Desktop tab&#10;Provider portal updated with new custom dropdown function /suite/selectDropdown&#10;Fixed data() passing to widgets from the dropdown objects&#10;Wired Reply,Reply All, Forward functions to the new dropdown&#10;Fixed a few widgets to have the new body heading structure&#10;Changed the remaining widgets to use the new heading structure" />
+    <MESSAGE value="Version 0.90.3&#10;Wired Delete,Undelete,Archive,Unarchive,Delete Forever custom dropdowns to PS&#10;Moved new dropdown subscription to the suiteUtility to be used by all templates&#10;Put in context filtering for custom dropdowns.  Archive/DeleteInbox actions not available in provider portal when in patient context&#10;Tested and prepared new Simulator tab" />
+    <MESSAGE value="Version 0.90.31&#10;Fixed a bug in the Inbox action when pressing the button instead of using the dropdown&#10;Cleared the Inbox grid before new filter is selected&#10;" />
+    <MESSAGE value="Version 0.90.4&#10;Put the Personal Info link in the provider Desktop Organizer&#10;Added class so that Personal Info link is not visible in provider portal while in patient context&#10;Centralized the dialog opening and closing routine&#10;Changed dialog subscription to support content also and not just a widget&#10;Added new logic for multiple surveys inside of a Dx Guide Action&#10;Took out the auto-start logic and added a control questionnaire section to hold the buttons available for this action&#10;Fixed Dx Guide display error when last active action is on the 2nd row of a stage" />
+    <MESSAGE value="Version 0.90.5&#10;Moved the logout and the window resize subscription to suiteUtility&#10;Fixed an issue in the pubsub function to make sure callback is defined before executing.&#10;Fixed CSS class bug overrides that were too general and interfering with same plugin in another widget&#10;Restructured the main template heading section in preparation for tabs above for the simulator&#10;Started laying out main Simulator widget body&#10;Created Simulator left navigator, and supporting tab detail widgets" />
+    <MESSAGE value="Version 0.90.6&#10;Added the version number to the config file, and put logic in to use it in index.html&#10;Put in logic to collapse Simulator left navs.&#10;Fixed a CSS bug in suiteBodyHeader to clear all &lt;div&gt;s, and fixed some widgets heading structures&#10;Took out manual &quot;load&quot; in index.html and replaced with getView&#10;Added a contentResized subscription to index.html and moved resizing logic there&#10;Took out global logout and window resizing subscriptions in index.html&#10;Fixed a few home template widgets to conform to new suiteBodyHeader structure&#10;Fixed a display issue with homeLeftNav when clicking on Medical News&#10;Converted hardcoded menu items in the homeFooter to use config data, then pass data() when navigating&#10;Created a blank widget for everything that doesn't have a widget yet (to avoid missing widget popups)" />
+    <MESSAGE value="Version 0.90.7&#10;Took out JQuery UI loading in the home template (not needed)&#10;Fixed Simulator framework flow to support all navigations&#10;Added more global grid parameters to both templates&#10;Built a form loading function&#10;Stubbed and started testing Simulator configuration screen with new form loading function" />
+    <MESSAGE value="Version 0.90.8&#10;Started the Simulations in Progress widget layout&#10;Renamed all the ./data files to have a .json extension&#10;Changed reqPS to look for new .json file if local" />
+    <MESSAGE value="Version 0.91&#10;Simulations in Progress widget layout&#10;Renamed all the ./data files to have a .json extension&#10;Changed reqPS to look for new .json file if local&#10;Put in a form template loading function to only load the forms when needed.  Also used to clear the form and start over.&#10;Added a severity color &quot;#ccc&quot; when an unknown severity comes back from PS&#10;Changed the look of the selected item in the Sim navigator&#10;Fixed widget navigation bug in the Simulator&#10;Added refresh logic to update all drawer data when the polling interval is reached." />
+    <MESSAGE value="Version 0.91.3&#10;Hide the NHIN document request button when not in a patient context&#10;Added a &quot;submit&quot; button in the Risk Model surveys so that surveys with 1 question can be &quot;answered&quot;&#10;Added a &quot;refresh&quot; button in the Risk Model drawer to force a refresh of all active models &#10;Took out &quot;Model&quot; column out of the Risk Model maintenance popup&#10;Increased Ajax timeout to 15 seconds&#10;Changed the visibility context for &quot;Organizer&quot; so its only visible within a logged in user's context  (Desktop or patient portal)&#10;Added &quot;Appointments&quot; view to the patient context which pulls up the calendar" />
+    <MESSAGE value="Version 0.91.5&#10;Moved &quot;Today&quot; link in Calendar header to the right&#10;Fixed Calendar issue with checkbox not toggling the display of events, but now they don't persist from page to page&#10;Put in new horizontal splitter styling and a new handle from Stefan&#10;Created a sirona.portal context so that widgets will know what loaded them.  Inbox uses to display NHIN button.&#10;More progress on the Simulator tabs and mockups&#10;Wire drawer Refresh button to destroy and recreate the accordion and request the favorite models again.&#10;Fixed a bug in the updating of the severity colors in the drawer" />
+    <MESSAGE value="Version 0.91.7&#10;When in patient context of provider portal, and composing a new message, default To: patient contactId  (added to searchPatient API)&#10;Created a &quot;timers&quot; array in the sirona namespace to assign one timer per widget&#10;Fixed the Risk Models timer functions to use the new sirona scoped timer, so that duplicates are not created.&#10;Fixed display issue for upper grid again..  Size to suiteBody until another format is needed.&#10;Updated the formTemplate class to allow more flexible break/detail/totals type reporting format used by the Simulator" />
+    <MESSAGE value="Version 0.91.8&#10;Put in latest Risk drawer aesthetics per discussions with everyone&#10;Fixed a regression with patient context and which widgets were visible.&#10;Fixed a pub/sub issue with Search for Patient and user cancels&#10;Rearranged and cleaned up pub/sub events within the Provider portal." />
+    <MESSAGE value="Version 0.92.1&#10;New Dx Guide icon for the drawer.&#10;Create function to pulsate the dxGuide icon if dxProcessStatus is &quot;Started&quot;&#10;Put in logic to look for a dxGuide in getRiskModelsDetail&#10;Inbox change to send &quot;location&quot; to setMessages instead of an array of locations&#10;Inbox Compose widget sends &quot;location&quot; and &quot;types&quot; to setMessage&#10;Fixed CSS style for the disabled background hover color of the NHIN request button" />
+    <MESSAGE value="Version 0.92.2&#10;Risk Model drawer aesthetics.  Almost finished&#10;Cleaned up both left navigators for Provider and Patient portals.&#10;Changed logic to highlight selected navigation item by the view name navigated to.  Fixed highlighting from Compose.&#10;Fixed hover color on NHIN Request button when disabled&#10;Cleaned up Inbox logic that contained old &quot;locations&quot; array logic&#10;Fixed a bug coming back from Compose where location needs to be set&#10;Moved &quot;Archived&quot; and &quot;Trash&quot; to left side navigation&#10;Rewired Inbox refresh logic to not completely refresh after every setMessages, only when location changes from left Nav.&#10;" />
+    <MESSAGE value="Version 0.92.4&#10;Refactored widget loading function.  Removed /suite/navigateView subscription everywhere and replaced with sirona.getView&#10;Refactored sirona.getView to support unsubscribing per container, splitting in any container, and passing data to widgets.&#10;Got rid of emrBody &amp; pmrBody containers and replaced with a global suiteContent container in both templates.&#10;Refactored all patient and provider widgets to use new getView.  Better performance, cleaner.&#10;Styled survey question cancel button.&#10;Changed survey question rendering to put the cancel button next to the list of possible answers instead of aligned right.&#10;Defaulted getView container to #suiteContent.  Removed sending from widgets.&#10;" />
+    <MESSAGE value="Version 0.92.6&#10;Simulator aesthetics&#10;Tons of code cleanup and commenting&#10;Scroll to the top of the simulation configuration when selected in New Results&#10;Fullscreen functionality on provider and patient templates&#10;Restructured some elements and added some classes so that the new changeScreenSize function will work cleanly.  &#10;Updated jqGrid plugin to 4.3.0 on provider and patient templates. &#10;Tested and fixed requestResultOperation logic in the simulator New Results screen&#10;Created new serializeObject() function for appending form parameters to a request" />
+    <MESSAGE value="Version 0.92.7&#10;Licensing/Copyright text in all files now.&#10;Licence file created in the root.&#10;Various bug fixes noted in TP" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/dialogSelectAddressBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="56" selection-start="4163" selection-end="4163" vertical-scroll-proportion="1.8087912">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogSelectRiskModels.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="55" selection-start="5485" selection-end="5485" vertical-scroll-proportion="1.0703297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/encounters.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="2342" selection-end="2342" vertical-scroll-proportion="-0.5472528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxCompose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="57" selection-start="6672" selection-end="6672" vertical-scroll-proportion="0.33186814">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/imaging.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="65" selection-start="3427" selection-end="3427" vertical-scroll-proportion="0.22637363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="20" selection-start="5017" selection-end="5022" vertical-scroll-proportion="0.1912088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/misc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="8" selection-start="2476" selection-end="2476" vertical-scroll-proportion="0.06860707">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/providerPredictive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="24" selection-start="5151" selection-end="5156" vertical-scroll-proportion="0.33186814">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/providerSimulatorNav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="55" selection-start="2703" selection-end="2703" vertical-scroll-proportion="0.33186814">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/searchPatient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="61" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.42197803">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/newAccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="42" selection-start="8771" selection-end="8771" vertical-scroll-proportion="0.578022">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="61" selection-start="9311" selection-end="9327" vertical-scroll-proportion="-4.7058825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/providerSimulatorNewResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="32" selection-start="9848" selection-end="9853" vertical-scroll-proportion="-99.84">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/providerSimulatorConfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="34" selection-start="2133" selection-end="2154" vertical-scroll-proportion="-4.509804">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/providerSimulatorSavedResults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="46" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.15604396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="30" selection-start="1751" selection-end="1751" vertical-scroll-proportion="0.65753424">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>UniversalPortal:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>KMR2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>flex_sdk_3.5.0.12683 (player 9.0)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>UniversalPortal</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>flex_sdk_3.5.0.12683 (player 9.0)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>KMR2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="KMR2" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

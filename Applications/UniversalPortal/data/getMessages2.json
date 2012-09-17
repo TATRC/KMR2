@@ -1,0 +1,147 @@
+{
+    "messagesFact": {
+        "successStatus": true,
+        "statusMessage": "Data validation errors go here",
+        "messageObjects": [
+            {
+                "messageId": "1",
+                "location":"Inbox",
+                "type": "Email",
+                "labels": [
+                    "Starred"
+                ],
+                "status": "Unread",
+                "messageDate": "2011-04-01",
+                "messageTime": "10:13:29",
+                "description": "3 Test description of an email message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Critical",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            },
+            {
+                "messageId": "1",
+                "location":"Inbox",
+                "type": "Alert",
+                "status": "Unread",
+                "messageDate": "2011-04-05",
+                "messageTime": "12:13:29",
+                "description": "Test description of Task message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 8,
+                "tasksComplete": 3
+            },
+            {
+                "messageId": "2",
+                "location":"Inbox",
+                "type": "Alert",
+                "status": "Unread",
+                "messageDate": "2011-04-02",
+                "messageTime": "11:13:29",
+                "description": "2 Test description of a Alert message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            },
+            {
+                "messageId": "9",
+                "location":"Inbox",
+                "type": "Alert",
+                "status": "Read",
+                "messageDate": "2011-04-02",
+                "messageTime": "10:14:29",
+                "description": "4 Test description of a Alert message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            },
+            {
+                "messageId": "5",
+                "location":"Inbox",
+                "type": "Document",
+                "labels": [
+                    "Starred"
+                ],
+                "status": "Read",
+                "messageDate": "2011-04-02",
+                "messageTime": "02:13:29",
+                "description": "Test description of a NHIN message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            },
+            {
+                "messageId": "3",
+                "location":"Inbox",
+                "type": "Alert",
+                "status": "Completed",
+                "messageDate": "2011-04-03",
+                "messageTime": "01:13:29",
+                "description": "1 Test description of a Alert message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 2,
+                "tasksComplete": 0
+            },
+            {
+                "messageId": "4",
+                "location":"Inbox",
+                "type": "Alert",
+                "status": "Read",
+                "messageDate": "2011-04-02",
+                "messageTime": "11:13:29",
+                "description": "Test description of a Alert message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            },
+
+            {
+                "messageId": "6",
+                "location":"Inbox",
+                "type": "Alert",
+                "labels": [
+                    ""
+                ],
+                "status": "Read",
+                "messageDate": "2011-04-05",
+                "messageTime": "10:20:29",
+                "description": "Test description of a Task message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 10,
+                "tasksComplete": 7
+            },
+            {
+                "messageId": "7",
+                "location":"Inbox",
+                "type": "Alert",
+                "labels": [
+                    "Starred"
+                ],
+                "status": "Archived",
+                "messageDate": "2011-04-05",
+                "messageTime": "11:13:29",
+                "description": "Test description of a Alert message",
+                "from": "provider.joe",
+                "title": "Title of Joe",
+                "priority": "Normal",
+                "tasksCount": 0,
+                "tasksComplete": 0
+            }
+        ]
+    }
+}

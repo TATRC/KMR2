@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<head>
+    <style type="text/css">
+        #simulatorSimResult th { line-height:25px; color:#ffffff; text-align:left }
+        .simulationResultDetail td { line-height:20px; border-bottom:2px solid #ffffff }
+    </style>
+</head>
+<body>
+    <div id="suiteSplitTop">
+        <div id="suiteSplitTopHeader" class="primaryText">
+            <div class="simHeadings simPadding">Search for Saved Results</div>
+            <div class="lightBG contentPadding"><form id="searchForm">
+                <table class="tblClean simInputTable">
+                    <tr><td class="simFirstCol"><label for="nameContains">Name Contains</label></td><td colspan="4"><input id="nameContains" name="nameContains" type="text" style="width:300px"></td></tr>
+                    <tr><td><label for="descriptionContains">Description Contains</label></td><td colspan="4"><input id="descriptionContains" name="descriptionContains" type="text" style="width:300px"></td></tr>
+                    <tr><td>Date</td><td><label for="lastSavedAfter">after</label></td><td><input id="lastSavedAfter" name="lastSavedAfter" type="text" style="width:100px"></td>
+                        <td style="text-align:right"><label for="lastSavedBefore">before</label></td><td style="text-align:right"><input id="lastSavedBefore" name="lastSavedBefore" type="text" style="width:100px"></td></tr>
+                    <tr><td>Score</td><td><label for="scoreAtLeast">&gt;=</label></td><td colspan="3"><input id="scoreAtLeast" name="scoreAtLeast" type="number" style="width:75px">
+                        <label for="scoreUpTo" style="padding:0 20px">&lt;=</label><input id="scoreUpTo" name="scoreUpTo" type="number" style="width:75px"></tr>
+                </table></form>
+            </div>
+            <div id="simModelTitle" class="simHeadings primaryText simPadding"><span class="simSearchResults">Saved Results</span>
+                <div id="simSearchAction" style="float:right"><button>Reset</button><span class="suiteButtonSpacing"></span><button>Search</button></div>
+            </div>
+        </div>
+        <div class="simSearchResults">
+            <table id="suiteTopGrid" class="suiteGrid"></table>
+        </div>
+    </div>
+    <div id="suiteSplitBottom" class="simSearchResults">
+        <div id="suiteBodyHeaderBottom">
+            <div id="suiteSplitter"><div id="suiteSplitterHandle"></div></div>
+        </div>
+        <div id="simulatorBottomContent" class="primaryText" style="overflow-y:auto">
+            <div class="lightBG contentPadding">
+                <table class="tblNorm" style="width:100%">
+                    <tr class="simSuberHeadings"><td colspan="2" style="width:50%">Configuration Description</td><td colspan="2">Search Results</td></tr>
+                    <tr><td class="simFirstCol">Name</td><td id="name" class="suiteRegText"></td><td>Run On</td><td id="runDate" class="suiteRegText"></td></tr>
+                    <tr><td>Plan Scope</td><td id="planScope" class="suiteRegText"></td><td>Run Duration</td><td id="simulationDuration" class="suiteRegText"></td></tr>
+                    <tr><td>Configuration Description</td><td id="description" class="suiteRegText"></td><td>Score</td><td id="score" class="suiteRegText"></td></tr>
+                    <tr><td colspan="2"></td><td>Stop</td><td id="stopCondition" class="suiteRegText"></td></tr>
+                </table>
+            </div>
+            <div id="simulatorSimResult" class="lightBG" style="display:none"></div>
+        </div>
+        <div id="simLoadResult">
+            <button id="simulatorLoadConfig" style="float:right;margin:10px 10px 15px 0">Load Selected Result</button>
+        </div>
+    </div>
+
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without the config
+        var _thisView = 'providerSimulatorSavedResults';
+        var _grid=$('#suiteTopGrid');
+
+        function populateGrid(data) {
+            $('.simSearchResults').show();
+            if ($('#gview_suiteTopGrid').length > 0) { // Has the grid been loaded already
+                _grid.jqGrid('setGridParam', { datatype:'jsonstring', datastr:data } ).trigger("reloadGrid");
+            } else {
+                // Load and populate the Inbox grid
+                _grid.jqGrid({
+                    datastr:data, height:77,
+                    jsonReader: { root: "resultInfo", repeatitems:false },
+                    colNames:['', '', '', '', '', 'Name', 'Result Date', 'Score', 'Stop Condition', 'Author', 'Status' ],
+                    colModel:[
+                        {name:'resultId', hidden:true}, {name:'planScope', hidden:true}, {name:'description', hidden:true}, {name:'runDate', hidden:true}, {name:'simulationDuration', hidden:true},
+                        {name:'name'}, {name:"resultDate"}, {name:"score"},{name:"stopCondition"},
+                        {name:'author'}, {name:'status', formatter:function(){return 'New'} }
+                    ],
+                    gridComplete: function() { resizeContent.updateAll() },
+                    onSelectRow:function(rowid) {
+                        var _rowData = _grid.getRowData(rowid);
+                        formTemplate.loadForm(_grid.getRowData(rowid));
+
+/*
+                        $('#simulationDescription').text(_rowData.name);    // Simulation name
+                        sirona.localOnce = true;  // TODO - take out
+                        sirona.reqPS('getResultDetails', { view:_thisView, data:{ modelId:sirona.planningModel.modelId, resultId:_rowData.resultId },
+                            success: populateResultReport
+                        }, 'resultDetailsFact');
+*/
+                    }
+                });
+            }
+            // Initialize the grid after it is loaded
+            if (_grid.getGridParam("reccount") > 0 ) {
+                _grid.jqGrid('setSelection',"1"); // Select the first row after the grid is loaded
+            }
+        }
+
+        function populateResultReport (objData) {
+            // Display the dynamic simulation results report
+            $('#simulatorSimResult').empty();
+            $.each(objData.results, function() {
+
+                var _out =
+                    '<div class="primaryText contentPadding simSuberHeadings">' + this.description + '</div>' +
+                    '<div><table class="tblClean" style="width:100%">' +
+                        '<tr class="primaryBG"><th style="width:15px"></th>';
+                            var _headings = this.tableHeadings;
+                            $.each(_headings, function() { _out += '<th>' + this.value + '</th>' });
+                _out += '</tr>';
+                $.each(this.tableOutput, function(detailIdx, detailVal) {
+                    var _detail = '';
+                    // tableOutput is the detail row.  Iterate through the tableHeadings to get the column names and other parameters
+                    $.each(_headings, function(headingIdx, headingVal) {
+                        _detail += '<td>' + detailVal[headingVal.columnId]  + '</td>';
+                    });
+                    _out += '<tr class="simulationResultDetail simPadding"><td style="width:15px"></td>' + _detail + '</tr>';
+                });
+                // Append this report section
+                $('#simulatorSimResult').append(_out += '</table></div>');
+            });
+        }
+// PUBLISHERS
+
+// SUBSCRIPTIONS
+        $('#simSearchAction :button').click(function() {
+            // Handle the search button options
+            if ($(this).text() == "Reset") { $('#searchForm :input').val(''); return }
+
+            sirona.localOnce = true;  // TODO - take out
+            sirona.reqPS('searchPlanResults', { view:_thisView, data: $.extend( $('#searchForm').serializeObject(), { modelId:sirona.planningModel.modelId} ),
+                success: populateGrid
+            },'searchPlanResultsFact');
+        });
+        $.subscribe('/suite/contentResized', _thisView, function(resizeObj) {
+            $('#simulatorBottomContent').outerHeight(resizeObj.suiteSplitBottomH - resizeObj.suiteBodyHeaderBottomH - $('#simLoadResult').outerHeight() );
+        });
+
+// INITIALIZATION
+    });
+</script>
+</body>
+</html>

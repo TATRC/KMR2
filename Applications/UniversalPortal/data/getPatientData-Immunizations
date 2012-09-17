@@ -1,0 +1,139 @@
+{
+    "patientDataFact": {
+        "detailTabs":   [
+            {"label": "Detail", "type":"grid", "source":"fact"},
+            {"label": "Background", "type":"text", "source":"ecs",   "index":"101"},
+            {"label": "Disease", "type":"text", "source":"ecs",   "index":"103"},
+            {"label": "Podcasts", "type":"text", "source":"ecs",   "index":"22"},
+            {"label": "Videos", "type":"text", "source":"ecs",   "index":"21"}
+        ],
+        "maxColumns":5,
+        "gridHeaders": [
+            { "columnId":       "vaccine",
+              "value":          "Vaccine",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "column1",
+              "value":          "#1",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "column2",
+              "value":          "#2",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "column3",
+              "value":          "#3",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "column4",
+              "value":          "#4",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "column5",
+              "value":          "#5",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+            {   "vaccine":        "Hepatitis A Injection",
+                "code":           "054868-4056-*0",
+                "codeSystemName": "NDC-FDA Drug Registration and Listing System",
+                "codeSystemCode": "PH_FDA_DRLS",
+                "column1":        "1990-06-15",
+                "column2":        "1990-06-15",
+                "column3":        "1990-06-15",
+                "column4":        "1990-06-15",
+                "column5":        "1990-06-15",
+                "column6":        "1990-06-15",
+                "column7":        "1990-06-15",
+                "hoverTexts":     ["054868-4056-*0 (PH_FDA_DRLS)",
+                                   "Age: 2 months",
+                                   "Age: 4 months",
+                                   "Age: 8 months",
+                                   "Age: 16 months",
+                                   "Age: 10 months",
+                                   "Age: 12 months",
+                                   "Age: 16 months"
+                                   ]
+            },
+            {
+                "vaccine":        "Hepatitis B",
+                "code":           "000006-4995-00",
+                "codeSystemName": "NDC-FDA Drug Registration and Listing System",
+                "codeSystemCode": "PH_FDA_DRLS",
+                "column1":        "15-Aug-1990",
+                "column2":        "15-Oct-1990",
+                "column3":        "15-Dec-1990",
+                "column4":        "15-Jun-1991",
+                "column5":        "15-Aug-1994",
+                "hoverTexts":     ["000006-4995-00 (PH_FDA_DRLS)",
+                                   "Age: 2 months",
+                                   "Age: 4 months",
+                                   "Age: 7 months",
+                                   "Age: 12 months",
+                                   "Age: 4 years"
+                                   ]
+            },
+            {
+                "vaccine":        "Tetanus",
+                "code":           "037",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1":        "15-Aug-2000",
+                "column2":        "11-Nov-2000",
+                "column3":        "15-Nov-2002",
+                "hoverTexts":     ["037 (ICD-9-CM, Volume 1&2)",
+                                   "Age: 10 years",
+                                   "Age: 10 years",
+                                   "Age: 12 years"
+                                   ]
+            },
+            {
+                "vaccine":        "MMR",
+                "code":           "V064",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1":        "05-Jun-2000",
+                "column2":        "12-Dec-2007",
+                "hoverTexts":     ["7890 (ICD-9-CM, Volume 1&2)",
+                                   "Age: 10 years",
+                                   "Age: 13 years"
+                                   ]
+            },
+            {
+                "vaccine":        "Polio",
+                "code":           "V063",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1":        "12-Dec-2008",
+                "column2":        "12-Dec-2007",
+                "hoverTexts":     ["V063 (ICD-9-CM)",
+                                   "Age: 12 years",
+                                   "Age: 13 years"
+                                   ]
+            },
+            {
+                "vaccine":        "Flu",
+                "code":           "9012",
+                "codeSystemName": "SNOMED-CT",
+                "codeSystemCode": "PH_SNOMED-CT",
+                "column1":        "15-Jun-1995",
+                "column2":        "12-Dec-1996",
+                "column3":        "12-Dec-1997",
+                "hoverTexts":     ["9012 (PH_SNOMED-CT)",
+                                   "Age: 5 years",
+                                   "Age: 6 years",
+                                   "Age: 7 years"
+                                   ]
+            }
+        ],
+        "successStatus": true
+    }
+}

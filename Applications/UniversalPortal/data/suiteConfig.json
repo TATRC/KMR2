@@ -1,0 +1,140 @@
+{
+    "successStatus":true,
+    "testOverride":true,
+    "testEntire":false,
+    "testOnce":false,
+    "debugIt":true,
+    "views" : "http://localhost/KMR2/UniversalPortal/views/",
+    "PS": "http://localhost/KMR2/UniversalPortal/data/",
+    "images": "http://localhost/KMR2/UniversalPortal/images/",
+    "testPS": "http://192.168.5.47:8080/PresentationServices/",
+    "backupServers": [ "http://192.168.5.47:8080/UniversalPortal/data/", "http://nhinint01:8080/PresentationServices/" ],
+
+    "ajaxError": "A critical error has occurred:",
+    "ajaxViewError": "There was a problem loading the requested view.\nPlease contact the web administrator.",
+    "confirmDelete":"Are you sure you want to delete the selection(s)?",
+    "confirmDiscard":"Are you sure you want to discard this message?",
+    "confirmDraft":"Would you like to save this message as a draft?",
+    "debugInfo":"",
+
+    "inboxCategoryMap": [
+        { "type":"Email","cssClass":"inboxMailType" },
+        { "type":"Alert","cssClass":"inboxAlertType" }
+    ],
+    "inboxCategories": [
+        { "name":"All Messages", "data":{} },
+        { "name":"Mail", "data":{"type":"Email"} },
+        { "name":"Alerts", "data":{"type":"Alert"} },
+        { "name":"Documents", "data":{"type":"Document"} },
+        { "name":"Archived", "cssClass":"providerContext", "data":{"location":"Archived"} },
+        { "name":"Trash", "cssClass":"providerContext", "data":{"location":"UserTrash"} }
+    ],
+    "inboxSelections": [
+        { "ID":"All", "Name":"All Messages" },
+        { "ID":"None", "Name":"None" },
+        { "ID":"Read", "Name":"Read" },
+        { "ID":"Open", "Name":"Unread" }
+    ],
+    "homeTemplate": {
+
+    },
+    "patientTemplate": {
+        "leftNav": [
+            { "label":"Messages", "children":[
+                {"label":"Compose", "view":"inboxCompose", "data":{} },
+                {"label":"Inbox", "view":"inbox" },
+                {"label":"Sent", "view":"inbox", "data":{"location":"Sent"} },
+                {"label":"Drafts", "view":"inbox", "data":{"location":"Draft"} }
+                ]
+            },
+            { "label":"My Organizer", "children":[
+                {"label":"Calendar", "view":"calendar"},
+                {"label":"Contacts", "view":"addressBook" },
+                {"label":"Personal Info", "view":"demographics" }
+                ]
+            },
+            { "label":"Medical Records", "children":[
+                {"label":"Admissions", "view":"admissions"},
+                {"label":"Allergies", "view":"allergies" },
+                {"label":"Documentation", "view":"documentation" },
+                {"label":"Immunizations", "view":"immunizations" },
+                {"label":"Medications", "view":"medications" },
+                {"label":"Problems", "view":"problems" },
+                {"label":"Results", "view":"results" },
+                {"label":"Vital Signs", "view":"vitalSigns" }
+                ]
+            }
+        ]
+    },
+    "providerTemplate": {
+        "leftNav": [
+            { "label":"Messages", "children":[
+                {"label":"Compose", "view":"inboxCompose", "data":{} },
+                {"label":"Inbox", "view":"inbox" },
+                {"label":"Sent", "view":"inbox", "cssClass":"providerContext", "data":{"location":"Sent"} },
+                {"label":"Drafts", "view":"inbox", "cssClass":"providerContext", "data":{"location":"Draft"} }
+                ]
+            },
+            { "label":"My Organizer", "children":[
+                {"label":"Calendar", "view":"calendar"},
+                {"label":"Contacts", "view":"addressBook" }
+                ]
+            },
+            { "label":"Medical Records", "cssClass":"providerPatientContext", "children":[
+                {"label":"Admissions", "cssClass":"providerPatientContext", "view":"admissions"},
+                {"label":"Allergies", "cssClass":"providerPatientContext", "view":"allergies" },
+                {"label":"Demographics", "cssClass":"providerPatientContext", "view":"demographics" },
+                {"label":"Documentation", "cssClass":"providerPatientContext", "view":"documentation" },
+                {"label":"Immunizations", "cssClass":"providerPatientContext", "view":"immunizations" },
+                {"label":"Medications", "cssClass":"providerPatientContext", "view":"medications" },
+                {"label":"Problems", "cssClass":"providerPatientContext", "view":"problems" },
+                {"label":"Results", "cssClass":"providerPatientContext", "view":"results" },
+                {"label":"Vital Signs", "cssClass":"providerPatientContext", "view":"vitalSigns" }
+                ]
+            }
+        ],
+        "dxGuideStageSeverities":[ "Low","Average","High","Very High" ],
+        "predictiveSeverityColors":[ "#e8c811","#d7891c","#d5511e","#bf001e" ],
+        "predictiveAnalysisPollingInterval":5000
+    },
+    "suiteFooterNav": [
+        { "label":"Home/Login", "view":"login", "secondary": [
+            { "label":"Log In", "view":"login" },
+            { "label":"Account", "view":"" }
+            ]
+        },
+        { "label":"About Janus", "view":"about", "secondary": [
+            { "label":"Patient Portal", "view":"aboutPatient" },
+            { "label":"Provider Portal", "view":"aboutProvider" },
+            { "label":"ResCap Simulator", "view":"aboutSimulator" }
+            ]
+        },
+        { "label":"Medical News", "view":"medicalNews", "secondary": [
+            { "label":"Wellness", "view":"wellness" },
+            { "label":"Exercise & Fitness", "view":"exercise" },
+            { "label":"Diet & Nutrition", "view":"diet" },
+            { "label":"Your Family", "view":"yourFamily" },
+            { "label":"Family", "view":"family" },
+            { "label":"Veterans", "view":"veterans" }
+            ]
+        },
+        { "label":"Support/Help", "view":"help", "secondary": [
+            { "label":"Get Started", "view":"about" },
+            { "label":"Preferences", "view":"preferences" },
+            { "label":"Help", "view":"help" },
+            { "label":"Feedback", "view":"feedback" }
+            ]
+        },
+        { "label":"Legal/Security", "view":"legal", "secondary": [
+            { "label":"Terms of Service", "view":"termsOfService" },
+            { "label":"Privacy", "view":"privacyPolicy" },
+            { "label":"Copyright Policy", "view":"copyrightPolicy" },
+            { "label":"Security", "view":"security" }
+            ]
+        },
+        { "label":"Contact Us", "view":"contactUs", "secondary": [
+            { "label":"Contact Us", "view":"contactUs" }
+            ]
+        }
+    ]
+}

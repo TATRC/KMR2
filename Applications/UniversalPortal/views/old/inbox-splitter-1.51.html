@@ -1,0 +1,84 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<div id="inboxHeader" class="emrBodyHeader">
+    <table class="tblClean" style="width:100%">
+        <tr>
+            <td><h2>Inbox</h2></td>
+            <td style="width:100%"><div id="fullScreen">Full Screen</div></td></tr>
+        <tr>
+            <td style="padding-right:5px"><select id="inboxCategory"><option selected>Category/All</option><option>Email</option><option>Patient Alerts</option></select>
+                <label for="inboxCategory">Select:&nbsp;&nbsp;</label><a href="">All</a><a href="">None</a><a href="">Read</a><a href="">Unread</a>
+            </td>
+            <td style="text-align:right;">
+                <button>Reply</button><button>Reply All</button><button>Forward</button><button>Archive</button><button style="margin-right:20px">Delete</button>
+                <button style="margin-right:20px">Request NHIN Document</button><button>Print</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="inboxContent" class="emrSplitter" style="background-color:red">
+    <div id="inboxTop" class="splitterTop">
+        <table id="inboxMain"></table>
+    </div>
+
+    <!--<div id="inboxPager"></div>-->
+    <!--<div id="inboxSplitter"></div>-->
+    <div id="inboxDetail" style="background-color:yellow;" class="splitterBottom">
+        <div id="inboxDetailHeader">
+
+        </div>
+        <div id="inboxDetailInput"></div>
+    </div>
+</div>
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+//        $('#inboxDetail').resize(function() { $.publish('/emr/contentResize',[ $('#inboxTop').width() ]) });
+        $(".emrSplitter").splitter({ type: "h" });
+        $("#inboxMain").jqGrid({
+            /*  Since autoWidth is on, set the columns so that they add up to the largest size in pixels - For now max will be 2000 */
+            width:100,  /* Set to the smallest width the grid can be */
+            url:'http://localhost/KMR2/EMR/data/getMessages.json',
+            datatype: "json",
+            loadonce: true,  // loads the data from the server only once.  Sets the datatype to local afterwards for sorting
+            jsonReader: {
+                root: "messagesFact.messageObjects",
+                repeatitems:false
+            },
+            colNames:['','Status', 'Date', 'Title', 'Message','Type','Priority' ],
+            colModel:[
+                {name:'messageId', index:'messageId', hidden:true, width:0 },
+                {name:'messageStatus', index:'messageStatus', width:150 },
+                {name:'messageDate',index:'messageDate', width:150 },
+                {name:'title',index:'title', width:300},
+                {name:'description',index:'description', width:600 },
+                {name:'messageType',index:'messageType', width:200},
+                {name:'priority',index:'priority', width:150} // align:"right"
+            ],
+            loadComplete: function() {
+                $.publish('/emr/contentResize',[]);
+//                $( "#inboxContent" ).split( { orientation:'horizontal', limit:150 });
+
+            },
+            afterInsertRow: function(rowid, rowdata) {
+                // Bold the row if it has not been read
+                if ( rowdata.messageStatus !='Open' ) $(this).jqGrid('setRowData', rowid, false, 'gridUnread');
+            }
+        });
+
+        // Subscribers
+        $.subscribe('/emr/contentResize', function() {
+            /* Used to resize the grid if the div containing it resizes by another widget (Predictive Analysis drawer) */
+            $('#navSimulator').html($('#inboxContent').height()+'/'+$('#inboxTop').width()+':'+Date() );
+            $('#inboxMain').setGridHeight( $('#inboxTop').height() );
+            if ( $('#inboxContent').width() >100 ) { $('#inboxMain').setGridWidth( $('#inboxContent').width() ) }
+        });
+    });
+</script>
+</body>
+</html>

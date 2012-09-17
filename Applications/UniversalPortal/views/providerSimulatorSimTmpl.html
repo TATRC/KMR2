@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+<div class="lightBG contentPadding primaryText" style="clear:both"><span class="simSubHeadings">Simulation Description</span><br/>
+    <div id="simDescription"></div>
+</div>
+<div class="lightBG contentPadding primaryText simSection"><span class="simSubHeadings">Stop Conditions</span><br/>
+    <table class="tblClean inputTable">
+        <tr><td class="inputLabel"><span>Maximum Time(s): </span><span id="configuration_stopTime"></span></td><td class="suiteRegText"><span>Time Elapsed: </span><span id="elapsedTime"></span></td></tr>
+        <tr><td class="inputLabel"><span>% of Maximum Achievable Score(s): &gt; </span><span id="configuration_stopScore"></span></td><td class="suiteRegText"><span>Current Score: </span><span id="currentRelativeOverallScore"></span></td></tr>
+        <tr><td class="inputLabel"><span>Maximum Steps: </span><span id="configuration_stopIteration"></span></td><td class="suiteRegText"><span>Time Elapsed: </span><span id="currentIteration"></span></td></tr>
+        <tr><td class="inputLabel"><span>Improvement Threshold: &lt; </span><span id="configuration_stopImprovement"></span></td><td class="suiteRegText"><span>Last Improvement: </span><span id="currentImprovement"></span></td></tr>
+    </table>
+</div>
+<div class="lightBG contentPadding primaryText simSection"><span class="simSubHeadings">Toggle Chart</span><br/>
+</div>
+<div class="lightBG contentPadding primaryText simSection">
+    <div class="simSubHeadings">Constraints</div>
+    <table class="tblClean simInputTable">
+        <tr class="scoreDetails_break" style="display:none">
+            <td id="scoreDetails_type" class="simSuberHeadings"></td><td># Violations / #</td><td>Penalty</td><td>Relevance</td><td>Score / Max Score</td>
+        </tr>
+        <tr class="scoreDetails_outputrow suiteRegText" style="display:none"><!-- scoreDetails_output required to create new rows ! -->
+            <td id="scoreDetails_description" class="simFirstCol"></td>
+            <td><span id="scoreDetails_violations"></span>&nbsp;/&nbsp;<span id="scoreDetails_violationLimit"></span></td>
+            <td id="scoreDetails_penalties"></td><td id="scoreDetails_relevance"></td>
+            <td><span id="scoreDetails_aggregateScore"></span>&nbsp;/&nbsp;<span id="scoreDetails_maxScore"></span></td>
+        </tr>
+        <tr style="font-weight:bold" class="suiteRegText"><td colspan="3"></td><td>Current Score</td><td id="currentAbsoluteScore"></td></tr>
+    </table>
+</div>
+<div style="float:right" class="contentPadding"></div>
+</body>
+</html>

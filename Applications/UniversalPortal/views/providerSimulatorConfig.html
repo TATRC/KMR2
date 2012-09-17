@@ -1,0 +1,191 @@
+
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+<div id="simulatorConfigSections" class="primaryText">
+    <div id="simulatorConfigInit" style="width:600px" class="contentPadding">
+        <div id="simModelTitle" class="simHeadings">Simulator Configuration</div>
+        <div id="simModelDescr">Please select either load a Saved Configuration, or create a New Configuration</div>
+        <div id="simMainAction" style="padding:20px 0"><button>Load Saved Configuration</button><span class="suiteButtonSpacing"></span><button>Create New Configuration</button></div>
+    </div>
+    <div id="simulatorConfigSearch" style="display:none">
+        <div class="simHeadings simPadding">Search for a Saved Configuration</div>
+        <div class="lightBG contentPadding">
+            <table class="tblClean simInputTable">
+                <tr><td class="simFirstCol"><label for="searchNameContains">Name Contains</label></td><td colspan="4"><input id="searchNameContains" type="text" style="width:300px"></td></tr>
+                <tr><td>Last saved</td><td><label for="searchLastSavedAfter">after</label></td><td><input id="searchLastSavedAfter" type="text" style="width:100px"></td>
+                    <td style="text-align:right"><label for="searchLastSavedBefore">before</label></td><td style="text-align:right"><input id="searchLastSavedBefore" type="text" style="width:100px"></td></tr>
+                <tr><td>Last run</td><td><label for="searchLastRunAfter">after</label></td><td><input id="searchLastRunAfter" type="text" style="width:100px"></td>
+                    <td style="text-align:right"><label for="searchLastRunBefore">before</label></td><td style="text-align:right"><input id="searchLastRunBefore" type="text" style="width:100px"></td></tr>
+                <tr><td>Score</td><td><label for="searchScoreAtLeast">&gt;=</label></td><td colspan="3"><input id="searchScoreAtLeast" type="number" style="width:75px">
+                    <label for="searchScoreUpTo" style="padding:0 20px">&lt;=</label><input id="searchScoreUpTo" type="number" style="width:75px"></tr>
+            </table>
+        </div>
+        <div id="simulatorSearchResults">
+            <div>
+                <div id="simSearchAction" style="float:right;clear:both"><button>Cancel</button><span class="suiteButtonSpacing"></span><button>Reset</button><span class="suiteButtonSpacing"></span><button>Search</button></div>
+                <span class="simHeadings simPadding">Configurations Found</span>
+            </div>
+            <div id="suiteSplitTop">
+                <table id="suiteTopGrid" class="suiteGrid"></table>
+            </div>
+            <div id="suiteSplitBottom">
+                <div id="suiteBodyHeaderBottom">
+                    <!--<div id="suiteSplitter"><div id="suiteSplitterHandle"></div></div>-->
+                </div>
+                <div id="simulatorConfigDescr" class="contentPadding lightBG"></div>
+                <div class="contentPadding">
+                    <button id="simulatorLoadConfig" style="float:right;display:none;margin-top:15px">Load Selected Configuration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="simulatorConfig" class="lightBG contentPadding" style="min-width:800px;margin-top:20px;display:none"></div>
+    <div id="simulatorConfigActions" style="float:right;display:none" class="contentPadding">
+        <button>Cancel</button><span class="suiteButtonSpacing"></span><button>Save</button><span class="suiteButtonSpacing"></span><button class="configExists">Save New Version</button>
+        <span class="suiteButtonSpacing"></span><span class="suiteButtonSpacing"></span><button style="background:#bdd851">Save and Run Configuration</button>
+    </div>
+</div>
+
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without the config
+        var _thisView = 'providerSimulatorConfig';
+
+// FORM TEMPLATES
+        var _selectedConfig={};
+        var configTmpl = {
+            containerId:"simulatorConfig",
+            name:{type:"text", dataType:"text", width:275 },
+            description:{type:"text", dataType:"text", width:275 },
+            score:{type:"text", dataType:"integer", width:75 },
+            startDate:{type:"text", dataType:"date", width:75 },
+            stopTime:{dataType:"integer", width:40},
+            stopScore:{dataType:"integer", width:40},
+            stopIteration:{dataType:"integer", width:40},
+            stopImprovement:{dataType:"integer", width:40},
+            agents: {
+                breakClass:{field:"type"},
+                population:{type:"label", dataType:"integer", width:60},
+                subfilter:{type:"label", width:150},
+                filtered:{type:"checkbox", width:40},
+                populationRange:{type:"label",dataType:"integer", width:40}
+            },
+            constraints: {
+                breakClass:{field:"type"},
+                required:{type:"checkbox", width:40}
+            }
+        };
+
+// PUBLISHERS
+
+// SUBSCRIPTIONS
+        $('#simMainAction :button').click(function() {
+            // Populate the detail with the appropriate screen
+            $('#simulatorConfigInit').hide();
+            if ($(this).text().indexOf('Load') >=0 ) $('#simulatorConfigSearch').show();
+            else renderConfig('null');
+        });
+        $('#simSearchAction :button').click(function() {
+//            $('#suiteTopGrid').jqGrid('GridUnload');
+//            $('#simulatorConfigDescr').empty();
+//            $('#simulatorLoadConfig').hide();
+
+            // Handle the search button options
+            if ($(this).text() == 'Cancel') { $('#simulatorConfigSearch').hide(); $('#simulatorConfigInit').show(); return }
+            else if ($(this).text() == "Reset") { $('#simulatorConfigSearch :input').val(''); return }
+
+            // Request the search
+            sirona.localOnce=true;  // TODO testing
+            sirona.reqPS('searchConfigurations', { view:_thisView,
+                success: function(data) {
+                    var _grid=$('#suiteTopGrid');
+                    // Load and populate the Inbox grid
+                    _grid.jqGrid({
+                        datastr:data, height:77,
+                        jsonReader: { root: "configInfo", repeatitems:false },
+                        colNames:['','', 'Name', 'Author', 'Last Saved Date', 'Last Run Date', 'Score' ],
+                        colModel:[
+                            {name:'configId', hidden:true}, {name:'description', hidden:true},
+                            {name:'name'}, {name:'author'}, {name:'lastSavedDate'}, {name:'lastRunDate'}, {name:'score'}
+                        ],
+                        gridComplete: function() { resizeContent.updateWidth() }, // $.publish( '/suite/topGridLoaded',[] )
+                        onSelectRow:function(rowid) {
+                            _selectedConfig = $(this).getRowData(rowid);
+                            $('#simulatorConfigDescr').html(_selectedConfig.description) }
+                    });
+                    // Initialize the grid after it is loaded
+                    if (_grid.getGridParam("reccount") > 0 ) {
+                        $('#simulatorLoadConfig').show();
+                        _grid.jqGrid('setSelection',"1"); // Select the first row after the grid is loaded
+                    }
+                }
+            }, 'searchConfigurationsFact');
+        });
+        $('#simulatorLoadConfig').click(function() {
+            $('#simulatorConfigSearch').hide();
+            renderConfig(_selectedConfig.configId);
+        });
+        function renderConfig(configId) {
+            sirona.getView('providerSimulatorConfigInputTmpl', { container:$('#simulatorConfig'),
+                success:function() {
+                    // Request the search
+                    sirona.localOnce=true;  // TODO testing
+                    sirona.reqPS('getConfigurationDetail', { view:_thisView, data:{ modelId:sirona.planningModel.modelId, configId:configId },
+                        success: function(data) {
+                            formTemplate.loadForm(data.configuration, configTmpl);
+                        }
+                    }, 'configurationDetailFact');
+
+                    $('.configExists').toggle(configId != 'null');  // Context for configuration that exists.  Toggles button display.
+                    $('#simConfigHeading').text( ((configId=='null')?'NEW':'SAVED') + ' CONFIGURATION');
+                    $('#simulatorConfig').show();
+                    $('#simulatorConfigActions').show();
+                }
+            });
+        }
+        $('#simulatorConfigActions :button').click(function(e) {
+            var _action =  $(e.target).text().toLowerCase();
+            if (_action == "cancel") {
+                $.publish( '/simulator/config',[ {action:_action} ] );    // Reload the initial config screen
+            } else if (_action.indexOf('save') >= 0) {
+                if (_action == 'save and run configuration') {
+                    // Launching the simulation with the configuration will implicitly save the configuration
+                    sirona.localOnce=true;  // TODO testing
+                    sirona.reqPS('launchSimulation', { view:_thisView, data: { modelId:sirona.planningModel.modelId, configuration:$('#simulatorConfigForm').serialize() },
+                        success: function(data) {
+                            $.publish( '/simulator/config', [ data ] )
+                        }
+                    }, 'saveConfigurationFact', 'POST');
+                } else {
+                    // One of the other "Save" options was clicked
+                    var _configId = $('#simulatorConfigForm #configId');
+                    var _currentId = _configId.val();
+                    if (_action == 'save new version') _configId.val('null');
+                    // Save the config
+                    sirona.localOnce=true;  // TODO testing
+                    sirona.reqPS('saveConfiguration', { view:_thisView, data: { modelId:sirona.planningModel.modelId, configuration:$('#simulatorConfigForm').serialize() },
+                        success: function(data) {
+                            if (data.configId) renderConfig(data.configId);
+                        }
+                    }, 'saveConfigurationFact', 'POST');
+                }
+
+            }
+        });
+    });
+</script>
+</body>
+</html>

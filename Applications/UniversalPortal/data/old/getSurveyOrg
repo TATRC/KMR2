@@ -1,0 +1,168 @@
+{
+    "surveyFact":{
+        "successStatus":"true",
+        "statusMessage":"Data validation errors go here",
+        "body":"<h2>HTML Survey Body</h2><p>This is an HTML formatted test Patient Alert questionnaire which has the following survey questions:</p>",
+        "surveyId":"123UNIQUESURVEYID",
+        "name" : "Name or title of the survey",
+        "expiresDate" : "2011-06-01",
+        "interactive":"true",
+        "language":"English",
+        "contextDesc":"Inbox",
+        "surveyClass":"Smoking",
+        "surveyQuestions":[
+         {
+            "questionId":"123UNIQUEQUESTIONID",
+            "preLabel":"Please choose one: ",
+            "required":"false",
+            "answerType":"integer",
+            "currentAnswer":"3",
+            "possibleAnswers":[
+               {
+                  "key":"1",
+                  "value":"Choice 1"
+               },
+               {
+                  "key":"2",
+                  "value":"Choice 2"
+               },
+               {
+                  "key":"3",
+                  "value":"Choice 3"
+               },
+               {
+                  "key":"4",
+                  "value":"Choice 4"
+               }
+            ],
+            "suggestedControl":"combobox"
+         },
+         {
+            "questionId":"124UNIQUEQUESTIONID",
+            "preLabel":"Please enter a decimal value: ",
+            "required":"false",
+            "answerType":"decimal",
+            "currentAnswer":"4",
+            "suggestedControl":"text"
+         },
+         {
+            "questionId":"112UNIQUEQUESTIONID",
+            "preLabel":"Please insert Domicile",
+            "required":"false",
+            "answerType":"text",
+            "currentAnswer":"2",
+            "possibleAnswers":[
+               {
+                  "key":"1",
+                  "value":"Urban"
+               },
+               {
+                  "key":"2",
+                  "value":"Rural"
+               }
+            ],
+            "suggestedControl":"radio"
+         },
+         {
+            "questionId":"119UNIQUEQUESTIONID",
+            "preLabel":"Please choose ALL hobbies that apply",
+            "required":"true",
+            "answerType":"text",
+            "currentAnswer":"2,3",
+            "possibleAnswers":[
+               {
+                  "key":"1",
+                  "value":"Camping"
+               },
+               {
+                  "key":"2",
+                  "value":"Fishing"
+               },
+               {
+                  "key":"3",
+                  "value":"Golf"
+               },
+               {
+                  "key":"4",
+                  "value":"Hang Gliding"
+               }
+            ],
+            "suggestedControl":"checkbox"
+         },
+         {
+            "questionId":"143UNIQUEQUESTIONID",
+            "preLabel":"Please choose an appointment date that is suitable for you: ",
+            "required":"false",
+            "answerType":"appointment",
+            "possibleAnswers":[
+               {
+                  "key":"1",
+                  "value":"Make an Appointment"
+               }
+            ],
+            "suggestedControl":"button"
+         },
+         {
+            "questionId":"523UNIQUEQUESTIONID",
+            "preLabel":"Please acknowledge that you agree with this treatment",
+            "required":"true",
+            "answerType":"button",
+            "possibleAnswers":[
+               {
+                  "key":"1",
+                  "value":"I Acknowledge"
+               },
+               {
+                  "key":"2",
+                  "value":"I Do Not Acknowledge"
+               },
+               {
+                  "key":"3",
+                  "value":"I Do Not Understand the Question"
+               }
+            ],
+            "suggestedControl":"button"
+         },
+         {
+            "questionId":"245UNIQUEQUESTIONID",
+            "preLabel":"Please enter the last date you had a tetanus shot :",
+            "required":"true",
+            "answerType":"date",
+            "currentAnswer":"2009-05-09",
+            "suggestedControl":"text"
+         },
+         {
+            "questionId":"94UNIQUEQUESTIONID",
+            "preLabel":"Please enter a value: ",
+            "required":"false",
+            "answerType":"text",
+            "currentAnswer":"4",
+            "suggestedControl":"text"
+         },
+         {
+            "questionId":"824UNIQUEQUESTIONID",
+            "preLabel":"Please enter a decimal value: ",
+            "required":"false",
+            "answerType":"decimal",
+            "currentAnswer":"4",
+            "suggestedControl":"text"
+         },
+         {
+            "questionId":"624UNIQUEQUESTIONID",
+            "preLabel":"Please enter a decimal value: ",
+            "required":"false",
+            "answerType":"decimal",
+            "currentAnswer":"4",
+            "suggestedControl":"text"
+         },
+         {
+            "questionId":"945UNIQUEQUESTIONID",
+            "preLabel":"Please enter a decimal value: ",
+            "required":"false",
+            "answerType":"decimal",
+            "currentAnswer":"4",
+            "suggestedControl":"text"
+         }
+        ]
+    }
+}

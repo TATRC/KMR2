@@ -1,0 +1,3 @@
+#!/bin/sh
+rm portal.tgz
+tar czvf portal.tgz config.js *.html ./images/* ./views/*.html ./js/*.js ./data/* ./css/*.css ./css/emrTheme/* ./css/pmrTheme/* 

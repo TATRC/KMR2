@@ -1,0 +1,4 @@
+#!/bin/sh
+tar czvf emr.tgz *
+echo "done"
+

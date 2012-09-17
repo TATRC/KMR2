@@ -1,0 +1,189 @@
+# EMAIL - http://nhinint01.asu.edu:8080/PresentationServices/Mail?action=detail&dataSource=Mail&itemId=T7?INBOX?1
+{
+   "GetDetailDataResponse":{
+      "detailObject":{
+         "itemId":"T7?INBOX?1",
+         "dataSource":"Mail",
+         "from":"baby smith <babysmith@socraticgrid.org>",
+         "author":"baby smith <babysmith@socraticgrid.org>",
+         "description":"Test emailfrom babysmith",
+         "dateCreated":"2010-12-21T10:13:29.000-08:00",
+         "data":null,
+         "itemValues":[
+            {
+               "name":"Read",
+               "values":true
+            },
+            {
+               "name":"Replied",
+               "values":false
+            }
+         ]
+      }
+   }
+}
+#ALERT - http://nhinint01.asu.edu:8080/PresentationServices/Mail?action=detail&dataSource=Patient Alerts&itemId=ID:3-208.75.163.61(95:84:2f:ba:b4:ee)-1-1290530836114
+{ "GetDetailDataResponse" : { "detailObject" : { "author" : "DDSS",
+          "data" : "<Recommendation>\n  <body><html>PLT GT 40 and PLT LE 80 for PHARMACY PATIENT<br>PLT: 51</html></body>\n  <metadata>\n    <type>MedAlert</type>\n  </metadata>\n  <actions>\n    <Action>\n      <actionId>aid1</actionId>\n      <name>Accept</name>\n    </Action>\n  </actions>\n</Recommendation>",
+          "dataSource" : "Patient Alerts",
+          "dateCreated" : "2010-11-30T20:23:54.000-08:00",
+          "description" : "UC#2: PLT GT 40 and LE 80",
+          "from" : "DDSS",
+          "itemId" : "ID:51-208.75.163.61(9f:c8:37:96:dd:40)-1-1291177434559",
+          "itemValues" : [ { "name" : "Priority",
+                "values" : "Critical"
+              },
+              { "name" : "Patient Unit Number",
+                "values" : 7
+              },
+              { "name" : "Patient Sex",
+                "values" : "F"
+              },
+              { "name" : "Patient FMP/SSN",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Fact NCID",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Fact Name",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Fact Value",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Fact Type",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Action ID",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Action Type",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Rule ID",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Rule Description",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "Rule Name",
+                "values" : { "xsi:nil" : true }
+              },
+              { "name" : "update.1.name",
+                "values" : "Alert"
+              },
+              { "name" : "update.1.time",
+                "values" : "2010-11-30T20:23:54.000-08:00"
+              },
+              { "name" : "update.1.userId",
+                "values" : 1
+              },
+              { "name" : "update.1.userName",
+                "values" : "Adam Adam"
+              },
+              { "name" : "update.1.userProvider",
+                "values" : true
+              },
+              { "name" : "update.1.message",
+                "values" : "Notification generated."
+              },
+              { "name" : "update.2.name",
+                "values" : "Alert"
+              },
+              { "name" : "update.2.time",
+                "values" : "2010-11-30T20:26:54.000-08:00"
+              },
+              { "name" : "update.2.userId",
+                "values" : 2122
+              },
+              { "name" : "update.2.userName",
+                "values" : "Huyen Trang Wilson, MD"
+              },
+              { "name" : "update.2.userProvider",
+                "values" : true
+              },
+              { "name" : "update.2.message",
+                "values" : "Notification generated."
+              },
+              { "name" : "update.3.name",
+                "values" : "Escalate"
+              },
+              { "name" : "update.3.time",
+                "values" : "2010-11-30T20:26:54.000-08:00"
+              },
+              { "name" : "update.3.userId",
+                "values" : 0
+              },
+              { "name" : "update.3.userName",
+                "values" : "System"
+              },
+              { "name" : "update.3.userProvider",
+                "values" : true
+              },
+              { "name" : "update.3.message",
+                "values" : "Auto-escalated alert."
+              },
+              { "name" : "Status",
+                "values" : "New"
+              }
+            ],
+          "patient" : "PHARMACY PATIENT"
+        } } }
+
+#NHIN Document - http://nhinint01.asu.edu:8080/PresentationServices/Mail?action=detail&dataSource=NHIN Documents&itemId=333333338
+{ "GetDetailDataResponse" : { "detailObject" : { "author" : "Dr. Joseph Hoodwink",
+"query":'',
+          "data" : "XSLT data to be formatted in PMR2",
+          "dataSource" : "NHIN Documents",
+          "dateCreated" : "2008-06-17T08:49:06.000-07:00",
+          "description" : "Document 1 Younder DoD comments",
+          "from" : "Main Children's Hospital - Dr. Joseph Hoodwink",
+          "itemId" : 333333338,
+          "itemValues" : [ { "name" : "Name",
+                "values" : "Younger DOD Document 1"
+              },
+              { "name" : "MIME Type",
+                "values" : "text/xml"
+              },
+              { "name" : "Language Code",
+                "values" : "en-US"
+              },
+              { "name" : "Service Start Time",
+                "values" : "2000-03-20T00:00:00.0-0800"
+              },
+              { "name" : "Service Stop Time",
+                "values" : "2008-01-01T00:00:00.0-0800"
+              },
+              { "name" : "Size",
+                "values" : 31529
+              },
+              { "name" : "Patient DOB",
+                "values" : 19990627
+              },
+              { "name" : "Patient Gender",
+                "values" : "M"
+              },
+              { "name" : "Patient Address",
+                "values" : "1111 Main Street^^Kingsport^TN^37662^US"
+              },
+              { "name" : "urn:gov:hhs:fha:nhinc:xds:hasBeenAccessed",
+                "values" : false
+              },
+              { "name" : "urn:gov:hhs:fha:nhinc:xds:OrigHomeCommunityId",
+                "values" : "urn:oid:2.16.840.1.113883.3.200"
+              },
+              { "name" : "urn:gov:hhs:fha:nhinc:xds:OrigDocumentUniqueId",
+                "values" : 333333333
+              },
+              { "name" : "urn:gov:hhs:fha:nhinc:xds:OrigRepositoryUniqueId",
+                "values" : 333333333
+              },
+              { "name" : "Repository ID",
+                "values" : 2
+              },
+              { "name" : "Author Institution",
+                "values" : "Main Children's Hospital"
+              }
+            ],
+          "patient" : "Younger^Gallow^^^"
+        } } }

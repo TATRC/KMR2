@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Provider Portal</title>
+    <link type="text/css" href="../../css/old/redmond/jquery-ui-1.8.10.custom.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/home.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/old/emr.css" rel="stylesheet" />
+
+<!--
+    <link rel='stylesheet' type='text/css' href='css/fullcalendar.css' />
+    <link rel='stylesheet' type='text/css' href='css/fullcalendar.print.css' media='print' />
+-->
+
+    <script type="text/javascript" src="../../js/test/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.8.10.custom.min.js"></script>
+
+    <!--<script type='text/javascript' src='js/fullcalendar.min.js'></script>-->
+
+    <script type="text/javascript">
+        $(document).ready (function(){
+            $('#topNav').tabs( {
+                selected:1
+            });
+            $('#desktopNav').load('views/emrDesktopNav.html');
+            $('#recordNav').load('views/emrRecordNav.html');
+
+//            $('#desktopContent').load('views/fullCalendar.html');
+/*
+            $("#desktopContent").load("views/fullCalendar.html", function(response, status, xhr) {
+              if (status == "error") {
+                var msg = "Sorry but there was an error: ";
+                $("#desktopContent").html(msg + xhr.status + " " + xhr.statusText);
+              }
+            });
+*/
+/*
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+            $('#desktopContent').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                editable: true,
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: new Date(y, m, 1)
+                    },
+                    {
+                        title: 'Long Event',
+                        start: new Date(y, m, d-5),
+                        end: new Date(y, m, d-2)
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d-3, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d+4, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Meeting',
+                        start: new Date(y, m, d, 10, 30),
+                        allDay: false
+                    },
+                    {
+                        title: 'Lunch',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: new Date(y, m, d+1, 19, 0),
+                        end: new Date(y, m, d+1, 22, 30),
+                        allDay: false
+                    },
+                    {
+                        title: 'Click for Google',
+                        start: new Date(y, m, 28),
+                        end: new Date(y, m, 29),
+                        url: 'http://google.com/'
+                    }
+                ]
+            });
+*/
+
+
+            $('#recordPredictive').load('views/emrPredictive.html');    // TODO Load only when tab is clicked
+            $('#drawerHandle').click(function() {
+//                $("#recordContent").height($("#contentHeight").height()-40); // alert($("#contentHeight").height());
+                if ($("#recordPredictive").is(':hidden')) {
+                    $("#recordPredictive").show('fast');
+                } else
+                    $("#recordPredictive").hide('fast');
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="container">
+        <tr>
+            <td>
+                <div id="header">Header</div>
+            </td>
+        </tr>
+        <tr>
+            <td id="contentHeight" style="height:100%;background-color:#add8e6;">
+                <div id="emrTopNav">
+                    <ul>
+                     <li><a href="emr2.html#desktop">Desktop</a></li>
+                        <li><a href="emr2.html#record">Medical Record</a></li>
+                        <li><a href="emr2.html#simulator">Simulator</a></li>
+                    </ul>
+                    <div id="desktop">
+                        <table id="desktopBody" style="border-spacing:0; padding:0;">
+                            <tr>
+                                <td><div id="desktopNav" class="navigation"></div></td>
+                                <td style="width:100%;padding:0 20px 0 20px;"><div id="desktopContent" class="content">Hello</div></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="record">
+                        <table id="recordBody" style="height:100%;width:100%; margin:0; border-spacing:0; padding:0;">
+                            <tr>
+                                <td><div id="recordNav" class="navigation"></div></td>
+                                <td style="height:100%;width:100%;"><div id="recordContent" class="content">Hello</div></td>
+                                <td><div id="drawerHandle"><button>&lt;</button></div></td>
+                                <td><div id="recordPredictive"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="simulator">
+                        <table id="simulatorBody">
+                            <tr>
+                                <td><div id="simulatorNav" class="navigation"></div></td>
+                                <td style="width:100%"><div id="SimulatorContent" class="content">Hello</div></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="footer">Footer</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

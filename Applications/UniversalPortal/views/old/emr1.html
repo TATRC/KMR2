@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Provider Portal</title>
+    <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript" src="js/jqGrid-4.0.0.min.js"></script>
+    <link type="text/css" href="css/redmond/jquery-ui-1.8.10.custom.css" rel="stylesheet" />
+    <link type="text/css" href="css/main.css" rel="stylesheet" />
+    <link type="text/css" href="css/emr.css" rel="stylesheet" />
+    <link type="text/css" href="css/ui.jqgrid.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Table here is needed since this template will be used for different views and the heights/widths will change (no CSS) -->
+    <table id="tblContainer" class="tblClean">
+        <tr>
+            <td>
+                <div id="header" class="headerBG"><a href="./">Logout</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="headerBG">
+                <div id="topNav">
+                    <div id="navDesktop">Desktop</div>
+                    <div id="navRecord">Medical Record</div>
+                    <div id="navSimulator">Simulator</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <!-- Be sure to include the padding in this cell in the recalcContentArea function -->
+            <td style="height:100%;padding:20px;">
+                    <table style="width:100%;height:100%; border-spacing:0; padding:0;">
+                        <tr>
+                            <td style="height:100%"><div id="recordNav" class="navigation"></div></td>
+                            <td style="width:100%"><div id="recordContent"></div></td>
+                            <td><div id="drawerHandle">&gt;</div></td>
+                            <td><div id="recordPredictive"></div></td>
+                        </tr>
+                    </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <div id="footer">Footer</div>
+
+    <script type="text/javascript" src="js/pubsub.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function recalcContentArea() {
+                /* Content in the middle of this page is fluid, so calculate and publish the new content area width.
+                                    NOTE: Make sure the padding is accounted for on either side of the row where the content is (see above td)*/
+                var newWidth;
+                if ($("#recordPredictive").is(':hidden')) newWidth=0;
+                    else newWidth=$('#recordPredictive').width();
+                $.publish('/emr/contentResize',[$(window).width()-$('#recordNav').width()-$('#drawerHandle').width()-newWidth-40])
+            }
+
+            //  Load the default views
+            $('#recordNav').load('views/emrRecordNav.html');
+            $('#recordPredictive').load('views/emrPredictive.html');
+            /*  Load the content area last since it is a variable width */
+            $('#recordContent').load('views/inbox.html');
+
+            // Publishers
+            $('#drawerHandle').click(function (e) {                      /* Drawer handle was clicked*/
+                $.publish('/emr/drawerHandle',[],e);
+            });
+            $(window).resize (function () { recalcContentArea() });         /* Browser window was resized */
+
+
+            // Subscribers
+            $.subscribe('/emr/drawerHandle', function(action) {
+                var $drawer = $("#recordPredictive");
+                $drawer.animate({
+//                    width: 'toggle'
+                    marginLeft: parseInt($drawer.css('marginLeft'),10) == 0 ? $drawer.outerWidth() : 0 });
+/*
+                */
+/* When the drawer handle is clicked, it will either hide or show.  So recalculate the content area size *//*
+
+                if ($("#recordPredictive").is(':hidden')) {
+                    $("#recordPredictive").show('fast', function() { recalcContentArea() });
+                    $("#drawerHandle").html('&gt;');
+                } else {
+                    $("#recordPredictive").hide('fast', function() { recalcContentArea() });
+                    $("#drawerHandle").html('&lt;');
+                }
+*/
+            });
+        });
+    </script>
+</body>
+</html>
+

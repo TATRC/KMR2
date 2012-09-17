@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+    <div class="simSection" style="clear:both"><div class="simSubHeadings ">Scope</div>
+        <table class="tblClean">
+            <tr><td class="simFirstCol"><label for="startDate">Start date</label><input id="startDate" name="startDate" type="text" style="width:80px"/></td><td>Duration</td>
+                <td><label for="duration">Duration</label><br/><select id="duration" name="duration" style="width:50px"></select></td><td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="simSection"><div class="simSubHeadings">Agents</div>
+        <table class="tblClean simInputTable">
+            <tr class="agents_break" style="display:none"><td colspan="6" class="simSuberHeadings"><span>Resource </span><span id="agents_type"></span></td></tr>
+            <tr class="agents_break" style="display:none"><td>Agent</td><td>Datasource?</td><td>Population</td><td>Filter</td><td>Subcategory Filter</td><td>Population Range</td></tr>
+            <tr class="agents_outputrow" style="display:none"><!-- agents_output required to create new rows ! -->
+                <td id="agents_name" class="simFirstCol suiteRegText"></td><td><input id="agents_agentId" name="agents[agentId]" type="hidden"/></td>
+                <td><label for="agents_population"></label><input id="agents_population" name="agents[population]"/></td>
+                <td><label for="agents_filtered"></label><input id="agents_filtered" name="agents[filtered]" type="checkbox"/></td>
+                <td><label for="agents_subfilter"></label><select id="agents_subfilter" name="agents[subfilter]"></select></td>
+                <td><label for="agents_populationRange"></label><input id="agents_populationRange" name="agents[populationRange]"/>%</td>
+            </tr>
+        </table>
+    </div>
+    <div class="simSection"><div class="simSubHeadings">Constraints</div>
+        <table class="tblClean simInputTable">
+            <tr class="constraints_break" style="display:none">
+                <td class="simSuberHeadings"><span id="constraints_type"></span><span> Constraints Package </span></td><td></td><td>Requirement</td><td>Importance</td>
+            </tr>
+            <tr class="constraints_outputrow" style="display:none"><!-- constraints_output required to create new rows ! -->
+                <td id="constraints_name" class="simFirstCol suiteRegText"></td><td><input id="constraints_constraintId" type="hidden" name="constraints[constraintId]"/></td>
+                <td><input type="checkbox" id="constraints_required" name="constraints[required]"/><label for="constraints_required">Required</label></td>
+                <td><label for="constraints_importance"></label><select id="constraints_importance" name="constraints[importance]"></select></td>
+            </tr>
+        </table>
+    </div>
+    <div class="simSection"><div class="simSubHeadings">Optimization Stop</div>
+        <table class="tblClean simInputTable">
+            <tr>
+                <td class="simFirstCol"><label for="stopTime">Maximum Time(s)</label></td><td><input id="stopTime" name="stopTime"/></td>
+                <td class="simFirstCol"><label for="stopScore">% Maximum Achievable Score</label></td><td><input id="stopScore" name="stopScore"/></td>
+            </tr>
+            <tr>
+                <td class="simFirstCol"><label for="stopIteration">Maximum Stops</label></td><td><input id="stopIteration" name="stopIteration"/></td>
+                <td class="simFirstCol"><label for="stopImprovement">Score Improvement</label></td><td><input id="stopImprovement" name="stopImprovement"/>%</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

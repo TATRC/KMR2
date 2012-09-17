@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.xdsmanager.model">
+  <class name="XDSProcess" table="xdsprocess">
+    <id column="ProcessID" name="processId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="Ticket" length="100" name="ticket" not-null="true" type="string"/>
+    <property column="UserId" length="100" name="userId" not-null="true" type="string"/>
+    <property column="PatientId" length="100" name="patientId" not-null="true" type="string"/>
+    <property column="ResultCount" name="resultCount" not-null="true" type="long"/>
+    <property column="DownloadCount" name="downloadCount" not-null="true" type="long"/>
+    <property column="ExistedCount" name="existedCount" not-null="true" type="long"/>
+    <property column="StartTime" name="startTime" not-null="true" type="timestamp"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,150 @@
+/*
+ * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+html { overflow-x:hidden; height:100% }
+
+body { height:100%; width:100%; font-size:12px; font-family:Arial,sans-serif; margin:0; padding:0; }
+li,ul,img,form,h1,h2,h3,h4,h5,h6,hr,textarea,span { margin:0; padding:0; list-style:none; vertical-align:middle }
+a { color:white;text-decoration:none; font-size:12px; }
+input {font-family:Arial,sans-serif; height:16px; font-size:11px; background:#f5f5f5;vertical-align:middle; border:1px solid #ccc; margin:0; padding:0 }
+select {font-family:Arial,sans-serif;  line-height:18px; height:18px; font-size:11px; background:#f5f5f5;vertical-align:middle; border:1px solid #ccc; margin:0; }
+label { line-height:18px; }
+button { font-family:Arial,sans-serif; font-size:12px; cursor:pointer; height:21px; background:#f5f5f5; padding:0 5px !important;margin:0 !important; color:#000; border:1px solid #ddd; border-radius:5px }
+button[disabled], button[disabled]:hover { cursor:default; color:#999; cursor:default; background:#f5f5f5 }
+.suiteButtonSpacing { padding-right:10px }
+.suiteTitleFont { font-size:23px; line-height:30px }
+.suiteRegText { color:#000000; }
+
+/* Dynamic, custom dropdowns */
+
+#suiteDropdownList { border:1px solid #ddd;background:#f5f5f5;padding:3px 0 }
+#suiteDropdownList li { cursor:pointer;padding:3px 5px }
+
+.suiteButton { outline: 0; margin:0; padding:0; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; /*zoom: 1; */ }
+
+/* Global suite classes */
+.contentPadding { padding:15px; overflow-y:auto !important; }             /* Default scrolling padded container */
+.contentPaddingFixed { padding:15px; overflow-y:hidden !important; }    /* Used for non-scrolling padded containers */
+
+#ajaxWait { position:absolute; width:64px;height:64px; left:50%; margin-left:-32px;top:50%; background: url("../images/loading-icon.gif") no-repeat center; }
+
+.suiteErrorText { text-align:center; font-weight:bold; color: #f89c2b }
+.suiteBodyHeaderTop { position:relative; min-height:50px; }
+#suiteBodyTitle { float:left; font-size:23px;line-height:45px; padding-top:5px }
+.suiteBodyHeaderButtonsL { float:left; margin-left:20px; margin-top:17px }  /* Placements are dependent on the position of the suiteBodyTitle */
+.suiteBodyHeaderButtonsR { float:right;margin-top:17px }
+
+.suiteGrayBG { background-color:#ccc }
+.suiteHeadingHeight { line-height:25px; color:#fff; }
+.suiteCloseButtonHeader { padding:5px 0; color:#fff; text-align:right; height:20px }
+.suiteCloseButton { cursor:pointer; font-size:12px;  }
+.suiteCloseGraphic { cursor:pointer; height:19px; width:19px; float:right; clear:both; background:url("../images/Close-Icon.png") no-repeat   }
+
+/* Table alignment classes */
+.tblCenter { margin:auto }
+table.tblClean { border:none; border-collapse:collapse; border-spacing:0; }
+table.tblClean td { padding:0; margin:0; border-collapse:collapse; border-spacing:0; vertical-align:top; }
+table.tblNorm { border:none; border-collapse:collapse; border-spacing:0; }
+table.tblNorm td { padding:0 10px 10px 0; margin:0; border-collapse:collapse; border-spacing:0; vertical-align:top; }
+
+table.thinBorder td { border:1px solid }
+table.inputTable td { padding:2px; }
+table.inputTable tr { line-height:20px; }
+table.inputTable label { text-align:right; }
+td.inputLabel { text-align:right; line-height:20px; padding-right:10px !important; }
+table.inputTable span[class="suiteFieldReq"] { padding-left: 2px}
+/*table.inputTable input { height:15px; }*/
+
+.suiteGrid td { border-bottom:2px solid white !important; vertical-align:middle; font-size:12px; line-height:23px }
+.suiteGridBold td { font-weight:bold !important; font-size:12px !important; }
+
+/* Navigation tabs in the header */
+/*.suiteTabActive { background-color:white; }*/
+.suiteTabActive { background-color:white; margin:0 5px; font-size:13px; line-height:22px; font-weight:bold; color:black; }
+.suiteTabInactive { background:url("../images/tabMiddle.png"); margin:0 5px; font-size:13px; line-height:22px; color:white; }
+.suiteTabL { background: url("../images/tabLeft.png") no-repeat; width:7px; height:22px; }
+.suiteTabR { background: url("../images/tabRight.png") no-repeat; width:12px; height:22px; }
+.suiteTabLD { background: url("../images/tabLeftD.png") no-repeat; width:7px; height:22px; }
+.suiteTabRD { background: url("../images/tabRightD.png") no-repeat; width:12px; height:22px; }
+.activeSearchIcon { float:left; width:17px; height:22px; padding-left:10px; background:url('../images/Magnifying-Glass-Active.png') no-repeat 10px 50%; }
+.inactiveSearchIcon { float:left; width:17px; height:22px; padding-left:10px; background: url('../images/Magnifying-Glass.png')  no-repeat 10px 50%; }
+
+#suiteHeader { color:white; text-decoration:none; position:relative; }
+    #suiteHeaderTop { text-align:right;margin-right:20px;line-height:25px }
+    #suiteHeaderTop span { padding-left:10px;}
+    #suiteHeaderTop .fullScreen { display:none; cursor:pointer }
+    .suiteHeaderBottom { position:absolute; width:100%; bottom:0; }
+    .suiteHeaderTabIndent { padding-left:236px}
+
+#suiteFonts { position:absolute; bottom:0; right:0; cursor:pointer }
+    #suiteFonts span  { padding:0 0 5px 10px;line-height:25px }
+
+/* Navigation */
+.suiteLeftNavHeading { font-weight:bold; line-height:20px; margin-left:10px; border-bottom:1px solid #eee}
+
+/* Center content area */
+div#suiteBodyHeader { position:relative }
+div#suiteBodyHeader a { padding-right:5px; }
+div#suiteBodyHeader h2 { line-height:40px;}
+/*div#suiteBodyHeader button { height:20px; padding:0 3px;vertical-align:top }*/
+div#suiteBodyHeader td { white-space:nowrap; vertical-align:top; }
+div#suiteBody { border:1px solid #ddd }
+
+.suiteBorder { border:1px solid #ccc }
+#suiteSplitter { height:8px; background: #ddd url('../images/splitter-background.png'); border-bottom:1px solid #ccc; border-top:1px solid #ccc; margin:auto }
+#suiteSplitterHandle {height:8px; width:20px; margin:auto; background:url('../images/Splitter-3.png') no-repeat center }
+
+.suiteSplitBottomDetail { padding:10px 20px; }
+    /*.suiteSplitBottomDetail ul { list-style:none }*/
+
+/* Surveys */
+.suiteSurveyInbox { padding:6px 0; border-bottom:1px solid #d3d3d3; }
+.suiteSurveyRisk { padding:5px 2px 0 0; }
+.suiteSurveyDxGuide { padding:2px; border-bottom:1px solid #d3d3d3; }
+.surveyQuestionCancel { width:16px; height:16px; padding-left:5px; cursor:pointer }
+
+/* Dialogs */
+.suiteDialogHeading { line-height:40px; color:#fff; font-size:23px; font-weight: bold; }
+#suiteDialogContent { position:absolute; display:none; z-index:110 !important; }
+.suiteDialog { position:absolute; display:none; top:0; left:0; }
+#suiteDialogOverlay { background-color:black; height:100%; width:100%; opacity:.5; z-index:100 !important; }
+    #suiteDialogHeader h3 { line-height:30px; margin-left:10px; }
+    #suiteDialogBody { padding:10px; }
+
+/* Miscellaneous global suite styles */
+#miscInfo div { padding:0 20px; }
+
+/* New grid styles 11-5-11 */
+.suiteGridTabs { padding:0 10px !important; line-height:25px; border-right:1px solid #fff; }
+
+/*div#factListTabs { border-bottom:5px solid #efefef; }*/
+div#factDetailTabs { }  /*border-bottom:5px solid #ffffff; */
+.suiteGridNav { background:#85bdf4; margin-right:20px; position:absolute; right:20px; top:-15px } /* Hide initially and don't wrap the buttons */
+.suiteGridNav button { height:15px;font-size:10px } /* Hide initially and don't wrap the buttons */
+/*.suiteGridNav { background:#c2c2c2; padding:5px; position:absolute;bottom:30px;left:50%; margin-left:-95px} *//* Hide initially and don't wrap the buttons */
+/*.suiteGridNav button { background:white;}*/
+
+/*div#suiteFactDetailContent { overflow-y:auto !important; overflow-x:hidden !important;  }*/
+.ui-jqgrid .ui-jqgrid-bdiv { position: relative; margin: 0; padding:0; overflow-x:hidden; overflow-y:auto; text-align:left; }
+.ui-jqgrid-labels > th { font-weight:normal !important; color:black !important; line-height:20px; height:25px !important; font-size:12px; text-align:left !important; } /* Left align */
+.ui-jqgrid.ui-widget-content { border:none; }   /* No borders around the grids */
+.ui-jqgrid tr.jqgfirstrow td {padding: 0 2px 0 2px;border:none }  /*  Take out strange black border below the grid border */
+.ui-resizable-s { cursor: s-resize; height: 12px; width: 100%; bottom: -12px; left: 0; }
+
+/* Inbox styles */
+.gridStarred { background-image:url("../images/starred.png") }
+.tasksProgress { width:80px; border:1px solid gray; background:white; }
+    .taskProgress { height:8px; }
+
+#factSearch { color:#333; }
+.factPageIcon { width:16px; height:16px; background:url("../images/pageIcon.png") no-repeat; cursor:pointer; }
+
+#suiteFooter { width:100%; position:fixed; bottom:0; height:25px; background-color:#f6f6f2; text-align:center; line-height:25px;}

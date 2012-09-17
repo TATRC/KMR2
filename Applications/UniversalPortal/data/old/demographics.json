@@ -1,0 +1,103 @@
+{
+    "personFact": {
+        "dateOfBirth": "1980-01-02T00:00:00-08:00",
+        "id": [
+            {
+                "codeSystemName": "",
+                "codeSystem": "2.16.840.1.113883.3.200",
+                "value": "99990070",
+                "displayable": "true",
+                "floatValue": "9.9990072E7"
+            },
+            {
+                "codeSystemName": "",
+                "codeSystem": "2.16.840.1.113883.4.1",
+                "value": "390143063",
+                "displayable": "false",
+                "floatValue": "3.90143072E8"
+            }
+        ],
+        "legalName": {
+            "middleName": "M",
+            "familyName": "DOE",
+            "firstName": "JANE",
+            "nameType": {
+                "codeSystemName": "",
+                "codeSystem": "",
+                "label": "Legal",
+                "code": "L"
+            }
+        },
+        "address": {
+            "streetAddress": "8627 Pede Rd.",
+            "postalCode": "92601",
+            "state": "CA",
+            "addressType": {
+                "codeSystemName": "",
+                "codeSystem": "",
+                "label": "Home",
+                "code": "HP"
+            },
+            "city": "San Diego"
+        },
+        "age": {
+            "unit": "yrs",
+            "value": "31",
+            "floatValue": "31.0"
+        },
+        "telecom": [
+            {
+                "value": "672 1385283",
+                "telecomType": {
+                    "codeSystemName": "",
+                    "codeSystem": "",
+                    "label": "Work",
+                    "code": "WP"
+                }
+            },
+            {
+                "value": "672 9484350",
+                "telecomType": {
+                    "codeSystemName": "",
+                    "codeSystem": "",
+                    "label": "Home",
+                    "code": "HP"
+                }
+            },
+            {
+                "telcomType": {
+                    "codeSystemName": "",
+                    "codeSystem": "",
+                    "label": "",
+                    "code": "MC"
+                },
+                "value": "1-858-395-7317"
+            }
+        ],
+        "gender": {
+            "codeSystemName": "AdministrativeGenderCode",
+            "codeSystem": "2.16.840.1.113883.5.1",
+            "label": "Female",
+            "code": "F"
+        },
+        "language": {
+            "codeSystemName": "",
+            "codeSystem": "",
+            "label": "English",
+            "code": "en-US"
+        },
+        "historical": "true",
+        "maritalStatus": {
+            "codeSystemName": "",
+            "codeSystem": "",
+            "label": "1",
+            "code": "UNK"
+        },
+        "race": {
+            "codeSystemName": "",
+            "codeSystem": "",
+            "label": "",
+            "code": "141"
+        }
+    }
+}

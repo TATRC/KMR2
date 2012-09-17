@@ -1,0 +1,51 @@
+/*
+ * Splitter container. Set this to the desired width and height
+ * of the combined left and right panes.
+ */
+.emrSplitter {
+	height: 450px;
+	/*width: 600px;*/
+	border: none;
+	/* No padding allowed */
+}
+/*
+ * Top element of the splitter. Use pixel units for the
+ * min-height and max-height; the splitter plugin parses them to
+ * determine the splitter movement limits. Set the height to
+ * the desired initial height of the element; the plugin changes
+ * the height of this element dynamically.
+ */
+.splitterTop {
+	background: #ffe;
+	/*overflow: auto;*/
+	 /*Initial/min/max height for this pane */
+	height: 250px;
+	min-height: 100px;
+	/*max-height: 400px;*/
+	/* No margin or border allowed */
+}
+/*
+ * Bottom element of the splitter; the plugin changes the top
+ * position and height of this element dynamically.
+ */
+.splitterBottom {
+	background: #ffd;
+	/*overflow: hidden;*/
+
+    min-height: 100px;
+    /*max-height: 400px;*/
+	/* No margin or border allowed */
+}
+/*
+ * Splitter bar style; the .active class is added when the
+ * mouse is over the splitter or the splitter is focused
+ * via the keyboard taborder or an accessKey.
+ */
+.emrSplitter .hsplitbar {
+	height: 6px;
+	background: #cca no-repeat center;
+	/* No margin, border, or padding allowed */
+}
+.emrSplitter .hsplitbar.active, .emrSplitter .hsplitbar:hover {
+	background: #e88 no-repeat center;
+}

@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Admissions",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":11,
+        "status":"Final",
+
+        "facts": [
+                {"report": "DATE OF ADMISSION:  2010-Oct-23 <br/>DATE OF DISCHARGE:  2010-Oct-27 <br/>ADMITTING DIAGNOSIS: Pneumonia <br/>CHIEF COMPLAINT: Cough, Fever <br/>HISTORY OF PRESENT ILLNESS: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies lectus vel ante blandit vitae lobortis est posuere. Nam pharetra nulla et nisi facilisis id dictum tortor feugiat. Nunc diam sem, semper sed gravida a, dapibus in est. Proin consectetur dui et lectus rhoncus blandit in sit amet eros. Pellentesque a ligula vel diam scelerisque tincidunt. Ut non nibh justo, non lobortis velit. Vivamus luctus euismod lacinia. Fusce in porta felis. Vestibulum vestibulum ligula risus. Sed at nisi dui, nec luctus turpis. Vestibulum scelerisque sem ut odio ullamcorper porttitor. Maecenas interdum rutrum enim, sit amet scelerisque enim semper ac. Phasellus feugiat magna vitae orci vehicula nec bibendum lacus posuere. <br/>PROCEDURES PERFORMED: Morbi commodo nisi nec elit feugiat ullamcorper. In nec tempus lorem. Aliquam nec lectus et elit bibendum facilisis. Suspendisse venenatis dui sed mi vestibulum dignissim. In interdum dapibus odio, id bibendum tortor bibendum pharetra. Aenean lobortis, urna sit amet aliquet commodo, ipsum arcu volutpat nisi, aliquet vestibulum nulla eros id tortor. "
+                }
+        ],
+        "successStatus": true
+    }
+}

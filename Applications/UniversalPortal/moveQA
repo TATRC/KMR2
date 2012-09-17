@@ -1,0 +1,5 @@
+#!/bin/sh
+HOME='/opt/wso2as-4.1.2/repository/deployment/server/webapps'
+
+mvn clean install
+scp target/portal.war root@192.168.5.62:${HOME}/

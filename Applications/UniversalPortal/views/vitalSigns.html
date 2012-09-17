@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <style type="text/css" media="screen">
+        th.ui-th-column div{
+            white-space:normal !important;
+            height:auto !important;
+            padding:2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="suiteBodyHeader">
+        <div class="suiteBodyHeaderTop"><div id="suiteBodyTitle">Vital Signs</div></div>
+    </div>
+
+    <div id="suiteBody">
+         <div id="suiteSplitTop">
+             <table id="suiteTopGrid"></table>
+         </div>
+         <div id="suiteSplitBottom">
+             <div id="suiteBodyHeaderBottom">
+                 <div id="suiteSplitter"><div id="suiteSplitterHandle"></div></div>
+             </div>
+             <div id="factsDetailWrapper" class="contentPadding">
+                 <div id="graphLegend" style="display:inline-block"></div>
+                 <div id="factsDetail" style="float:right;margin-right:30px;width:100px;height:100px"></div>
+             </div>
+         </div>
+     </div>
+
+<!-- Scripts should be at the end of the HTML so that DOM is loaded -->
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="js/jquery.flot.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.flot.resize.js"></script>-->
+
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without the config
+        var _thisView = 'vitalSigns';
+
+        function populatePage(colIdx) {
+            // Given the column pointer, populate the new page
+            // Start the 2 arrays that will be used in the grid for dynamic columns
+            _colNames = ['Description'];  // 'Graph',,'Units'
+            _colModel = [ {name:'vitalDesc', index:'vitalDesc', width:200, sortable:false }
+//                {name:'vitalSelected', index:'vitalSelected', width:10, editable:true, formatoptions:{disabled:false}, edittype:'checkbox', formatter:"checkbox", align:'center', sortable:false },
+            ];
+            // Get the rows to display and build the grid parameters
+            _newData = [];
+            $.each(_newRowLayout, function(rowIdx, obj){
+                _newData.push( { label:obj.label, vitalDesc:obj.label + ' ('+ obj.resultValueUnit +')', graphVals:[]} );
+            });
+
+            // Get the portion of the array needed for display
+            var _startCol = (colIdx-_numberOfColumns < 0)?0:colIdx-_numberOfColumns;
+            $.each(_gridCols.slice(_startCol,colIdx), function(colIdx, resultDate) {
+                _colNames.push(resultDate.substr(5,5)+'-' + resultDate.substr(2,2) + '<br/>' + resultDate.substr(-5));
+                _colModel.push( {name:resultDate, index:resultDate, width:60, align:'center', title:false } )
+                $.each(_newRowLayout, function(rowIndx, vitalRow) {
+                    var _resultValue = vitalRow[resultDate];
+                    // Insert the selected column data
+                    _newData[rowIndx][resultDate]=_resultValue;
+//                    _newData[rowIndx].graphVals.push(_resultValue);           // Google charts format
+                    _newData[rowIndx].graphVals.push([colIdx,_resultValue]);    // Flot format
+
+/*
+                    // Create the low and high range for this row
+                    if (!_newData[rowIndx].lowValue ||  _newData[rowIndx].lowValue > _resultValue)
+                        _newData[rowIndx].lowValue=_resultValue;
+                    if (!_newData[rowIndx].highValue || _newData[rowIndx].highValue < _resultValue )
+                        _newData[rowIndx].highValue=_resultValue;
+*/
+                });
+            });
+        }
+
+        function populateGrid(data) {
+            data.facts = _newData;
+
+            var _grid=$('#suiteTopGrid');
+            // Load and populate the Inbox grid
+            _grid.jqGrid({
+                datatype: "jsonstring",
+                datastr:data,
+                loadonce: true,  // loads the data from the server only once.  Sets the datatype to local afterwards for sorting
+                jsonReader: {
+                    root: "facts",
+                    repeatitems:false
+                },
+                colNames:_colNames,
+                colModel:_colModel,
+                forceFit:true, hoverrows:false, scrollrows:true, // rowNum:-1, shrinkToFit:true,
+                onSelectRow: function(rowid, status) {
+                    drawGraph();
+                },
+                loadComplete: function() {
+                    $.publish( '/suite/topGridLoaded',[]);
+                    if (_grid.getGridParam("reccount") > 0 ) {
+                        _grid.jqGrid('setSelection',_rowIndex); // Select the first row after the grid is loaded
+                    }
+
+/*
+                    // After the grid is loaded, change all of the tooltips to show the label of the Vital
+                    var ids = _grid.jqGrid('getDataIDs');
+                    for (var i=0;i<ids.length;i++) {
+                        var id=ids[i];
+                        var rowData = _grid.jqGrid('getRowData',id);
+                        $('#'+id,_grid[0]).attr('title', rowData.label);
+                    }
+*/
+                }
+            });
+
+            $('#gridNav :button').click(function(e) {
+                var _title = e.target.title;
+                if (_title=='First Date') _colIndex=_numberOfColumns-1;
+                else if(_title=="Previous Page") _colIndex=( (_colIndex-_numberOfColumns) <_numberOfColumns?_numberOfColumns-1:_colIndex-_numberOfColumns);
+                else if(_title=="Previous Date") _colIndex=(_colIndex-1<_numberOfColumns?_numberOfColumns-1:_colIndex-1);
+                else if(_title=="Next Date") _colIndex=(_colIndex+1 > _gridCols.length-1?_gridCols.length-1:_colIndex+1);
+                else if(_title=="Next Page") _colIndex=(_colIndex+_numberOfColumns > _gridCols.length-1?_gridCols.length-1:_colIndex+_numberOfColumns);
+                else if(_title=="Last Date") _colIndex=_gridCols.length-1;
+                populatePage(_colIndex);
+                var _data = []; _data.facts = _newData;
+                $("#suiteTopGrid").jqGrid('setGridParam', { datatype:'jsonstring', datastr:_data, colNames:_colNames, colModel:_colModel } ).trigger("reloadGrid");
+            });
+
+             // Initialize the grid after it is loaded
+            if (_grid.getGridParam("reccount") > 0 ) {
+                _grid.jqGrid('setSelection',_rowIndex); // Select the first row after the grid is loaded
+            }
+
+        }
+
+        function drawGraph() {
+            var _graph = $("#factsDetail");
+            var _rowid = $('#suiteTopGrid').jqGrid('getGridParam','selrow');
+            if (!_rowid) return;
+
+            var _rowData = _newData[_rowid-1];
+
+            var options = {
+                series: { lines: { show: true }, points: { show: true } },
+                legend: { show: true, position:"sw", container:$('#graphLegend')},
+                xaxis: { show:false}
+//                      yaxis: { labelWidth:200 }
+            };
+            var plot = $.plot(_graph,[ { label:_rowData.vitalDesc, data:_rowData.graphVals } ], options);
+        }
+        $.subscribe('/suite/contentResized',_thisView, function(resizeObj) {
+            var _wrapper = $('#factsDetailWrapper');
+            _wrapper.outerHeight(resizeObj.suiteSplitBottomH - resizeObj.suiteBodyHeaderBottomH );
+            $('#factsDetail').width(_wrapper.width()-$('#suiteTopGrid_vitalDesc').width()-30).height(_wrapper.innerHeight()-30 );
+            drawGraph();
+        });
+
+// INITIALIZATION
+        var _graph;
+        var _numberOfColumns = 12;              // Default # of columns for the grid
+        var _resultDate=''; var _gridRows=[]; var _gridCols = []; var _newRowLayout=[];
+        var _colNames; var _colModel; var _newData;  // Dynamic grid parameters
+
+        $('#factRefDate').datepicker();      // Date picker
+        var _colIndex=0;                    // Keeps track of the current index used for the paging
+        var _rowIndex=1;                    // Keeps track of the currently selected row
+        sirona.localOnce = true;
+        sirona.reqPS('getPatientData-Vitals2', { view:_thisView, data: { 'domain':'vitals', 'responseType':'list' },
+            success: function(data){
+                if (data.facts.length<=0) return;
+
+                // First, sort all of the facts data by resultDate ascending
+                data.facts.sort(sort_by('resultDate', false));
+
+                // Reorganize the data
+                $.each(data.facts, function(idx, fact) {
+                    // Create an array of result dates.  Will be used in the horizontal paging logic also.
+                    if (_resultDate != fact.resultDate) {_gridCols.push(fact.resultDate);_resultDate=fact.resultDate;}
+
+                    // Create an array of vitals (labels).
+                    if (_gridRows.indexOf(fact.label)<0) {
+                        _gridRows.push(fact.label);
+                        _newRowLayout.push({ label:fact.label, resultValueUnit:fact.resultValueUnit  });
+                    }
+                    var _row = _gridRows.indexOf(fact.label);
+
+                    // Now construct the new complete data array that will be used for cache, and to create the grid and graph
+                    _newRowLayout[_row][fact.resultDate] = fact.resultValue;
+                });
+
+                _colIndex= _gridCols.length-1;
+                populatePage(_colIndex);  // Start at the last page (most current date)
+                populateGrid(data);
+            }
+        }, 'patientDataFact');
+
+    });
+</script>
+</body>
+</html>

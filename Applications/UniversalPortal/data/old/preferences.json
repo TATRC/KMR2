@@ -1,0 +1,41 @@
+{
+   "preferences":{
+      "general":{
+         "use24hourClock":"true"
+      },
+      "providers":[
+
+      ],
+      "pmrCalendar":[
+         {
+            "username":"null",
+            "password":"null",
+            "description":"",
+            "eventColor":"0x0000FF"
+         },
+         {
+            "username":"null",
+            "password":"null",
+            "description":"Jane",
+            "eventColor":"0x008000"
+         }
+      ],
+      "externalCalendar":[
+         {
+            "name":"personal",
+            "account":"nhinbabysmith@gmail.com",
+            "eventColor":"0xFF1493"
+         },
+         {
+            "name":"kids",
+            "account":"kids@gmail.com",
+            "eventColor":"0x800080"
+         },
+         {
+            "name":"test",
+            "account":"mike@dunestech.com",
+            "eventColor":"0xCCCCCC"
+         }
+      ]
+   }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+  ~ Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~ - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<html>
+<body>
+<div id="suiteTopTabNav" style="display:none">
+    <table class="tblClean">
+        <tr id="suiteTopTabs" style="cursor:pointer;">
+            <td class="suiteTabL"></td><td class="suiteTabActive">Desktop</td><td class="suiteTabR"></td>
+            <td class="suiteTabLD"></td><td class="suiteTabInactive"><div id="topNavPatient" style="float:left">Patient Records</div><div class="inactiveSearchIcon" id="topNavSearch"></div></td><td class="suiteTabRD"></td>
+            <td class="suiteTabLD"></td><td class="suiteTabInactive">Simulator</td><td class="suiteTabRD"></td>
+        </tr>
+    </table>
+</div>
+<!-- Script to load data should be at the end of the HTML so that DOM is loaded -->
+<script type="text/javascript">
+    $(function($) {
+        if (!sirona) return false; // Cannot be loaded without the config
+        var _thisView = 'topNavTabs';
+
+        $('#suiteTopTabs').delegate('td', 'click', function(e) {
+            $('.suiteTabL').attr('class','suiteTabLD');
+            $('.suiteTabActive').attr('class','suiteTabInactive');
+            $('.suiteTabR').attr('class','suiteTabRD');
+
+            var _tabIndex = parseInt(this.cellIndex/3)*3; // Get the starting index of the tab clicked
+            var _parent = $('#suiteTopTabs');
+            _parent.children(":eq(" + _tabIndex + ")").attr('class','suiteTabL');
+            _parent.children(":eq(" + (_tabIndex+1) + ")").attr('class','suiteTabActive');
+            _parent.children(":eq(" + (_tabIndex+2) + ")").attr('class','suiteTabR');
+
+            var _tabContent = '';
+            if (_tabIndex/3 == 1) {
+                // User clicked the patient tab
+                $('#topNavSearch').attr('class', 'activeSearchIcon');
+                if ($(e.target).attr('id') == 'topNavSearch') {
+                    _tabContent = 'Patient Records';
+                    delete sirona.patient.id;   // Remove the patient context when intending to search for a new one
+                }  // Set the tab content to default, then the topTabNavigate subscription will show the search widget
+                else  {
+                    _tabContent = $('#topNavPatient').text();
+                    if (sirona.patient.patientId) sirona.patient.id = sirona.patient.patientId;      // Change the context back to the current patient
+                }
+            } else {
+                delete sirona.patient.id;   // Not on a patient tab, so remove the context
+                $('#topNavSearch').attr('class', 'inactiveSearchIcon');
+                _tabContent = $('#suiteTopTabs .suiteTabActive').html();
+            }
+            $.publish( '/suite/topTabNavigate',[ _tabContent ],e );
+        });
+
+        $.subscribe('/emr/patientSelected', _thisView, function(rowData) {
+            sirona.patient = rowData;
+            sirona.patient.id = sirona.patient.patientId;
+            sirona.patient.displayName = rowData.firstName + ((rowData.middleName && rowData.middleName !='')?' '+rowData.middleName:'') + ' ' + rowData.lastName;
+            $('#topNavPatient').html('Patient: ' + sirona.patient.displayName);
+            $.publish( '/suite/topTabNavigate',[ $('#topNavPatient').html() ] );  // Publish that the new patient was selected
+        });
+
+// INITIALIZATION
+        $('#suiteTopTabNav').css('display','inline');
+
+//        $.publish( '/suite/topTabNavigate',[ 'Simulator' ] );
+        $.publish( '/suite/topTabNavigate',[ 'Desktop' ] );
+//        $.publish( '/emr/patientSelected',[ { patientId:'99990070', firstName:'Jane', middleName:'Test', lastName:'Doe' } ] ); // TODO testing
+    });
+</script>
+</body>
+</html>
